@@ -17,21 +17,8 @@
 <meta content="yes" name="apple-mobile-web-app-capable">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-<link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-touch-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/img/icons/apple-touch-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/img/icons/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/img/icons/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/img/icons/apple-touch-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/img/icons/apple-touch-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-touch-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon-180x180.png">
-<link rel="icon" type="image/png" href="/img/icons/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/img/icons/android-chrome-192x192.png" sizes="192x192">
-<link rel="icon" type="image/png" href="/img/icons/favicon-96x96.png" sizes="96x96">
-<link rel="icon" type="image/png" href="/img/icons/favicon-16x16.png" sizes="16x16">
-<link rel="manifest" href="/img/icons/manifest.json">
-<link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg">
+<link rel="icon" type="image/png" href="favicon.ico">
+
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 <meta name="theme-color" content="#ffffff">
@@ -71,8 +58,7 @@
 
   <link rel="stylesheet" type="text/css" href="plugins/aos/aos.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
-
-   
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
 
 </head>
 <body>
@@ -147,7 +133,7 @@
 
   <div id="barba-wrapper">
     <div class="barba-container">
-      
+
 <div id="index" class="index-alt">
   <section id="headline-cover">
     <div class="container">
@@ -162,7 +148,7 @@
           </p>
 
           <div class="buttons-container" data-aos="fade-up">
-            <a href="#"  data-toggle="modal" data-target="#purchaseModal" class="btn btn-lg btn-primary btn-round btn-main-cta">
+            <a href="#final-cta" id="subscribe" class="btn btn-lg btn-primary btn-round btn-main-cta">
               Subscribe for notification
             </a>
 
@@ -205,7 +191,7 @@
 
       <p class="lead">
 			Use regular flat digital patterns to create garment 3D rendered model, customize design and cut, set-up digital fabric settings and textures, fit the garment on a virtual mannequin in a few clicks
-			
+
       </p>
     </div>
 
@@ -340,11 +326,20 @@
           </h2>
 
           <p class="lead">
-			The new market of 3D-printed fashion is rapidly growing, changing the way people produce sustainable, recyclable, and made-to-order garments 
-			<form class="subscribe-form wow animated" style="margin-top: 30px; text-align: center; visibility: visible;" action="assets/php/subscribe.php" method="post" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate="">
-			              <input class="mail" type="email" name="email" placeholder="Subscribe now!" autocomplete="off"><input class="submit-button" type="submit" value="Subscribe">
-			            </form>
-          </p>
+			The new market of 3D-printed fashion is rapidly growing, changing the way people produce sustainable, recyclable, and made-to-order garments</p>
+
+            <form action="" class="subscribe-form">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-10 col-md-offset-1">
+                        <input type="text" class="input-lg form-control" name="email" placeholder="Your email address">
+                        <span class="input-group-btn">
+                            <input type="submit" class="btn btn-default btn-lg" value="Subscribe" />
+                        </span>
+                    </div>
+                </div>
+            </form>
+            <div class="success-message"></div>
+            <div class="error-message"></div>
         </div>
       </div>
     </div>
@@ -355,7 +350,7 @@
     </div>
   </div>
 
-  
+
 <footer id="main-footer">
 
   <div class="copyright-footer">
@@ -425,7 +420,7 @@
 
 
 
-   
+
 
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
@@ -437,12 +432,13 @@
     <script src="plugins/isotope/isotope.pkgd.js"></script>
     <script src="plugins/barba/dist/barba.min.js"></script>
     <script src="plugins/aos/aos.js"></script>
+    <script src="plugins/jquery.smooth-scroll.min.js"></script>
   <!-- endbuild -->
 
   <script type="text/javascript" src="js/main.js"></script>
 
 
 
-   
+
 </body>
 </html>

@@ -1,0 +1,15 @@
+{
+  "name": "sharecloth/sc2",
+  "description": "sharecloth landing",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "petr marochkin",
+      "email": "petun911@gmail.com"
+    }
+  ],
+  "require": {
+    "zfr/zfr-mailchimp": "^2.0"
+  }
+}

@@ -1,0 +1,29 @@
+.navbar.navbar-inverse.navbar-custom-dark {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.navbar-custom-dark .navbar-nav>li>a {
+    border-left: none;
+}
+
+#index.index-alt #headline-cover {
+    padding-top: 120px;
+}
+
+#custom-search-input .input-lg {
+    height: 45px;
+}
+
+div.error-message {
+    color: red;
+}
+
+div.success-message {
+    display: block;
+    color: #06af28;
+    font-size: 20px
+}

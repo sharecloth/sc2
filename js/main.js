@@ -225,4 +225,33 @@ $(function() {
   }
 
 
-})
+});
+
+
+$(function() {
+  $('#subscribe').smoothScroll({speed: 800});
+
+  $('.subscribe-form').submit(function(e) {
+    e.preventDefault();
+    var postdata = $('.subscribe-form').serialize();
+    $.ajax({
+      type: 'POST',
+      url: 'php/subscribe.php',
+      data: postdata,
+      dataType: 'json',
+      success: function(json) {
+        if(json.valid == 0) {
+          $('.success-message').hide();
+          $('.error-message').html(json.message).show();
+        }
+        else {
+          $('.error-message').hide();
+          $('.success-message').hide();
+          $('.subscribe-form').hide();
+          $('.success-message').html(json.message).show();
+        }
+      }
+    });
+  });
+
+});
