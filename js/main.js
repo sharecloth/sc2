@@ -229,8 +229,12 @@ $(function() {
 
 
 $(function() {
-  $('#subscribe').smoothScroll({speed: 800});
-  $('#features-link').smoothScroll({speed: 800});
+  if ( $('#subscribe').size() > 0) {
+    $('#subscribe').smoothScroll({speed: 800});
+  }
+  if ($('#features-link').size() > 0) {
+    $('#features-link').smoothScroll({speed: 800});
+  }
 
   $('.subscribe-form').submit(function(e) {
     e.preventDefault();

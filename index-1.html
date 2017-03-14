@@ -69,18 +69,121 @@
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="plugins/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="plugins/jquery.mb.YTPlayer/dist/css/jquery.mb.YTPlayer.min.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
 
    
 
 </head>
 <body>
+<nav class="navbar navbar-inverse navbar-transparent" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                ShareCloth
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-top-collapse" id="bs-navbar-collapse-1">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">
+                        <i class="material-icons">home</i> Future of fashion whitepaper
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="material-icons">home</i> Press kit
+                    </a>
+                </li>
+                <!--
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="material-icons">pages</i> Main Pages <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="pricing.html">
+                        <i class="material-icons">monetization_on</i> Pricing
+                      </a>
+                    </li>
+                    <li>
+                      <a href="services.html">
+                        <i class="material-icons">done_all</i> Services
+                      </a>
+                    </li>
+                    <li>
+                      <a href="features.html">
+                        <i class="material-icons">new_releases</i> Features
+                      </a>
+                    </li>
+                    <li>
+                      <a href="about.html">
+                        <i class="material-icons">face</i> About
+                      </a>
+                    </li>
+                    <li>
+                      <a href="contact-us.html">
+                        <i class="material-icons">contact_mail</i> Contact Us
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                -->
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- container -->
+</nav>
   
   <div id="barba-wrapper">
     <div class="barba-container">
       
-<div id="index">
-  <section id="headline-cover" style="padding-top:50px;">
+<div id="index" class="index-alt">
+    <section id="headline-cover">
+        <a class="player" data-property="{videoURL:'https://youtu.be/wZWiRoktNWA',containment:'#headline-cover', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default'}"></a>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="headline-text" data-aos="fade-down">
+                        Empowering innovators in fashion 3D-printing
+                    </h1>
+
+                    <p class="subheading-text" data-aos="fade-down">
+                        ShareCloth allows fashion designers to connect their knowledge of garment design with revolutionary 3D-printing technologies
+                    </p>
+
+                    <div class="buttons-container" data-aos="fade-up">
+                        <a href="#final-cta" id="subscribe" class="btn btn-lg btn-primary btn-round btn-main-cta">
+                            Subscribe for notification
+                        </a>
+
+                        <span class="or">or</span>
+
+                        <a href="#features" class="btn btn-link" id="features-link">
+                            Take a tour &rarr;
+                        </a>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+  <section id="headline-cover2" style="padding-top:50px;">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-xs-12">
@@ -263,14 +366,12 @@
     <script src="plugins/countUp/dist/countUp.js"></script>
     <script src="plugins/lightbox/dist/ekko-lightbox.min.js"></script>
     <script src="plugins/isotope/isotope.pkgd.js"></script>
+    <script src="plugins/jquery.smooth-scroll.min.js"></script>
     <script src="plugins/barba/dist/barba.min.js"></script>
+  <script src="plugins/jquery.mb.YTPlayer/dist/jquery.mb.YTPlayer.min.js"></script>
     <script src="plugins/aos/aos.js"></script>
   <!-- endbuild -->
 
   <script type="text/javascript" src="js/main.js"></script>
-
-
-
-   
 </body>
 </html>
