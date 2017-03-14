@@ -29,7 +29,7 @@ if ($_POST) {
 
         try {
             $result = $client->subscribe(array(
-                'id'    => $config['list-id'],
+                'id'    => $config['sc-list-id'],
                 'email' => array(
                     'email' => $subscriber_email,
                 ),
@@ -39,7 +39,7 @@ if ($_POST) {
             ));
             //var_dump($result);
             $array['valid'] = 1;
-            $array['message'] = 'Success! Please check your mail.';
+            $array['message'] = 'Success! You are successfully subscribed!';
 
             $array = array_merge($array, $result);
 

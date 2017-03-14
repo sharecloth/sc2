@@ -8,6 +8,7 @@
 <html itemscope itemtype="https://schema.org/" lang="en-US">
 <!--<![endif]-->
 <head>
+    <base href="/sc2/" />
   <meta charset="utf-8">
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -174,26 +175,26 @@
 	        </div>
 
 	        <div class="col-md-4 col-md-offset-1 col-xs-12 " data-aos="fade-up-left" style="padding-top: 20px; color:#fff;">
-				<form role="form">
+				<form role="form" class="white-paper-form">
 					<div class="form-group">
 	              <label for="inputUsernameEmail">Email *</label>
-	              <input type="text" class="form-control input-lg" placeholder="you@yourcompany.com" id="inputUsernameEmail">
+	              <input name="email" type="text" class="form-control input-lg" placeholder="you@yourcompany.com" id="inputUsernameEmail">
 	             </div>
 					<div class="form-group">
 	              <label for="inputUsername">Your Name *</label>
-	              <input type="text" class="form-control input-lg" placeholder="Jack" id="inputUsername">
+	              <input name="name" type="text" class="form-control input-lg" placeholder="Jack" id="inputUsername">
 	            </div>
 					<div class="row">
 					<div class="col-md-6 col-lg-6">
 						<div class="form-group">
 							<label for="inputCompany">Company</label>
-							<input type="text" class="form-control input-lg" placeholder="Fashion, Inc" id="inputCompany">
+							<input name="company" type="text" class="form-control input-lg" placeholder="Fashion, Inc" id="inputCompany">
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-6">
 						<div class="form-group">
 							<label for="inputPosition">Position</label>
-							<input type="text" class="form-control input-lg" placeholder="Position" id="inputPosition">
+							<input name="position" type="text" class="form-control input-lg" placeholder="Position" id="inputPosition">
 						</div>
 					</div>
 				</div>
@@ -203,6 +204,9 @@
 		                <i class="fa fa-check-sign"></i> Obtain free digital copy now
 		              </button>
 		            </div>
+
+                    <div class="success"></div>
+                    <div class="error"></div>
 				</form>
 				<div class="row">
 					<div class="col-md-12 col-xs-12 text-center">

@@ -171,61 +171,7 @@ $(function() {
   $.StartKit.init();
 })
 
-$(function() {
-  var FadeTransition = Barba.BaseTransition.extend({
-    start: function() {
-      Promise
-        .all([this.scrollToTop(), this.newContainerLoading, this.fadeOut()])
-        .then(this.fadeIn.bind(this));
-    },
 
-    fadeOut: function() {
-      return $(this.oldContainer).animate({
-        opacity: 0,
-        top: "-100px"
-       }).promise();
-    },
-
-    scrollToTop: function() {
-      return $("body").animate({scrollTop: 0}).promise();
-    },
-
-    fadeIn: function() {
-      var _this = this;
-      var $el = $(this.newContainer);
-
-      $(this.oldContainer).hide();
-
-      $el.css({
-        visibility : 'visible',
-        opacity : 0,
-        top: "-100px",
-      });
-
-      $el.animate({ opacity: 1, top: 0 }, 400, function() {
-        _this.done();
-      });
-    }
-  });
-
-  Barba.Pjax.getTransition = function() {
-    return FadeTransition;
-  };
-
-  var protocol = window.location.protocol;
-
-  if(protocol == "http:" || protocol == "https:") {
-    Barba.Prefetch.init();
-    Barba.Pjax.start();
-    Barba.Dispatcher.on("transitionCompleted", function() {
-      $.StartKit.init();
-    })
-  } else {
-    console.log("Please serve this page from a web server to see AJAX page transitions")
-  }
-
-
-});
 
 
 $(function() {
@@ -263,8 +209,43 @@ $(function() {
 
 
 $(function() {
+  var height = window.innerHeight;
+  console.log(height);
   var $head = $('#headline-cover');
-  $head.height(window.innerHeight - 200);
+  $head.css('height', window.innerHeight + 'px');
 
   $('.player').YTPlayer();
+});
+
+
+
+$(function() {
+
+  var $form = $('.white-paper-form');
+  var $success = $form.find('.success');
+  var $error = $form.find('.error');
+
+  $form.on('submit', function(e) {
+    e.preventDefault();
+
+    $form.find('button').button('loading');
+    $.ajax({
+      method: 'POST',
+      url: 'php/register.php',
+      dataType: 'json',
+      data: $(this).serialize(),
+      success: function(r) {
+        if (r.valid) {
+          $error.hide();
+          $success.show().text(r.message);
+        } else {
+          $error.show().text(r.message);
+          $success.hide();
+        }
+        $form.find('button').button('reset');
+        console.log(r);
+      }
+    });
+  });
+
 });
