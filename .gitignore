@@ -1,2 +1,7 @@
+<<<<<<< Updated upstream
 .idea
 php/config.php
+=======
+
+*.tmproj
+>>>>>>> Stashed changes
