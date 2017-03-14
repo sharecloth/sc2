@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>index-1.html</string>
+	<string>index.html</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -92,7 +92,9 @@
 			<key>filename</key>
 			<string>index.html</string>
 			<key>lastUsed</key>
-			<date>2017-03-13T13:11:53Z</date>
+			<date>2017-03-14T14:27:21Z</date>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>filename</key>
@@ -104,9 +106,7 @@
 			<key>filename</key>
 			<string>index-1.html</string>
 			<key>lastUsed</key>
-			<date>2017-03-13T13:11:53Z</date>
-			<key>selected</key>
-			<true/>
+			<date>2017-03-14T11:03:40Z</date>
 		</dict>
 		<dict>
 			<key>expanded</key>
@@ -175,20 +175,6 @@
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>index-1.html</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>44</integer>
-				<key>line</key>
-				<integer>128</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>238</integer>
-		</dict>
 		<key>index.html</key>
 		<dict>
 			<key>caret</key>
@@ -196,28 +182,12 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>78</integer>
+				<integer>0</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>7</integer>
-				<key>line</key>
-				<integer>145</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>78</integer>
-			</dict>
+			<integer>64</integer>
 		</dict>
 		<key>js/main.js</key>
 		<dict>
@@ -237,7 +207,6 @@
 	<key>openDocuments</key>
 	<array>
 		<string>index.html</string>
-		<string>index-1.html</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
