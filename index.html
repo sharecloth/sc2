@@ -57,6 +57,7 @@
     <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
 
   <link rel="stylesheet" type="text/css" href="plugins/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="plugins/jquery.mb.YTPlayer/dist/css/jquery.mb.YTPlayer.min.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <link rel="stylesheet" type="text/css" href="css/custom.css">
 
@@ -136,7 +137,9 @@
 
 <div id="index" class="index-alt">
   <section id="headline-cover">
-    <div class="container">
+      <a class="player" data-property="{videoURL:'https://youtu.be/wZWiRoktNWA',containment:'#headline-cover', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default'}"></a>
+
+      <div class="container">
       <div class="row">
         <div class="col-md-12">
           <h1 class="headline-text" data-aos="fade-down">
@@ -433,6 +436,7 @@
     <script src="plugins/barba/dist/barba.min.js"></script>
     <script src="plugins/aos/aos.js"></script>
     <script src="plugins/jquery.smooth-scroll.min.js"></script>
+    <script src="plugins/jquery.mb.YTPlayer/dist/jquery.mb.YTPlayer.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
 
     <!-- endbuild -->

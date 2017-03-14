@@ -256,3 +256,11 @@ $(function() {
   });
 
 });
+
+
+$(function() {
+  var $head = $('#headline-cover');
+  $head.height(window.innerHeight - 200);
+
+  $('.player').YTPlayer();
+});
