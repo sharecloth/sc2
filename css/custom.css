@@ -27,3 +27,13 @@ div.success-message {
     color: #06af28;
     font-size: 20px
 }
+
+
+#highlight-cta img {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+#highlight-cta .thumbnail {
+    border: none;
+}
