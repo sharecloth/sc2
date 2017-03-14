@@ -230,6 +230,7 @@ $(function() {
 
 $(function() {
   $('#subscribe').smoothScroll({speed: 800});
+  $('#features-link').smoothScroll({speed: 800});
 
   $('.subscribe-form').submit(function(e) {
     e.preventDefault();
