@@ -39,7 +39,7 @@ if ($_POST) {
             ));
             //var_dump($result);
             $array['valid'] = 1;
-            $array['message'] = 'Success! You are successfully subscribed!';
+            $array['message'] = 'Thank you! <br /> We\'ll reach you with our release news as soon as possible!';
 
             $array = array_merge($array, $result);
 
