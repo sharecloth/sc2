@@ -212,9 +212,12 @@ $(function() {
   var height = window.innerHeight;
   console.log(height);
   var $head = $('#headline-cover');
-  $head.css('height', window.innerHeight + 'px');
 
-  $('.player').YTPlayer();
+  if ($head.find('a.player')[0]) {
+    $head.css('height', window.innerHeight + 'px');
+    $('.player').YTPlayer();
+  }
+
 });
 
 
