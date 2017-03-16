@@ -5,6 +5,9 @@
     left: 0;
     right: 0;
     top: 0;
+    a {
+        color: white;
+    }
 }
 
 @media (min-width: 768px) {
@@ -120,4 +123,12 @@ section#final-cta {
         font-size: 15px;
         color: red;
     }
+}
+
+.testimonial .quote-author {
+    width: 27%;
+}
+
+.testimonial .quote-text {
+    width: 71%;
 }
