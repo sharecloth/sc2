@@ -1,11 +1,21 @@
 .navbar.navbar-inverse.navbar-transparent {
     background: transparent;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
     box-shadow: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
 }
+
+@media (min-width: 768px) {
+    .navbar.navbar-inverse.navbar-transparent {
+        position: absolute;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+}
+
 
 .navbar-transparent .navbar-nav>li>a {
     border-left: none;
@@ -17,6 +27,35 @@
 
 #index.index-alt #headline-cover {
     padding-top: 120px;
+}
+
+#index #headline-cover .headline-text {
+        font-size: 25px;
+}
+@media (min-width: 768px) {
+    #index #headline-cover .headline-text {
+            font-size: 32px;
+    }
+}
+
+#index #headline-cover .buttons-container .btn-main-cta {
+    padding: 16px 28px;
+}
+@media (min-width: 768px) {
+    padding: 18px 48px;
+}
+
+.btn-lg {
+    padding: 10px 8px;
+}
+
+#about .stats .stat-item strong {
+    font-size: 3em;
+}
+@media (min-width: 768px) {
+    #about .stats .stat-item strong {
+        font-size: 4em;
+    }
 }
 
 #custom-search-input .input-lg {
