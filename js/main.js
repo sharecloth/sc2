@@ -193,13 +193,13 @@ $(function() {
       success: function(json) {
         if(json.valid == 0) {
           $('.success-message').hide();
-          $('.error-message').show().find('alert').html(json.message);
+          $('.error-message').html(json.message).show();
         }
         else {
           $('.error-message').hide();
           $('.success-message').hide();
           $('.subscribe-form').hide();
-          $('.success-message').show().find('.alert').html(json.message);
+          $('.success-message').html(json.message).show();
         }
       }
     });
@@ -240,9 +240,9 @@ $(function() {
       success: function(r) {
         if (r.valid) {
           $error.hide();
-          $success.show().text(r.message);
+          $success.show().find('.alert').text(r.message);
         } else {
-          $error.show().text(r.message);
+          $error.show().find('.alert').text(r.message);
           $success.hide();
         }
         $form.find('button').button('reset');
