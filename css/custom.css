@@ -81,7 +81,7 @@ section#final-cta {
 
 .white-paper-form .success {
   display: block;
-  padding: 10px;
+  padding: 10px 0;
   font-size: 30px;
   color: #5adaff; }
 .white-paper-form .error {

@@ -57,13 +57,13 @@ if (empty($errors)) {
         ));
         //var_dump($result);
         $array['valid'] = 1;
-        $array['message'] = 'Success!';
+        $array['message'] = 'Thank you! We send the link to your email in a minute!';
 
         $array = array_merge($array, $result);
 
     } catch (\Exception $e) {
         $array['valid'] = 0;
-        $array['message'] = 'An error occurred! Please try again later.';
+        $array['message'] = 'Oops, something goes wrong!';
         $array['details'] = $e->getMessage();
     }
 

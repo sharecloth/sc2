@@ -193,13 +193,13 @@ $(function() {
       success: function(json) {
         if(json.valid == 0) {
           $('.success-message').hide();
-          $('.error-message').html(json.message).show();
+          $('.error-message').show().find('alert').html(json.message);
         }
         else {
           $('.error-message').hide();
           $('.success-message').hide();
           $('.subscribe-form').hide();
-          $('.success-message').html(json.message).show();
+          $('.success-message').show().find('.alert').html(json.message);
         }
       }
     });
