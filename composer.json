@@ -11,6 +11,7 @@
   ],
   "require": {
     "zfr/zfr-mailchimp": "^2.0",
-    "symfony/validator": "^3.2"
+    "symfony/validator": "^3.2",
+    "petun/forms": "dev-master"
   }
 }

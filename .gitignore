@@ -1,3 +1,4 @@
 .idea
+/vendor
 php/config.php
 *.tmproj
