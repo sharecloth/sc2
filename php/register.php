@@ -51,6 +51,9 @@ if (empty($errors)) {
             'email' => array(
                 'email' => $subscriber_email,
             ),
+            'merge_vars' => [
+                 'MMERGE4' => md5(uniqid())
+            ],
             'double_optin' => false,
             'update_existing' => true,
             'replace_interests' => true
