@@ -1,20 +1,18 @@
 <?php
 
-$mailTo = 'petun911@gmail.com';
+$mailTo = 'team@sharecloth.com';
+//$mailTo = 'petun911@gmail.com';
 $siteName = 'sharecloth.com';
 
 $config = [
     'contactForm' => [
-        'successMessage' => 'Thank you! We send the link to your email in a minute!',
+        'successMessage' => 'Thank you for your feedback!',
         'errorMessage' => 'Oops, something goes wrong!',
         'fields' => [
             'name' => 'Your name',
             'email' => 'Email',
-            'phone' => 'Ваш телефон',
-            'select-box' => 'select-box',
-            'check-test' => 'test check',
-            'regexText' => 'Regex Text',
-
+            'phone' => 'Phone',
+            'comment' => 'Comment',
         ],
         'rules' => [
             ['name', 'required', 'errorMessage' => 'Name is required'],
@@ -26,7 +24,13 @@ $config = [
                 'mail', 'subject' => 'Новое письмо с сайта',
                 'from' => 'no-reply@' . $siteName,
                 'fromName' => 'Администратор',
-                'to' => $mailTo
+                'to' => $mailTo,
+		'useSmtp' => true,
+                'smtpAuth' => true,
+                'smtpHost' => 'smtp.globedrobe.com',
+                'smtpPort' => 25,
+                'smtpUsername' => 'robot@globedrobe.com',
+                'smtpPassword' => 'aEsh6KdpvAF1',
             ],
         ]
     ],

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f8c427f0a24ec0bbc01335f8ca3b5cf7",
+    "hash": "4e9767b28347127cabdb756618b8139b",
     "content-hash": "715f94d3aae4d7edd285ec765f30902d",
     "packages": [
         {
@@ -109,12 +109,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/petun/forms.git",
-                "reference": "2ed4de5eb906faa58e2ff768b953b8669669cbac"
+                "reference": "afa29dec483869ccec73df799303ecd8f7e740c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/petun/forms/zipball/2ed4de5eb906faa58e2ff768b953b8669669cbac",
-                "reference": "2ed4de5eb906faa58e2ff768b953b8669669cbac",
+                "url": "https://api.github.com/repos/petun/forms/zipball/afa29dec483869ccec73df799303ecd8f7e740c6",
+                "reference": "afa29dec483869ccec73df799303ecd8f7e740c6",
                 "shasum": ""
             },
             "require": {
@@ -130,7 +130,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Package for simple forms handle in any CMS or Frameworks",
-            "time": "2016-02-20 09:48:42"
+            "time": "2017-05-04 08:46:07"
         },
         {
             "name": "phpmailer/phpmailer",
@@ -138,12 +138,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "7115df4a6f76281109ebe352900c42403b728bb4"
+                "reference": "48261992765204ea5e3772b003075ad053937155"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/7115df4a6f76281109ebe352900c42403b728bb4",
-                "reference": "7115df4a6f76281109ebe352900c42403b728bb4",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/48261992765204ea5e3772b003075ad053937155",
+                "reference": "48261992765204ea5e3772b003075ad053937155",
                 "shasum": ""
             },
             "require": {
@@ -206,7 +206,7 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "time": "2017-03-15 19:32:56"
+            "time": "2017-04-18 15:47:46"
         },
         {
             "name": "smarty/smarty",
@@ -214,12 +214,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "c7d42e4a327c402897dd587871434888fde1e7a9"
+                "reference": "e3eda8a5f5653d8abb960eb1bc47e3eca679b1b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/c7d42e4a327c402897dd587871434888fde1e7a9",
-                "reference": "c7d42e4a327c402897dd587871434888fde1e7a9",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/e3eda8a5f5653d8abb960eb1bc47e3eca679b1b4",
+                "reference": "e3eda8a5f5653d8abb960eb1bc47e3eca679b1b4",
                 "shasum": ""
             },
             "require": {
@@ -259,7 +259,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-12-14 21:57:25"
+            "time": "2017-04-17 03:32:24"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -267,12 +267,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "bb4ec47e8e109c1c1172145732d0aa468d967cd0"
+                "reference": "7fc8e2b4118ff316550596357325dfd92a51f531"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/bb4ec47e8e109c1c1172145732d0aa468d967cd0",
-                "reference": "bb4ec47e8e109c1c1172145732d0aa468d967cd0",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/7fc8e2b4118ff316550596357325dfd92a51f531",
+                "reference": "7fc8e2b4118ff316550596357325dfd92a51f531",
                 "shasum": ""
             },
             "require": {
@@ -319,7 +319,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-21 08:33:48"
+            "time": "2017-04-26 16:56:54"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -386,12 +386,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "987e8740b947320ce8431b4d48da97ec5c05c66c"
+                "reference": "2a6f7a97421875ea66ace2fc943c2303d4d2289d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/987e8740b947320ce8431b4d48da97ec5c05c66c",
-                "reference": "987e8740b947320ce8431b4d48da97ec5c05c66c",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/2a6f7a97421875ea66ace2fc943c2303d4d2289d",
+                "reference": "2a6f7a97421875ea66ace2fc943c2303d4d2289d",
                 "shasum": ""
             },
             "require": {
@@ -443,7 +443,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-06 19:18:14"
+            "time": "2017-04-12 14:14:56"
         },
         {
             "name": "symfony/validator",
@@ -451,12 +451,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
-                "reference": "c24b23c012b99bebf09d60541d6ce9422fd721ff"
+                "reference": "fe6324d3ccab984824b7ebd4f72fcfc9e8dc8011"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/c24b23c012b99bebf09d60541d6ce9422fd721ff",
-                "reference": "c24b23c012b99bebf09d60541d6ce9422fd721ff",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/fe6324d3ccab984824b7ebd4f72fcfc9e8dc8011",
+                "reference": "fe6324d3ccab984824b7ebd4f72fcfc9e8dc8011",
                 "shasum": ""
             },
             "require": {
@@ -466,6 +466,7 @@
             },
             "conflict": {
                 "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0",
+                "symfony/dependency-injection": "<3.3",
                 "symfony/yaml": "<3.3"
             },
             "require-dev": {
@@ -474,6 +475,7 @@
                 "egulias/email-validator": "^1.2.8|~2.0",
                 "symfony/cache": "~3.1",
                 "symfony/config": "~2.8|~3.0",
+                "symfony/dependency-injection": "~3.3",
                 "symfony/expression-language": "~2.8|~3.0",
                 "symfony/http-foundation": "~2.8|~3.0",
                 "symfony/intl": "^2.8.18|^3.2.5",
@@ -521,7 +523,7 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-06 19:18:14"
+            "time": "2017-05-02 16:40:49"
         },
         {
             "name": "zfr/zfr-mailchimp",
