@@ -40,24 +40,26 @@ if (empty($errors)) {
 
     $subscriber_email = addslashes(trim($_POST['email']));
 
-    $array = array();
-    $merge_vars = array();
+    $array = [];
 
     $client = new MailChimpClient($config['api-key']);
 
     try {
-        $result = $client->subscribe(array(
+        $result = $client->subscribe([
             'id'    => $config['white-paper-list-id'],
-            'email' => array(
+            'email' => [
                 'email' => $subscriber_email,
-            ),
+            ],
             'merge_vars' => [
-                 'MMERGE4' => md5(uniqid())
+                 'MMERGE4' => md5(uniqid()),
+                 'FNAME' => $_POST['name'],
+                 'MMERGE2' => $_POST['company'],
+                 'MMERGE3' => $_POST['position'],
             ],
             'double_optin' => false,
             'update_existing' => true,
             'replace_interests' => true
-        ));
+        ]);
         //var_dump($result);
         $array['valid'] = 1;
         $array['message'] = 'Thank you! We send the link to your email in a minute!';
