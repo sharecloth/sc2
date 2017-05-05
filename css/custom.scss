@@ -10,6 +10,10 @@
     }
 }
 
+.navbar .navbar-header .navbar-brand {
+    font-size: 16px;
+}
+
 @media (min-width: 768px) {
     .navbar.navbar-inverse.navbar-transparent {
         position: absolute;
