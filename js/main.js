@@ -241,6 +241,7 @@ $(function() {
         if (r.valid) {
           $error.hide();
           $success.show().find('.alert').text(r.message);
+          ga('send', 'event', 'leadform', 'submition', 'sucess');
         } else {
           $error.show().find('.alert').text(r.message);
           $success.hide();
