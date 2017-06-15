@@ -17,11 +17,16 @@
 @media (min-width: 768px) {
     .navbar.navbar-inverse.navbar-transparent {
         position: absolute;
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
+        left: 0;
+        right: 0;
+
+        &.navbar-color-blue {
+            background-color: rgba(55, 71, 79, 0.56);
+        }
     }
+
 }
+
 
 .navbar-inverse .navbar-collapse {
     background: rgba(69, 69, 69, 0.96);
@@ -157,5 +162,8 @@ section#final-cta {
 #section-report {
     padding: 40px 0 73px;
     background: #ececec;
-
 }
+
+
+@import "helpers";
+@import "blocks/index-new";
