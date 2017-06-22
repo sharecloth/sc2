@@ -42,6 +42,7 @@ var EcommCustomModule = (function(){
                 mesh: '/ecomm/custom/api_data/mesh.zip',
                 texture: '/ecomm/custom/api.php?' + data
             }, function() {
+                plugin.hideCurtains();
                 console.log('done!');
             });
         });
@@ -60,6 +61,7 @@ var EcommCustomModule = (function(){
             console.log('load scene complete');
         });
 
+        plugin.showCurtains();
         plugin.loadDummy({
             avatar: '/ecomm/custom/api_data/avatar.zip',
             texture: '/ecomm/custom/api_data/avatar_texture.zip',

@@ -82,17 +82,8 @@ Release in Sep'17">
 
             <ul class="nav navbar-nav navbar-left">
                 <li>
-                    <a href="future/">
-                        <i class="material-icons">print</i> 3D-printed future whitepaper</a>
-                </li>
-                <li>
                     <a href="contacts/">
                         <i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us</a>
-                </li>
-                <li>
-                    <a href="http://bit.ly/2nqRz4P">
-                        <i class="material-icons">present_to_all</i> Press kit <sup>[ext]</sup>
-                    </a>
                 </li>
             </ul>
 
