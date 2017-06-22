@@ -1,0 +1,12 @@
+<phpunit bootstrap="vendor/autoload.php">
+    <testsuites>
+        <testsuite name="api">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <const name="API_EMAIL" value="petun911@gmail.com"/>
+        <const name="API_PASSWORD" value="genda$"/>
+        <const name="API_URI" value="http://api.local.sharecloth.com/v1/"/>
+    </php>
+</phpunit>
