@@ -20,7 +20,7 @@ $additionalCss = [
             <div class="row">
                 <div class="col-md-12">
                     <h2>
-                        ShareCloth allows custom brands to demonstrate styles on the flights<br>
+                        ShareCloth allows custom brands to demonstrate styles on the fly<br>
                     </h2>
                 </div>
             </div>
@@ -109,7 +109,7 @@ $additionalCss = [
                         </div>
 
                         <div class="">
-                            <div class="pull-left" style="padding-right: 20px;">
+                            <div class="" style="padding-right: 20px; text-align: center;">
                                 <form action="">
                                     <input type="hidden" name="print"/>
                                     <input type="hidden" name="color"/>
@@ -117,12 +117,6 @@ $additionalCss = [
                                     <input type="submit" value="Apply Style"
                                            class="btn btn-primary btn-lg ecomm-custom-apply"/>
                                 </form>
-                            </div>
-                            <div class="pull-right" style="padding-top: 10px;">
-                                <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
-                                <script src="//yastatic.net/share2/share.js"></script>
-                                <div class="ya-share2"
-                                     data-services="facebook,twitter,gplus,linkedin,odnoklassniki,moimir,vkontakte"></div>
                             </div>
                         </div>
                     </div>
@@ -135,27 +129,10 @@ $additionalCss = [
         <div class="container">
             <div class="ta-center">
                 <h1>Learn More</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos distinctio ea exercitationem
-                    labore
-                    mollitia nemo officia quas soluta tempora! Ad animi aspernatur commodi consequatur consequuntur
-                    delectus
-                    distinctio dolore doloribus eaque ex facere fugit harum hic illum impedit incidunt ipsam ipsum iusto
-                    mollitia natus neque nihil nobis, odit perferendis quaerat quas quasi repellendus similique ut vel
-                    vero
-                    vitae voluptas voluptatem. Aliquam aliquid at aut corporis delectus dolore dolorem doloremque
-                    ducimus
-                    eius explicabo ipsum labore laudantium libero minima modi, mollitia non quam qui sequi unde!
-                    Blanditiis
-                    commodi dicta, dolor et facere mollitia quis recusandae repellat ullam veniam. Dignissimos in
-                    inventore
-                    qui rerum.</p>
+                <p>ShareCloth offers solutions for e-commerce, retail and tailoring business that allows to develop precise adanced virtual fitting application on web, mobile or VR for your fashion brand.
+                </p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad doloribus nemo recusandae tempora
-                    tenetur.
-                    Ad assumenda beatae blanditiis culpa delectus dignissimos dolores doloribus dolorum eveniet iusto
-                    mollitia, nam odio perferendis, porro quae, quam quibusdam quidem quis reiciendis rem repudiandae
-                    soluta
-                    suscipit ut velit voluptatibus. Asperiores ex impedit possimus praesentium velit!</p>
+                <p>ShareCloth infrastructure consist of 3D body scanning solution, garment 3D rendering and advanced cloud technology to run this for your business</p>
             </div>
         </div>
     </section>

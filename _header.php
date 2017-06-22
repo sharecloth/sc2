@@ -82,7 +82,7 @@ Release in Sep'17">
 
             <ul class="nav navbar-nav navbar-left">
                 <li>
-                    <a href="contacts/">
+                    <a href="/contacts/">
                         <i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us</a>
                 </li>
             </ul>
