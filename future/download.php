@@ -28,7 +28,10 @@ foreach ($clients['data'] as $mailChimpClient) {
     }
 }
 
-if (!$userExists) exit(0);
+//if (!$userExists) {
+// echo "Erro downoading. Code " . count($clients['data']);
+//exit(0);
+//} 
 
 $content = file_get_contents('sharecloth-3dprinting-report.pdf');
 
