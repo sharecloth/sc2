@@ -16,7 +16,9 @@ var EcommCustomModule = (function(){
 
         $apply = $('.ecomm-custom-apply');
 
-        $triggers.on('click', function() {
+        $triggers.on('click', function(e) {
+            e.preventDefault();
+            
             var $allIntab = $(this).parent().parent().find('.ecomm-trigger');
 
             $allIntab.removeClass('active');
