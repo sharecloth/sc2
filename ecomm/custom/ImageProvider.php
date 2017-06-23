@@ -158,6 +158,7 @@ class ImageProvider
         $zippy->create($zipPath, $result);
 
         header("Content-Type: application/zip");
+        header("Content-Length: ". filesize($zipPath));
         header('Expires: 0');
         header('Cache-Control: must-revalidate');
         header('Pragma: public');
