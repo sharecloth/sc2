@@ -24,9 +24,9 @@ class ImageProvider
      * @var array
      */
     protected $names = [
-        self::TYPE_PRINT => '1391(2).png',
+        self::TYPE_PRINT => 'ecomm_custom_print_9.png',
         self::TYPE_FABRIC => 'round_normal.jpg',
-        self::TYPE_COLOR => 'Bershka_L_52_T_shit_Whait.jpg',
+        self::TYPE_COLOR => 'ecomm_custom_color_2.jpg',
     ];
 
     protected $types = [
