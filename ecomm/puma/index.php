@@ -28,7 +28,8 @@
         <div class="cover-container">
 
             <div class="inner cover">
-                <p><img src="puma-logo.png" id="logo" alt="Logo" />
+                <p><img src="puma-logo.png" id="logo" alt="Logo" /></p>
+
                 <h1 class="cover-heading">ShareCloth VR demo-page</h1>
                 <p class="lead">This is a demonstration of the core features of ShareCloth virtual fitting solution. Eyes only.</p>
                 <br>
