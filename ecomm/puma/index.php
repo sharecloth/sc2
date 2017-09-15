@@ -62,7 +62,7 @@ $additionalCss = [
                             <img class="d-flex mr-3 img-responsive" src="icons/rotate128.png" alt="The move">
                         </div>
                         <div class="col-md-9">
-                            <h5 class="mt-0 mb-1">To rotate mannequin title head left or right</h5>
+                            <h5 class="mt-0 mb-1">To rotate mannequin tilt the head left or right</h5>
                         </div>
                     </div>
                 </li>
