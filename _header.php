@@ -44,7 +44,7 @@ Release in Sep'17">
     <meta itemprop="image" content="http://sharecloth.com/img/display/mockup-2.png">
 
 
-    <title>ShareCloth.com – fashion 3D printing</title>
+    <title><?php echo isset($title) ? $title : 'ShareCloth.com – fashion 3D printing';?></title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="screen" charset="utf-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

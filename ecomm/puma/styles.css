@@ -3,12 +3,14 @@
 	max-width:280px;
 }
 #controls{
-	margin-top: 30px;
+    max-width: 624px;
+    margin: 30px auto 0;
 }
 
 #controls{
 	background-color: inherit;
 	border: 1px solid #fff;
+    margin-bottom: 80px;
 }
 .jumbotron{
 	padding: 2rem 2rem;
@@ -17,4 +19,8 @@
 	margin-bottom: 30px;
 }
 
-.jumbotron h5 { font-size: 14pt; padding-top: 12%; } 
+.jumbotron h5 { font-size: 14pt;     padding-top: 8%; }
+
+.list-unstyled img {
+    margin: 0 auto;
+}
