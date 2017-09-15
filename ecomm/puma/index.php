@@ -60,25 +60,25 @@
                         <li class="media">
                             <img class="d-flex mr-3" src="icons/rotate128.png" alt="The move">
                             <div class="media-body">
-                                <h5 class="mt-0 mb-1">Rotate mannequin by titling head left or right</h5>
+                                <h5 class="mt-0 mb-1">To rotate mannequin title head left or right</h5>
                             </div>
                         </li>
                         <li class="media">
                             <img class="d-flex mr-3" src="icons/catalog128.png" alt="The move">
                             <div class="media-body">
-                                <h5 class="mt-0 mb-1">Open clothing catalog</h5>
+                                <h5 class="mt-0 mb-1">Press to open clothing catalog</h5>
                             </div>
                         </li>
                         <li class="media">
                             <img class="d-flex mr-3" src="icons/stress-map.png" alt="The move">
                             <div class="media-body">
-                                <h5 class="mt-0 mb-1">Turn the heat map feature on</h5>
+                                <h5 class="mt-0 mb-1">To turn the heat map feature on</h5>
                             </div>
                         </li>
                         <li class="media">
                             <img class="d-flex mr-3" src="icons/seams.png" alt="The move">
                             <div class="media-body">
-                                <h5 class="mt-0 mb-1">Turn the transparency mode</h5>
+                                <h5 class="mt-0 mb-1">To turn the transparency mode</h5>
                             </div>
                         </li>
                     </ul>
