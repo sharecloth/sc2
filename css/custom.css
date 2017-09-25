@@ -293,4 +293,19 @@ section.how-it-works {
 #features dl dd {
 	margin-bottom: 10px;
 }
+
+#services{
+	overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,.4);
+    padding-bottom: 80px;
+}
+
+#services #headline-cover{
+	padding-top: 100px;
+    min-height: 300px;
+	color: #fff;
+	background-image: url('../img/services1.jpg') !important;	
+    background-position: center center;	
+}
 /*# sourceMappingURL=custom.css.map */
