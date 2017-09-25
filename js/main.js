@@ -210,7 +210,6 @@ $(function() {
 
 $(function() {
   var height = window.innerHeight;
-  console.log(height);
   var $head = $('#headline-cover');
 
   if ($head.find('a.player')[0]) {
