@@ -46,21 +46,24 @@ class MailActionHq extends MailAction
         $mail->addAddress($this->to);
 
         //Set the subject line
-        $mail->Subject = $this->_form->fieldValue('type');
+        $mail->Subject = 'Fwd: ' . $this->_form->fieldValue('type');
+
+        $mail->isHTML(false);
+//        $mail->addCC('sergey@sharecloth.com');
+//        $mail->addCC('petun911@gmail.com');
 
         $data = $this->_form->fieldValues();
 
-        $mail->msgHTML(
-            "
-/tag Inbound
+        $mail->Body =
+"/tag Inbound
+---------- Forwarded message ----------
+From: ".$data['Your name']." <".$data['Email'].">
 Date: ". gmdate("D, d M Y H:i:s", time()) . "
 Subject: ".$data['Request type']."
-From: ".$data['Your name']." <$data[Email]>
 To: team@sharecloth.com
 
 ".strip_tags($this->_getBody())."
-        "
-        );
+        ";
 
         if (!$mail->send()) {
             return false;
