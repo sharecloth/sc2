@@ -121,14 +121,21 @@ Release in May'17">
 
         <div class="container contact-form">
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-7">
                     <div class="additional-header"><h3>Contact Us</h3></div>
-                    <p class="lead">Our support staff will get in touch with you as soon as possible.<br>Holidays &amp;
-                        weekends may take extra time.</p>
+                    <p class="lead">We appreciate your interest to ShareCloth technologies and products. We'll get back to you as soon as possible</p>
                     <form id="contact-us-form" id="petun-form">
                         <input type="hidden" name="formId" value="contactForm" />
                         <div class="row">
                             <div class="col-md-5">
+	                            <div class="form-group"><label for="type">Request type</label>
+											<select id="type" name="type" class="form-control">
+												<option value="1" selected="selected">Products - "3D retail" inquiry</option>
+												<option value="2">Products - "Product development" inquiry</option>
+												<option value="3">Support</option>
+												<option value="3">Feedback</option>
+											</select>
+                                </div>
                                 <div class="form-group"><label for="fname">Name <sup>*</sup></label><input type="text" name="name"
                                                                                               id="fname"
                                                                                               class="form-control">
@@ -138,7 +145,17 @@ Release in May'17">
                                                                                                             id="email"
                                                                                                             class="form-control">
                                 </div>
-                                <div class="form-group"><label for="phone">Phone to call you back <sup>*</sup></label><input
+								<div class="form-group"><label for="company">Company name <sup>*</sup></label><input type="text"
+                                                                                                            name="company"
+                                                                                                            id="company"
+                                                                                                            class="form-control">
+                                </div>
+								<div class="form-group"><label for="positon">Position </label><input type="text"
+                                                                                                            name="position"
+                                                                                                            id="position"
+                                                                                                            class="form-control">
+                                </div>
+                                <div class="form-group"><label for="phone">Phone to call you back</label><input
                                         type="text" name="phone" id="phone" class="form-control"></div>
                             </div>
                             <div class="col-md-7">
@@ -152,6 +169,18 @@ Release in May'17">
                         <div class="form-result"></div>
                     </form>
                 </div>
+				<div class="col-md-4 col-md-offset-1">
+                    <div class="additional-header"><h3>Get in touch</h3></div>
+					<p class="lead">You can reach us with:</p>
+					<h4>Online one-click call</h4>
+					
+					<h4>Online support chat</h4>
+					
+					<h4>Social media</h4>
+					<h4>Company info</h4>
+					<strong>ShareCloth, Inc.</strong>
+					<address>Suit 210-A, 300 Delaware Ave., Willmington, DE, United States</address>
+				</div>
             </div>
         </div>
 
