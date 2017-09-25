@@ -11,7 +11,8 @@
   ],
   "autoload": {
     "psr-4": {
-      "ShareCloth\\Api\\": "src"
+      "ShareCloth\\Api\\": "src",
+      "Site\\": "src-site"
     }
   },
   "require": {
