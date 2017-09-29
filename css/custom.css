@@ -1,5 +1,5 @@
 #index #headline-cover {
-  background-image: url('../img/head.jpg') !important;
+  background-image: url('../img/index-head.jpg') !important;
   background-position: center center;
 }
 
@@ -260,8 +260,7 @@ section.how-it-works {
 }
 
 #front-data .feature-single img {
-	max-width: 250px;
-    margin: 0 auto;
+	margin-top: 20px;
 }
 #front-data .points{
 	margin-top: 30px;
@@ -279,10 +278,10 @@ section.how-it-works {
 	min-height: 300px;
 	background-size: auto;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: center center;
 }
 #customer-web {
-    background-image: url('../img/customer-web.png');
+    background-image: url('../img/customer-web-2.png');
 }
 #customer-mobile {
     background-image: url('../img/customer-mobile.png');
@@ -292,6 +291,31 @@ section.how-it-works {
 }
 #features dl dd {
 	margin-bottom: 10px;
+}
+
+#product-development {
+	height: auto;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,.4);
+    padding-bottom: 80px;
+}
+
+
+#product-development #headline-cover{
+    min-height: 550px;
+	color: #fff;
+	background-image: url('../img/product-development-head.jpg') !important;	
+	background-size: cover;
+    background-position: center center;
+}
+
+#product-development #headline-cover .subheading-text {
+    margin-top: 25px;
+    color: #fff;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 1.6;
+    color: #d8d8d8;
 }
 
 #services{
@@ -305,7 +329,8 @@ section.how-it-works {
 	padding-top: 100px;
     min-height: 300px;
 	color: #fff;
-	background-image: url('../img/services1.jpg') !important;	
+	background-image: url('../img/services-head1.jpg') !important;	
+	background-size: cover;
     background-position: center center;	
 }
 /*# sourceMappingURL=custom.css.map */
