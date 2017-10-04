@@ -25,7 +25,7 @@ class ImageProvider
      */
     protected $names = [
         self::TYPE_PRINT => 'ecomm_custom_print_9.png',
-        self::TYPE_FABRIC => 'round_normal.jpg',
+        self::TYPE_FABRIC => 'texture_6_normal.jpg',
         self::TYPE_COLOR => 'ecomm_custom_color_2.jpg',
     ];
 
