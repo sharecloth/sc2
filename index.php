@@ -101,7 +101,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/">
 				ShareCloth
             </a>
         </div>
@@ -117,7 +117,7 @@
 
 		          <ul class="dropdown-menu">
 		            <li>
-		              <a href="index.html">
+		              <a href="/">
 		                3D Retail
 		              </a>
 		            </li>
