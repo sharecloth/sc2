@@ -183,11 +183,30 @@ Release in May'17">
                     <div class="additional-header"><h3>Get in touch</h3></div>
 					<p class="lead">You can reach us with:</p>
 
-                    <!--
+
 					<h4>Online support chat</h4>
-					<p><button id="support_chat" class="btn btn-success btn-round">Start chatting</button><br><br></p>
-					-->
-					
+					<p><button id="support_chat" class="btn btn-success btn-round" onclick="Chatra('show'); Chatra('openChat', true)">Start chatting</button><br><br></p>
+
+                    <!-- Chatra {literal} -->
+                    <script>
+                        window.ChatraSetup = {
+                            startHidden: true
+                        };
+
+                        (function(d, w, c) {
+                            w.ChatraID = 'R2NDg9B8Tmo5E4uZd';
+                            var s = d.createElement('script');
+                            w[c] = w[c] || function() {
+                                (w[c].q = w[c].q || []).push(arguments);
+                            };
+                            s.async = true;
+                            s.src = (d.location.protocol === 'https:' ? 'https:': 'http:')
+                                + '//call.chatra.io/chatra.js';
+                            if (d.head) d.head.appendChild(s);
+                        })(document, window, 'Chatra');
+                    </script>
+                    <!-- /Chatra {/literal} -->
+
 					<h4>Online one-click call</h4>	
 					<p><a class="zingayaButton zingaya0398fcfa7a2f41c7b9935d9b14296873" id="zingayaButton0398fcfa7a2f41c7b9935d9b14296873" href="https://zingaya.com/widget/0398fcfa7a2f41c7b9935d9b14296873" onclick="window.open(this.href+'?referrer='+escape(window.location.href)+'', '_blank', 'width=236,height=220,resizable=no,toolbar=no,menubar=no,location=no,status=no'); return false;"></a>
 					<script>
