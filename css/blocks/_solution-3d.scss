@@ -1,31 +1,25 @@
 .additional-buttons {
   margin-top: 26px;
-}
-
-.additional-buttons .media {
-  margin-top: 20px;
-
-  color: #e0e0e0;
-
-  i {
-    font-size: 40px;
-  }
-
-  a {
+  .media {
+    margin-top: 20px;
     color: #e0e0e0;
-    h4 {
-
-      border-bottom: 1px solid #9e9e9e;
-      &:hover {
-        border-bottom: 1px #eee solid;
-      }
-
-      line-height: 40px;
-      font-size: 19px;
-      display: inline;
+    i {
+      font-size: 40px;
     }
-  }
-  .media-body {
-    text-align: left;
+    a {
+      color: #e0e0e0;
+      h4 {
+        border-bottom: 1px solid #9e9e9e;
+        line-height: 40px;
+        font-size: 19px;
+        display: inline;
+        &:hover {
+          border-bottom: 1px #eee solid;
+        }
+      }
+    }
+    .media-body {
+      text-align: left;
+    }
   }
 }

@@ -1,17 +1,40 @@
-.navbar.navbar-inverse.navbar-transparent {
-    background: transparent;
-    box-shadow: none;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    a {
-        color: white;
+#index.index-new #headline-cover {
+    background-image: url('../img/index-head.jpg') !important;
+    background-position: center center;
+}
+
+
+.navbar {
+    &.navbar-inverse.navbar-transparent {
+        background: transparent;
+        box-shadow: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        a {
+            color: white;
+        }
+    }
+    .nav ul.dropdown-menu {
+        background: rgba(55, 71, 79, 0.56);
+        li a {
+            font-size: 14px;
+            color: #fff !important;
+        }
+    }
+    .navbar-header .navbar-brand {
+        font-size: 16px;
     }
 }
 
-.navbar .navbar-header .navbar-brand {
-    font-size: 16px;
+#barba-wrapper {
+    h1 {
+        font-size: 42px;
+    }
+    h2 {
+        font-size: 36px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -19,58 +42,47 @@
         position: absolute;
         left: 0;
         right: 0;
-
         &.navbar-color-blue {
             background-color: rgba(55, 71, 79, 0.56);
         }
     }
-
 }
-
 
 .navbar-inverse .navbar-collapse {
     background: rgba(69, 69, 69, 0.96);
 }
+
 @media (min-width: 768px) {
     .navbar-inverse .navbar-collapse {
         background: none;
     }
 }
 
-
-.navbar-transparent .navbar-nav>li>a {
+.navbar-transparent .navbar-nav > li > a {
     border-left: none;
 }
 
 #index.index-alt #headline-cover {
     background: #565656;
-}
-
-#index.index-alt #headline-cover {
     padding-top: 120px;
-}
-
-#index.index-alt #headline-cover .headline-text {
+    .headline-text {
         font-size: 25px;
-    &.-future {
-        font-size: 25px;
-    }
-}
-@media (min-width: 768px) {
-    #index.index-alt #headline-cover .headline-text {
-            font-size: 32px;
         &.-future {
-            font-size: 40px;
-
+            font-size: 25px;
         }
     }
+    .buttons-container .btn-main-cta {
+        padding: 16px 28px;
+    }
 }
 
-#index.index-alt #headline-cover .buttons-container .btn-main-cta {
-    padding: 16px 28px;
-}
 @media (min-width: 768px) {
-    padding: 18px 48px;
+    #index.index-alt #headline-cover .headline-text {
+        font-size: 32px;
+        &.-future {
+            font-size: 40px;
+        }
+    }
 }
 
 .btn-lg {
@@ -80,6 +92,7 @@
 #about .stats .stat-item strong {
     font-size: 3em;
 }
+
 @media (min-width: 768px) {
     #about .stats .stat-item strong {
         font-size: 4em;
@@ -90,33 +103,34 @@
     height: 45px;
 }
 
-div.error-message {
-    color: red;
+div {
+    &.error-message {
+        color: red;
+    }
+    &.success-message {
+        display: block;
+        color: #06af28;
+        font-size: 20px;
+    }
 }
 
-div.success-message {
-    display: block;
-    color: #06af28;
-    font-size: 20px
-}
-
-
-#highlight-cta img {
-    max-width: 150px;
-    max-height: 150px;
-}
-
-#highlight-cta .thumbnail {
-    border: none;
-    background-color: transparent;
+#highlight-cta {
+    img {
+        max-width: 150px;
+        max-height: 150px;
+    }
+    .thumbnail {
+        border: none;
+        background-color: transparent;
+    }
 }
 
 section#final-cta {
     padding: 30px 0 50px;
-    background:#fefffc;
-    border-top: 1px solid rgba(0,0,0,.1);
-    border-bottom:1px solid rgba(0,0,0,.1);
-    margin-top:50px;
+    background: #fff;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
 }
 
 .white-paper-form {
@@ -124,9 +138,8 @@ section#final-cta {
         display: block;
         padding: 10px 0;
         font-size: 30px;
-        color: rgb(90, 218, 255)
+        color: #5adaff;
     }
-
     .error {
         padding: 10px 0;
         font-size: 15px;
@@ -134,12 +147,13 @@ section#final-cta {
     }
 }
 
-.testimonial .quote-author {
-    width: 27%;
-}
-
-.testimonial .quote-text {
-    width: 71%;
+.testimonial {
+    .quote-author {
+        width: 27%;
+    }
+    .quote-text {
+        width: 71%;
+    }
 }
 
 .contact-form {
@@ -147,16 +161,7 @@ section#final-cta {
 }
 
 .form-result {
-    margin: 20px 0 0 0 ;
-}
-
-
-.mb40 {
-    margin-bottom: 40px;
-}
-
-.mb45 {
-    margin-bottom: 45px;
+    margin: 20px 0 0 0;
 }
 
 #section-report {
@@ -164,9 +169,100 @@ section#final-cta {
     background: #ececec;
 }
 
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#headline-cover .btn.btn-main {
+    padding: 15px 20px;
+}
+
+#front-what .thumbnail {
+    min-height: 260px;
+}
+
+#front-data {
+    background-color: #fff;
+    .feature-single img {
+        margin-top: 20px;
+    }
+    .points {
+        margin-top: 30px;
+    }
+}
+
+.final-cta-front {
+    margin-top: 0 !important;
+    padding: 20px 0 30px !important;
+}
+
+#front-customer {}
+
+.front-customer-block {
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    min-height: 300px;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#customer-web {
+    background-image: url('../img/customer-web-2.png');
+}
+
+#customer-mobile {
+    background-image: url('../img/customer-mobile.png');
+}
+
+#customer-vr {
+    background-image: url('../img/customer-vr3.png');
+}
+
+#features dl dd {
+    margin-bottom: 10px;
+}
+
+#product-development {
+    height: auto;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    padding-bottom: 80px;
+    #headline-cover {
+        min-height: 550px;
+        color: #fff;
+        background-image: url('../img/product-development-head.jpg') !important;
+        background-size: cover;
+        background-position: center center;
+        .subheading-text {
+            margin-top: 25px;
+            font-weight: 300;
+            font-size: 22px;
+            line-height: 1.6;
+            color: #d8d8d8;
+        }
+    }
+}
+
+#services {
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    padding-bottom: 80px;
+    #headline-cover {
+        padding-top: 100px;
+        min-height: 300px;
+        color: #fff;
+        background-image: url('../img/services-head1.jpg') !important;
+        background-size: cover;
+        background-position: center center;
+    }
+}
 
 @import "helpers";
-@import "blocks/index-new";
 @import "blocks/solution-3d";
-
-
+@import "blocks/index-new";
