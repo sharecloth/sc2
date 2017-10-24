@@ -57,7 +57,7 @@ if ($_POST) {
                 ),
                 'double_optin' => false,
                 'update_existing' => true,
-                'replace_interests' => true,
+                'replace_interests' => false,
                 'merge_vars' => $merge_vars,
             ));
             //var_dump($result);
