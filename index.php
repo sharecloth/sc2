@@ -307,7 +307,10 @@
 				            <div id="custom-search-input">
 				                <div class="input-group col-md-10 col-md-offset-1">
 				                    <input type="text" class="input-lg form-control" name="email" placeholder="Your email address">
-				                    <span class="input-group-btn">
+                                    <input type="hidden" name="internalSource" value="News" />
+                                    <input type="hidden" name="type" value="News" />
+
+                                    <span class="input-group-btn">
 				                        <input type="submit" class="btn btn-default btn-lg" value="Keep me informed!">
 				                    </span>
 				                </div>

@@ -17,17 +17,42 @@ if ($_POST) {
     $subscriber_email = addslashes(trim($_POST['email']));
 
     if (!isEmail($subscriber_email)) {
-        $array = array();
+        $array = [];
         $array['valid'] = 0;
         $array['message'] = 'Not a valid email address!';
         echo json_encode($array);
     } else {
-        $array = array();
-        $merge_vars = array();
+        $array = [];
+        $merge_vars = [];
 
         $client = new MailChimpClient($config['api-key']);
 
         try {
+            $member = $client->GetListMembersInfo([
+                'id'    => $config['sc-list-id'],
+                'emails' => [['email'=>$subscriber_email]],
+            ]);
+
+            $groups = [];
+            if (!empty($member['data'][0])) {
+                $groups = $member['data'][0]['merges']['GROUPINGS'] ? $member['data'][0]['merges']['GROUPINGS'] : [];
+            }
+
+            if (!empty($_POST['internalSource']) && !empty($_POST['type'])) {
+                $merge_vars = [
+                    'GROUPINGS' => [
+                        [
+                            'name' => 'Internal source',
+                            'groups' => array_unique(array_merge([$_POST['internalSource']], findActiveGroupsFor($groups, 'Internal source'))),
+                        ],
+                        [
+                            'name' => 'User Type',
+                            'groups' => array_unique(array_merge([$_POST['type']], findActiveGroupsFor($groups, 'User Type'))),
+                        ]
+                    ]
+                ];
+            }
+
             $result = $client->subscribe(array(
                 'id'    => $config['sc-list-id'],
                 'email' => array(
@@ -35,7 +60,8 @@ if ($_POST) {
                 ),
                 'double_optin' => false,
                 'update_existing' => true,
-                'replace_interests' => true
+                'replace_interests' => true,
+                'merge_vars' => $merge_vars,
             ));
             //var_dump($result);
             $array['valid'] = 1;
@@ -54,6 +80,26 @@ if ($_POST) {
 
     }
 
+}
+
+/**
+ * @param $groupList
+ * @param $groupName
+ * @return array
+ */
+function findActiveGroupsFor($groupList, $groupName) {
+    $result =[];
+    foreach ($groupList as $groupItem) {
+        if ($groupItem['name'] == $groupName) {
+            foreach ($groupItem['groups'] as $group) {
+                if ($group['interested'] == true) {
+                    $result[] = $group['name'];
+                }
+            }
+        }
+    }
+
+    return $result;
 }
 
 ?>
