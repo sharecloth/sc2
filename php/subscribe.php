@@ -45,11 +45,8 @@ if ($_POST) {
                             'name' => 'Internal source',
                             'groups' => array_unique(array_merge([$_POST['internalSource']], findActiveGroupsFor($groups, 'Internal source'))),
                         ],
-                        [
-                            'name' => 'User Type',
-                            'groups' => array_unique(array_merge([$_POST['type']], findActiveGroupsFor($groups, 'User Type'))),
-                        ]
-                    ]
+                    ],
+                    'NEWSSUB' => 1,
                 ];
             }
 
