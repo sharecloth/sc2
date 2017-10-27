@@ -50,7 +50,7 @@ $(document).ready(function () {
         console.log('You clicked edge: ' + edgeName);
     });
 
-    plugin.loadScene(8, function (e) {
+    plugin.loadScene(15, function (e) {
 
         plugin.loadDummy(GLOBAL_SETTINGS.avatarId, function () {
             plugin.hideLoadingPlane(); 
