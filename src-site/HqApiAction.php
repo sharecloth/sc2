@@ -31,6 +31,7 @@ class HqApiAction extends BaseAction
         $new_person->setCompanyName($data['Company']);
         $new_person->addEmailAddress($data['Email']);
         $new_person->addPhoneNumber($data['Phone'], 'Work');
+        $new_person->addTag('inbound');
         $new_person->save();
     }
 

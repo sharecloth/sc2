@@ -58,8 +58,8 @@ $config = [
             [
                 'hq-api',
                 'class' => HqApiAction::class,
-                'token' => '',
-                'account' => '',
+                'token' => '332b2497ecb90df6f2c750ed326d28e6',
+                'account' => 'sharecloth',
             ],
             [
                 'db',
