@@ -1,6 +1,7 @@
 <?php
 
 use Site\DatabaseSave;
+use Site\HqApiAction;
 
 $mailTo = 'team@sharecloth.com';
 //$mailTo = 'petun911@gmail.com';
@@ -40,19 +41,25 @@ $config = [
                 'smtpUsername' => 'robot@globedrobe.com',
                 'smtpPassword' => 'aEsh6KdpvAF1',
             ],
+//            [
+//                'fucking-mail',
+//                'to' => 'dropbox@40833388.sharecloth.highrisehq.com',
+//                //'to' => 'petun911@gmail.com',
+//                'class' => \Site\MailActionHq::class,
+//                'from' => 'no-reply@' . $siteName,
+//                'fromName' => 'Администратор',
+//                'useSmtp' => true,
+//                'smtpAuth' => true,
+//                'smtpHost' => 'smtp.globedrobe.com',
+//                'smtpPort' => 25,
+//                'smtpUsername' => 'robot@globedrobe.com',
+//                'smtpPassword' => 'aEsh6KdpvAF1',
+//            ],
             [
-                'fucking-mail',
-                'to' => 'dropbox@40833388.sharecloth.highrisehq.com',
-                //'to' => 'petun911@gmail.com',
-                'class' => \Site\MailActionHq::class,
-                'from' => 'no-reply@' . $siteName,
-                'fromName' => 'Администратор',
-                'useSmtp' => true,
-                'smtpAuth' => true,
-                'smtpHost' => 'smtp.globedrobe.com',
-                'smtpPort' => 25,
-                'smtpUsername' => 'robot@globedrobe.com',
-                'smtpPassword' => 'aEsh6KdpvAF1',
+                'hq-api',
+                'class' => HqApiAction::class,
+                'token' => '',
+                'account' => '',
             ],
             [
                 'db',
