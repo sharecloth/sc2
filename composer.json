@@ -21,6 +21,8 @@
     "petun/forms": "dev-master",
     "guzzlehttp/guzzle": "^6.2",
     "phpunit/phpunit": "5.5.*",
-    "alchemy/zippy": "^0.4.8"
+    "alchemy/zippy": "^0.4.8",
+    "ganga/potato-orm": "^1.0@dev",
+    "libcast/highrise": "dev-master"
   }
 }

@@ -1,5 +1,7 @@
 <?php
 
+use Site\DatabaseSave;
+
 $mailTo = 'team@sharecloth.com';
 //$mailTo = 'petun911@gmail.com';
 $siteName = 'sharecloth.com';
@@ -52,6 +54,10 @@ $config = [
                 'smtpUsername' => 'robot@globedrobe.com',
                 'smtpPassword' => 'aEsh6KdpvAF1',
             ],
+            [
+                'db',
+                'class' => DatabaseSave::class,
+            ]
         ]
     ],
 ];

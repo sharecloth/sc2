@@ -2,3 +2,4 @@
 /vendor
 php/config.php
 *.tmproj
+php/contacts.sqlite

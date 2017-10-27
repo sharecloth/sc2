@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "049f1a913f71bc05b23f47e946719884",
-    "content-hash": "b0b40c174c088586b11c7e0c76bde000",
+    "content-hash": "7b409a2879152b0ac33d95f0a2ba06f0",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -136,7 +135,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2017-01-03 10:49:41"
+            "time": "2017-01-03T10:49:41+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -191,6 +190,61 @@
                 "instantiate"
             ],
             "time": "2017-02-16 16:15:51"
+        },
+        {
+            "name": "ganga/potato-orm",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andela-cganga/potato-orm.git",
+                "reference": "12bb25ca31716aac97bbe78596810220e39626b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andela-cganga/potato-orm/zipball/12bb25ca31716aac97bbe78596810220e39626b0",
+                "reference": "12bb25ca31716aac97bbe78596810220e39626b0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0",
+                "vlucas/phpdotenv": "^2.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.1",
+                "satooshi/php-coveralls": "^0.7.0",
+                "scrutinizer/ocular": "^1.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ganga\\Potato\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "andela-cganga",
+                    "email": "ganga.chris@gmail.com",
+                    "homepage": "https://github.com/andela-cganga",
+                    "role": "Developer"
+                }
+            ],
+            "description": "potato-orm is an SQLite ORM package.",
+            "homepage": "https://github.com/andela-cganga/potato-orm",
+            "keywords": [
+                "Potato-ORM",
+                "ganga",
+                "orm"
+            ],
+            "time": "2016-01-07 11:10:30"
         },
         {
             "name": "guzzle/guzzle",
@@ -470,6 +524,33 @@
             "time": "2017-06-19 13:30:27"
         },
         {
+            "name": "libcast/highrise",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/libcast/Highrise-PHP-Api.git",
+                "reference": "ce8ce0b6d0a61a6d5b83bf48e7e9bb5b264df0bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/libcast/Highrise-PHP-Api/zipball/ce8ce0b6d0a61a6d5b83bf48e7e9bb5b264df0bf",
+                "reference": "ce8ce0b6d0a61a6d5b83bf48e7e9bb5b264df0bf",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Highrise": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-4-Clause"
+            ],
+            "description": "Highrise API client",
+            "time": "2017-04-07 20:07:58"
+        },
+        {
             "name": "myclabs/deep-copy",
             "version": "1.x-dev",
             "source": {
@@ -637,7 +718,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2016-09-30 07:12:33"
+            "time": "2016-09-30T07:12:33+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -684,7 +765,7 @@
                     "email": "me@mikevanriel.com"
                 }
             ],
-            "time": "2016-11-25 06:54:22"
+            "time": "2016-11-25T06:54:22+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
@@ -975,7 +1056,7 @@
             "keywords": [
                 "template"
             ],
-            "time": "2015-06-21 13:50:34"
+            "time": "2015-06-21T13:50:34+00:00"
         },
         {
             "name": "phpunit/php-timer",
@@ -2253,6 +2334,56 @@
             "time": "2017-06-14 20:38:21"
         },
         {
+            "name": "vlucas/phpdotenv",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vlucas/phpdotenv.git",
+                "reference": "828d19e597052ddeee65890bb2b1a0912d79fea8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/828d19e597052ddeee65890bb2b1a0912d79fea8",
+                "reference": "828d19e597052ddeee65890bb2b1a0912d79fea8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8 || ^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dotenv\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause-Attribution"
+            ],
+            "authors": [
+                {
+                    "name": "Vance Lucas",
+                    "email": "vance@vancelucas.com",
+                    "homepage": "http://www.vancelucas.com"
+                }
+            ],
+            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "time": "2017-10-10 06:32:45"
+        },
+        {
             "name": "webmozart/assert",
             "version": "dev-master",
             "source": {
@@ -2350,14 +2481,16 @@
                 "mail",
                 "mailchimp"
             ],
-            "time": "2016-11-24 06:46:20"
+            "time": "2016-11-24T06:46:20+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "petun/forms": 20
+        "petun/forms": 20,
+        "ganga/potato-orm": 20,
+        "libcast/highrise": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
