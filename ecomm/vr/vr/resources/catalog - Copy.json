@@ -1,0 +1,611 @@
+{
+  "sizes": [
+    {
+      "id": 1,
+      "name": "48",
+      "shoulder": 30,
+      "bust": 96,
+      "waist": 76,
+      "hips": 101,
+      "avatar_ident": "d1745f2c-3bc2-40ff-8c79-12a8c29b6c35"
+    },
+    {
+      "id": 2,
+      "name": "50",
+      "shoulder": 40,
+      "bust": 100,
+      "waist": 82,
+      "hips": 108,
+      "avatar_ident": "dfe63ae3-0999-42af-a2cc-d9b41886ffb8"
+    },
+    {
+      "id": 3,
+      "name": "52",
+      "shoulder": 50,
+      "bust": 104,
+      "waist": 86,
+      "hips": 112,
+      "avatar_ident": "f06aac71-7606-4df5-bf8c-1ad829442c39"
+    },
+    {
+      "id": 4,
+      "name": "54",
+      "shoulder": 50,
+      "bust": 108,
+      "waist": 90,
+      "hips": 116,
+      "avatar_ident": "0869253c-b62d-45aa-9818-d698873a6352"
+    },
+    {
+      "id": 6,
+      "name": "56",
+      "shoulder": 50,
+      "bust": 112,
+      "waist": 94,
+      "hips": 120,
+      "avatar_ident": "9ac3d83f-78be-4fa3-acf0-dceace22259b"
+    },
+    {
+      "id": 7,
+      "name": "58",
+      "shoulder": 60,
+      "bust": 116,
+      "waist": 98,
+      "hips": 124,
+      "avatar_ident": "a450489b-62fd-41fd-9115-871d34bf66d3"
+    },
+    {
+      "id": 8,
+      "name": "60",
+      "shoulder": 65,
+      "bust": 120,
+      "waist": 102,
+      "hips": 128,
+      "avatar_ident": "97be7e76-68b2-426d-9012-3ce3e9e19cb2"
+    },
+    {
+      "id": 9,
+      "name": "62",
+      "shoulder": 70,
+      "bust": 124,
+      "waist": 106,
+      "hips": 132,
+      "avatar_ident": "97be7e76-68b2-426d-9012-3ce3e9e19cb2"
+    },
+    {
+      "id": 10,
+      "name": "64",
+      "shoulder": 70,
+      "bust": 128,
+      "waist": 110,
+      "hips": 136,
+      "avatar_ident": "97be7e76-68b2-426d-9012-3ce3e9e19cb2"
+    },
+    {
+      "id": 11,
+      "name": "66",
+      "shoulder": 72,
+      "bust": 132,
+      "waist": 114,
+      "hips": 140,
+      "avatar_ident": "97be7e76-68b2-426d-9012-3ce3e9e19cb2"
+    },
+    {
+      "id": 12,
+      "name": "68",
+      "shoulder": 80,
+      "bust": 136,
+      "waist": 118,
+      "hips": 144,
+      "avatar_ident": "97be7e76-68b2-426d-9012-3ce3e9e19cb2"
+    }
+  ],
+  "cloth": [
+    {
+      "id": 113,
+      "name": "Молочная блузка с декоративными рукавами",
+      "price": 4500,
+      "description": "Вертикальные линии блузки создают приталенный, женственный силуэт. \r\nГлавный акцент – на декоративные рукава-крылышки. Они из подобранной в цвет, но другой по фактуре ткани – летящей, воздушной. Такие рукава дополнительно облегчают силуэт, добавляют элегантности и интереса. ",
+      "without_discount_price": 6300,
+      "discount_type": "pre-order",
+      "sizes": [
+        {
+          "id": 190,
+          "cloth_body_type": 0,
+          "size_id": 1,
+          "ident": "70fe114c-a854-49e2-8bbe-a69559ef48b9",
+          "name": "48"
+        },
+        {
+          "id": 191,
+          "cloth_body_type": 0,
+          "size_id": 2,
+          "ident": "142ca9b4-0881-4466-9188-d03abc410d5d",
+          "name": "50"
+        },
+        {
+          "id": 192,
+          "cloth_body_type": 0,
+          "size_id": 3,
+          "ident": "e4fde464-9d31-40f4-a81c-7ee191d729fc",
+          "name": "52"
+        },
+        {
+          "id": 193,
+          "cloth_body_type": 0,
+          "size_id": 4,
+          "ident": "139ad266-7f2b-4f70-8db1-b0f934dba16b",
+          "name": "54"
+        },
+        {
+          "id": 194,
+          "cloth_body_type": 0,
+          "size_id": 6,
+          "ident": "179ab806-6d7e-497f-abfa-47701e76410b",
+          "name": "56"
+        },
+        {
+          "id": 195,
+          "cloth_body_type": 0,
+          "size_id": 7,
+          "ident": "60f3a05f-3b2b-48c5-a016-6e0ff22049a0",
+          "name": "58"
+        }
+      ],
+      "images": [
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f18d0c7941.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f18db6d0a9.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f2ff345102.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f3052dd1a9.png",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f306b7ae2d.png",
+          "use_as_preview": false
+        }
+      ]
+    },
+    {
+      "id": 116,
+      "name": "Жакет со смещенной линией борта",
+      "price": 8000,
+      "description": "Жакет со смещенной линией борта и асимметричным низом. \r\nСделан из ткани интересного плетения – типа «Шанель». \r\nЗастегивается на спрятанные внутрь застежки.\r\nЖакет украшает бахрома-окантовка нежно-бирюзового цвета и декоративные карманы.  ",
+      "without_discount_price": 10000,
+      "discount_type": "pre-order",
+      "sizes": [
+        {
+          "id": 209,
+          "cloth_body_type": 0,
+          "size_id": 1,
+          "ident": "845cc4a2-11bd-4e9b-88db-425efc2608c1",
+          "name": "48"
+        },
+        {
+          "id": 208,
+          "cloth_body_type": 0,
+          "size_id": 2,
+          "ident": "83501163-c222-4328-86ab-c8d32257fa44",
+          "name": "50"
+        },
+        {
+          "id": 210,
+          "cloth_body_type": 0,
+          "size_id": 3,
+          "ident": "30bb1d5a-a552-4fa9-8cfb-557518c14b62",
+          "name": "52"
+        },
+        {
+          "id": 211,
+          "cloth_body_type": 0,
+          "size_id": 4,
+          "ident": "15366fe2-e6ec-4976-8074-b75790ee99bf",
+          "name": "54"
+        },
+        {
+          "id": 212,
+          "cloth_body_type": 0,
+          "size_id": 6,
+          "ident": "9f905685-72c5-461d-a629-7c84a063fd14",
+          "name": "56"
+        },
+        {
+          "id": 213,
+          "cloth_body_type": 0,
+          "size_id": 7,
+          "ident": "3e0c2776-dfbf-4bef-abb5-6a7cbb15ea6c",
+          "name": "58"
+        }
+      ],
+      "images": [
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f26a6614ed.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f26b442258.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f26c46e932.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f26d83675a.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f2729b8a4c.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f31848a1da.png",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f319790132.png",
+          "use_as_preview": false
+        }
+      ]
+    },
+    {
+      "id": 114,
+      "name": "Брюки",
+      "price": 4500,
+      "description": "Зауженные к низу брюки из костюмной шерсти.\r\nПредставлены в двух цвета – сепия и капучино. \r\nСкладки на поясе придают элегантности силуэту, смягчают линии фигуры и не сковывают движения.",
+      "without_discount_price": 6300,
+      "discount_type": "pre-order",
+      "sizes": [
+        {
+          "id": 196,
+          "cloth_body_type": 1,
+          "size_id": 1,
+          "ident": "f887d4a7-05b2-4563-bc4b-96425730a590",
+          "name": "48"
+        },
+        {
+          "id": 197,
+          "cloth_body_type": 1,
+          "size_id": 2,
+          "ident": "cf1c091e-5c57-4722-940b-a6b4228f5c11",
+          "name": "50"
+        },
+        {
+          "id": 198,
+          "cloth_body_type": 1,
+          "size_id": 3,
+          "ident": "2a91ed38-52b4-4115-8c5d-94dc7b35d38c",
+          "name": "52"
+        },
+        {
+          "id": 199,
+          "cloth_body_type": 1,
+          "size_id": 4,
+          "ident": "f3d5b60e-6673-4249-b58a-3f702d461a71",
+          "name": "54"
+        },
+        {
+          "id": 200,
+          "cloth_body_type": 1,
+          "size_id": 6,
+          "ident": "f2f6f259-8638-4037-a9ba-212346ee0e03",
+          "name": "56"
+        },
+        {
+          "id": 201,
+          "cloth_body_type": 1,
+          "size_id": 7,
+          "ident": "f12e8c38-d068-411f-b1be-6c9578dc8ec2",
+          "name": "58"
+        }
+      ],
+      "images": [
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f26d83675a.JPGcloth_597f157476240.JPG",
+          "use_as_preview": true
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f26d83675a.JPGcloth_597f1590a83b6.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f26d83675a.JPGcloth_597f15c44d4af.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f26d83675a.JPGcloth_597f308cb82f7.png",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f26d83675a.JPGcloth_597f30a77e637.png",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f26d83675a.JPGcloth_597f30c09a1da.png",
+          "use_as_preview": false
+        }
+      ]
+    },
+    {
+      "id": 117,
+      "name": "Бирюзовая блузка",
+      "price": 7500,
+      "description": "Блузка с интересным вырезом горловины. \r\nСделана из легкой ткани нежного цвета голубой бирюзы. \r\nРукава украшены складками контрастного жемчужно-молочного цвета. ",
+      "without_discount_price": 9200,
+      "discount_type": "pre-order",
+      "sizes": [
+        {
+          "id": 214,
+          "cloth_body_type": 0,
+          "size_id": 1,
+          "ident": "66cbec1c-2741-4592-9792-7e2a6076fc0a",
+          "name": "48"
+        },
+        {
+          "id": 215,
+          "cloth_body_type": 0,
+          "size_id": 2,
+          "ident": "4b1c5403-4b1a-4cae-bd67-0d95cd51c505",
+          "name": "50"
+        },
+        {
+          "id": 216,
+          "cloth_body_type": 0,
+          "size_id": 3,
+          "ident": "d3089e75-aaa7-4d02-9808-5b37a6629637",
+          "name": "52"
+        },
+        {
+          "id": 217,
+          "cloth_body_type": 0,
+          "size_id": 4,
+          "ident": "5dfe5b3b-b37a-4e54-a13a-3ea223fd75d7",
+          "name": "54"
+        },
+        {
+          "id": 218,
+          "cloth_body_type": 0,
+          "size_id": 6,
+          "ident": "00e9edc0-5e06-4c3b-83f0-6835572f92ec",
+          "name": "56"
+        },
+        {
+          "id": 219,
+          "cloth_body_type": 0,
+          "size_id": 7,
+          "ident": "0de29a2c-80f0-4391-8969-791832e8769a",
+          "name": "58"
+        }
+      ],
+      "images": [
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f16d92f0a0.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f16e8354be.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f16f24b55e.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f170208ac9.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f31c2d97e3.jpg",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f31d0a2cf6.png",
+          "use_as_preview": false
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "name": "Юбка со складкой",
+      "price": 4000,
+      "description": "Юбка из шерстяного костюмного твида, цвет сепия. \r\nПлавный крой, зауженный к низу, придает силуэту элегантность. \r\nСкладка спереди дополняет образ и делает каждый шаг эффектным. ",
+      "without_discount_price": 4500,
+      "discount_type": "pre-order",
+      "sizes": [
+        {
+          "id": 184,
+          "cloth_body_type": 1,
+          "size_id": 1,
+          "ident": "5a6a8b81-1037-4a9e-9c8f-2383bfc4e672",
+          "name": "48"
+        },
+        {
+          "id": 185,
+          "cloth_body_type": 1,
+          "size_id": 2,
+          "ident": "7a6e1ed0-7ff5-492f-8816-91a7574a84ce",
+          "name": "50"
+        },
+        {
+          "id": 186,
+          "cloth_body_type": 1,
+          "size_id": 3,
+          "ident": "1aa36870-3244-43d3-808d-960834242e21",
+          "name": "52"
+        },
+        {
+          "id": 187,
+          "cloth_body_type": 1,
+          "size_id": 4,
+          "ident": "f059d6ba-8f14-46db-bd12-f8855384b437",
+          "name": "54"
+        },
+        {
+          "id": 189,
+          "cloth_body_type": 1,
+          "size_id": 6,
+          "ident": "68ba3573-2a1f-4ec3-a5a5-5a6e5df2715e",
+          "name": "56"
+        },
+        {
+          "id": 188,
+          "cloth_body_type": 1,
+          "size_id": 7,
+          "ident": "2194dc6d-a24c-4016-badd-588360cc68f7",
+          "name": "58"
+        }
+      ],
+      "images": [
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f25a560c32.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f25b2e98c1.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f25c75c4fd.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f2faeab605.jpg",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f2fc196480.png",
+          "use_as_preview": false
+        }
+      ]
+    },
+    {
+      "id": 115,
+      "name": "Платье с асимметричным вырезом",
+      "price": 5000,
+      "description": "Платье нежного цвета «аква-небо». \r\nЗауженная к низу форма подчеркивает изящные линии и достоинства фигуры. \r\nНебольшие акценты – складки из ткани жемчужно-молочного цвета на рукавах – добавляют интереса и завершенности образу. ",
+      "without_discount_price": 7000,
+      "discount_type": "pre-order",
+      "sizes": [
+        {
+          "id": 202,
+          "cloth_body_type": 0,
+          "size_id": 1,
+          "ident": "450f52be-2975-469c-b947-4344aea9a7e9",
+          "name": "48"
+        },
+        {
+          "id": 203,
+          "cloth_body_type": 0,
+          "size_id": 2,
+          "ident": "c478362a-45aa-42e0-aa4e-ff2091d22bd4",
+          "name": "50"
+        },
+        {
+          "id": 204,
+          "cloth_body_type": 0,
+          "size_id": 3,
+          "ident": "fe053b1b-38a8-4b87-b27d-1e7d1a9c8d51",
+          "name": "52"
+        },
+        {
+          "id": 205,
+          "cloth_body_type": 0,
+          "size_id": 4,
+          "ident": "c9dc9329-4be7-4071-bca6-d58b96ac5000",
+          "name": "54"
+        },
+        {
+          "id": 206,
+          "cloth_body_type": 0,
+          "size_id": 6,
+          "ident": "00498781-ddb9-4a84-b939-0da833a1296c",
+          "name": "56"
+        },
+        {
+          "id": 207,
+          "cloth_body_type": 0,
+          "size_id": 7,
+          "ident": "1a60e191-83b0-4f02-9703-c58492df055f",
+          "name": "58"
+        }
+      ],
+      "images": [
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f13c2bfe4e.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f13cc22fff.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f13d728e9d.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f14029c11b.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f1418caaf3.JPG",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f14440e751.png",
+          "use_as_preview": false
+        },
+        {
+          "path": "http://fitbuyshop.ru/icache/cloth/400x600_zc_cloth_597f145de1af3.png",
+          "use_as_preview": false
+        }
+      ]
+    }
+  ],
+  "user": {
+    "id": 1,
+    "email": "petun911@gmail.com",
+    "display_name": "Петр Марочкин",
+    "default_size_id": 6,
+    "avatars": [
+      {
+        "id": 132,
+        "name": "Woman",
+        "ident": "c1eba1e3-f9e2-4c74-a2fa-900edb194a61",
+        "is_default": false
+      },
+      {
+        "id": 705,
+        "name": "1.5 проверка",
+        "ident": "db841458-7301-452b-8a1e-7d813310147a",
+        "is_default": false
+      },
+      {
+        "id": 959,
+        "name": "Еще",
+        "ident": "e7966487-f8cb-40df-9594-70458306f496",
+        "is_default": false
+      },
+      {
+        "id": 974,
+        "name": "Манекен по умолчанию",
+        "ident": "9fd8ccaf-b187-4c85-973b-1b0aee5cf760",
+        "is_default": false
+      },
+      {
+        "id": 1093,
+        "name": "Мой аватар",
+        "ident": "e893974f-6299-4165-911b-45715510dc2a",
+        "is_default": true
+      }
+    ]
+  }
+}

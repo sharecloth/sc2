@@ -1,0 +1,26 @@
+#logo{
+	margin: 50px 0 0 0;
+	max-width:280px;
+}
+#controls{
+    max-width: 624px;
+    margin: 30px auto 0;
+}
+
+#controls{
+	background-color: inherit;
+	border: 1px solid #fff;
+    margin-bottom: 80px;
+}
+.jumbotron{
+	padding: 2rem 2rem;
+}	
+.jumbotron > p.lead {
+	margin-bottom: 30px;
+}
+
+.jumbotron h5 { font-size: 14pt;     padding-top: 8%; }
+
+.list-unstyled img {
+    margin: 0 auto;
+}

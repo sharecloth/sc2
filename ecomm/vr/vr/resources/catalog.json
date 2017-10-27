@@ -1,0 +1,353 @@
+{
+  "sizes": [
+    {
+      "id": 1,
+      "name": "48",
+      "shoulder": 30,
+      "bust": 96,
+      "waist": 76,
+      "hips": 101,
+      "avatar_ident": "d1745f2c-3bc2-40ff-8c79-12a8c29b6c35"
+    },
+    {
+      "id": 2,
+      "name": "50",
+      "shoulder": 40,
+      "bust": 100,
+      "waist": 82,
+      "hips": 108,
+      "avatar_ident": "dfe63ae3-0999-42af-a2cc-d9b41886ffb8"
+    },
+    {
+      "id": 3,
+      "name": "52",
+      "shoulder": 50,
+      "bust": 104,
+      "waist": 86,
+      "hips": 112,
+      "avatar_ident": "f06aac71-7606-4df5-bf8c-1ad829442c39"
+    },
+    {
+      "id": 4,
+      "name": "54",
+      "shoulder": 50,
+      "bust": 108,
+      "waist": 90,
+      "hips": 116,
+      "avatar_ident": "0869253c-b62d-45aa-9818-d698873a6352"
+    },
+    {
+      "id": 6,
+      "name": "56",
+      "shoulder": 50,
+      "bust": 112,
+      "waist": 94,
+      "hips": 120,
+      "avatar_ident": "9ac3d83f-78be-4fa3-acf0-dceace22259b"
+    },
+    {
+      "id": 7,
+      "name": "58",
+      "shoulder": 60,
+      "bust": 116,
+      "waist": 98,
+      "hips": 124,
+      "avatar_ident": "a450489b-62fd-41fd-9115-871d34bf66d3"
+    },
+    {
+      "id": 8,
+      "name": "60",
+      "shoulder": 65,
+      "bust": 120,
+      "waist": 102,
+      "hips": 128,
+      "avatar_ident": "97be7e76-68b2-426d-9012-3ce3e9e19cb2"
+    },
+    {
+      "id": 9,
+      "name": "62",
+      "shoulder": 70,
+      "bust": 124,
+      "waist": 106,
+      "hips": 132,
+      "avatar_ident": "97be7e76-68b2-426d-9012-3ce3e9e19cb2"
+    },
+    {
+      "id": 10,
+      "name": "64",
+      "shoulder": 70,
+      "bust": 128,
+      "waist": 110,
+      "hips": 136,
+      "avatar_ident": "97be7e76-68b2-426d-9012-3ce3e9e19cb2"
+    },
+    {
+      "id": 11,
+      "name": "66",
+      "shoulder": 72,
+      "bust": 132,
+      "waist": 114,
+      "hips": 140,
+      "avatar_ident": "97be7e76-68b2-426d-9012-3ce3e9e19cb2"
+    },
+    {
+      "id": 12,
+      "name": "68",
+      "shoulder": 80,
+      "bust": 136,
+      "waist": 118,
+      "hips": 144,
+      "avatar_ident": "97be7e76-68b2-426d-9012-3ce3e9e19cb2"
+    }
+  ],
+  "cloth": [
+    {
+      "id": 1,
+      "name": "PANTS ARCHIVE T7 TRACK",
+      "price": 4990,
+      "description": "Эти суперклассические штаны входят в нашу линейку T7 — самую известную дизайнерскую серию от PUMA.",
+      "without_discount_price": 5500,
+      "discount_type": "pre-order",
+      "cloth_body_type": 0,
+      "sizes": [
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "b5437a91-574d-40d7-bb54-0afc4bbca7fc",
+          "name": "38"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "f866b04f-050c-4789-8d0a-f7f7fc4f94a9",
+          "name": "48"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "5a58b822-1a69-4733-82ff-b360bc3b955f",
+          "name": "58"
+        }
+      ],
+      "images": [
+        {
+          "path": "resources/573313_14.jpg",
+          "use_as_preview": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ШОРТЫ REVERSIBLE SHORT",
+      "price": 3790,
+      "description": "Меняй свой спортивный образ с помощью двусторонних шорт Reversible Short. Одна сторона выполнена из сетчатого материала, другую сторону украшает принт по всему изделию.",
+      "without_discount_price": 5500,
+      "discount_type": "pre-order",
+      "cloth_body_type": 0,
+      "sizes": [
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "c0ebb29e-fc87-4fc0-bab3-17720a6bbb44",
+          "name": "38"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "ca5d0af2-f160-4f15-a602-85e345c2f58b",
+          "name": "48"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "a0578f30-c8c4-47f3-bff2-feafce93d7cd",
+          "name": "58"
+        }
+      ],
+      "images": [
+        {
+          "path": "resources/515659_03.jpg",
+          "use_as_preview": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "ТОЛСТОВКА ARCHIVE EMBOSSED LOGO CREW",
+      "price": 3990,
+      "description": "Толстовка Archive Embossed Logo Crew отличается крупным рельефным логотипом PUMA, нанесенным по всей поверхности изделия и классическим кроем.",
+      "without_discount_price": 5500,
+      "discount_type": "pre-order",
+      "cloth_body_type": 1,
+      "sizes": [
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "76ef2a2d-2e3d-48b8-b5b9-8a5dc0811bff",
+          "name": "38"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "77bbe148-6d49-493b-bc7a-6a8434a16ec9",
+          "name": "48"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "645fe186-7dc6-4714-8c05-ba50365bf760",
+          "name": "58"
+        }
+      ],
+      "images": [
+        {
+          "path": "resources/573306_03.jpg",
+          "use_as_preview": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "ФУТБОЛКА EVO RIB TEE BLACK",
+      "price": 2990,
+      "description": "Мужская футболка с мягкими линиями кроя и узорчатым печатным рисунком – это новый стиль PUMA как для спортивного зала, так и для улицы. Не упустите возможность выглядеть модно и стильно.",
+      "without_discount_price": 3500,
+      "discount_type": "pre-order",
+      "cloth_body_type": 1,
+      "sizes": [
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "aa46bf41-7843-4b65-8dde-a32f44d8e859",
+          "name": "38"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "9e9d83d6-2a76-48e0-bd96-063d0f0ad139",
+          "name": "48"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "c63e53c9-0049-4889-91c5-01737a36aff8",
+          "name": "58"
+        }
+      ],
+      "images": [
+        {
+          "path": "resources/574445_01.jpg",
+          "use_as_preview": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "ФУТБОЛКА EVO RIB TEE GREEN",
+      "price": 2990,
+      "description": "Мужская футболка с мягкими линиями кроя и узорчатым печатным рисунком – это новый стиль PUMA как для спортивного зала, так и для улицы. Не упустите возможность выглядеть модно и стильно.",
+      "without_discount_price": 3500,
+      "discount_type": "pre-order",
+      "cloth_body_type": 1,
+      "sizes": [
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "9050a50a-18e0-4b10-a8c4-58928e93ad83",
+          "name": "38"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "3a3e72c2-87db-4c1f-92b6-57186c98b252",
+          "name": "48"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "be4a9c11-3547-4b20-a07d-372a09f7b93f",
+          "name": "58"
+        }
+      ],
+      "images": [
+        {
+          "path": "resources/puma-evo-rib-tee-t-shirt-khaki-f14-lifestyle-freizeit-shortsleeve-kurzarm-574445.jpg",
+          "use_as_preview": true
+        }
+      ]
+    },
+    {
+      "id": 116,
+      "name": "LEGGINGS Puma Men",
+      "price": 4990,
+      "description": "",
+      "without_discount_price": 5000,
+      "discount_type": "pre-order",
+      "cloth_body_type": 0,
+      "sizes": [
+        {
+          "id": 209,
+          "size_id": 1,
+          "ident": "52e5aad0-cc17-41bc-b7a9-7a275e005184",
+          "name": "38"
+        },
+        {
+          "id": 209,
+          "size_id": 1,
+          "ident": "60b3a634-4523-4ba5-940c-cc0c124c040e",
+          "name": "48"
+        },
+        {
+          "id": 209,
+          "size_id": 1,
+          "ident": "db7ef0dc-fa17-4fbd-9e62-4a46c1743831",
+          "name": "58"
+        }
+      ],
+      "images": [
+        {
+          "path": "resources/572450_01.jpg",
+          "use_as_preview": true
+        }
+      ]
+    }
+  ],
+  "user": {
+    "id": 1,
+    "email": "petun911@gmail.com",
+    "display_name": "Петр Марочкин",
+    "default_size_id": 6,
+    "avatars": [
+      {
+        "id": 132,
+        "name": "Woman",
+        "ident": "c1eba1e3-f9e2-4c74-a2fa-900edb194a61",
+        "is_default": false
+      },
+      {
+        "id": 705,
+        "name": "1.5 проверка",
+        "ident": "db841458-7301-452b-8a1e-7d813310147a",
+        "is_default": false
+      },
+      {
+        "id": 959,
+        "name": "Еще",
+        "ident": "e7966487-f8cb-40df-9594-70458306f496",
+        "is_default": false
+      },
+      {
+        "id": 974,
+        "name": "Манекен по умолчанию",
+        "ident": "9fd8ccaf-b187-4c85-973b-1b0aee5cf760",
+        "is_default": false
+      },
+      {
+        "id": 1093,
+        "name": "Мой аватар",
+        "ident": "e893974f-6299-4165-911b-45715510dc2a",
+        "is_default": true
+      }
+    ]
+  }
+}

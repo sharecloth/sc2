@@ -1,0 +1,225 @@
+﻿<!doctype html>
+<html>
+	<head>
+            <title>ShareCloth VR experience for Puma</title>
+            <link rel="icon" type="image/png" href="../../../favicon_sc2.png">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
+		<style>
+            body {
+                margin: 0; overflow-x: hidden;
+            }
+                        .hidden {
+                                display: none;
+                        }
+			#plugin-3d, #controls {
+				cursor: default;
+				outline: none;
+                width: 480px;
+                margin: 0 auto;
+                position: relative;
+			}
+
+            #plugin-3d:-webkit-full-screen {
+                width: 100%;
+            }
+
+                        /*
+                         * following styles should come with main site css
+                         * see https://dl.dropboxusercontent.com/u/27164/ShareCloth%2031.03/index.html
+                         */
+                        .controls span {
+                                display: block;
+                                border-radius: 50px;
+                                margin-bottom: 7px;
+                                width: 30px;
+                                height: 30px;
+                                background-repeat: no-repeat;
+                                background-position: center center;
+                        }
+                        .controls span.up {
+                                background-image: url("../images/up.png");
+                        }
+                        .controls span.down {
+                            background-image: url("../images/down.png");
+                        }
+                        .controls span.plus {
+                            background-image: url("../images/plus.png");
+                        }
+                        .controls span.minus {
+                            background-image: url("../images/minus.png");
+                        }
+                        .controls span.fs {
+                            background-image: url("../images/fs_in.gif");
+                        }
+                        :-webkit-full-screen .controls span.fs {
+                            background-image: url("../images/fs_out.gif");
+                        }
+                        :-moz-full-screen .controls span.fs {
+                            background-image: url("../images/fs_out.gif");
+                        }
+                        :-ms-fullscreen .controls span.fs {
+                            background-image: url("../images/fs_out.gif");
+                        }
+                        :fullscreen .controls span.fs {
+                            background-image: url("../images/fs_out.gif");
+                        }
+                        .controls span:hover {
+                                cursor: pointer;
+                                border: 1px solid #FFF;
+                                margin-left: -1px;
+                                margin-top: -1px;
+                                margin-bottom: 6px;
+                        }
+
+                        body {
+                                line-height: 1.42857;
+                        }
+
+                        @font-face{font-family:'Glyphicons Halflings';src:url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.eot');src:url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.woff') format('woff'),url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.ttf') format('truetype'),url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');}.glyphicon{position:relative;top:1px;display:inline-block;font-family:'Glyphicons Halflings';font-style:normal;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased;}
+                        .glyphicon-plus:before{content:"\2b";}
+
+                        .img-point {
+                                position: absolute;
+                                width: 110px;
+                        }
+
+                        @font-face {
+                                font-family: 'GothamProRegular' /* actually Montserrat, cant load gotham from dropbox (CORS) */;
+                                font-style: normal;
+                                font-weight: normal;
+                                src: local('Montserrat-Regular'), url(http://fonts.gstatic.com/s/montserrat/v6/zhcz-_WihjSQC0oHJ9TCYAzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2'), url(http://fonts.gstatic.com/s/montserrat/v6/zhcz-_WihjSQC0oHJ9TCYL3hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
+                        }
+
+                        .point-message {
+                                font-family: "GothamProRegular",helvetica,sans-serif;
+                                padding: 6px 18px;
+                                border-radius: 100px;
+                                width: auto;
+                                font-size: 12px;
+                                background-color: #EB6C6C;
+                                color: #FFE4E4;
+                        }
+                        .point-message .point-arrow {
+                                top: 50%;
+                                left: 0px;
+                                margin-top: 15px;
+                                margin-left: 49px;
+                                border-width: 8px 6px 0px;
+                                border-color: #EB6C6C transparent transparent;
+                                position: absolute;
+                                width: 0px;
+                                height: 0px;
+                                border-style: solid;
+                        }
+                        .message-inner .message-add {
+                                float: right;
+                                border-left: 0px solid #FFF;
+                                margin-left: 5px;
+                                padding-left: 5px;
+                                font-weight: bold;
+                        }
+                        .message-add a {
+                                text-decoration: none;
+                                color: #FFF;
+                                border: 0px none;
+                                background-color: transparent;
+                        }
+                        .img-point .point-dot {
+                                width: 8px;
+                                height: 8px;
+                                background-color: #EB6C6C;
+                                border: 1px solid #FFE4E4;
+                                border-radius: 10px;
+                                position: absolute;
+                                margin: 7px 0px 0px 51px;
+                        }
+
+                        .img-point.img-point-planes {
+                            width: 60px;
+                        }
+                        .img-point.img-point-planes .point-message {
+                            padding: 3px;
+                        }
+                        .img-point.img-point-planes .point-message .point-arrow {
+                            margin-left: 24px;
+                            margin-top: 10px;
+                        }
+
+            /* vr icon TODO needs 14x14 files */
+            .controls span.vr {
+                background-image: url("../images/ico_VR.png");
+                background-size: contain;
+            }
+
+		</style>
+        <link rel="stylesheet" type="text/css" href="../plugin.css" />
+        <link rel="stylesheet" type="text/css" href="../addtohomescreen.css" />
+        <script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+
+        <script type="text/javascript">
+            var GLOBAL_SETTINGS = {
+                "avatarId": 'ccbeb36f-8446-4a99-b0f8-39022c90893f',
+                "catalogApiEndpoint": 'resources/woman_catalog.json'
+            };
+        </script>
+	</head>
+	
+	<body>
+
+        <div align="center" id="plugin-3d"></div>
+
+        <script type="text/javascript" src="../js/addtohomescreen.js"></script>
+        <script type="text/javascript" src="../js/3d-client.vr.init.js"></script>
+        <script type="text/javascript" src="../js/3d-client.gallery.js"></script>
+        <script type="text/javascript" src="../js/path-resolver.js"></script>
+        <script type="text/javascript" src="../js/stats.min.js"></script>
+        <script type="text/javascript" src="../js/expose-util.js"></script>
+        <script type="text/javascript" src="../js/webvr-polyfill.js"></script>
+        <script type="text/javascript" src="../js/three.js"></script>
+        <script type="text/javascript" src="../js/postprocessing/EffectComposer.js"></script>
+        <script type="text/javascript" src="../js/postprocessing/RenderPass.js"></script>
+        <script type="text/javascript" src="../js/postprocessing/MaskPass.js"></script>
+        <script type="text/javascript" src="../js/postprocessing/ShaderPass.js"></script>
+        <script type="text/javascript" src="../js/shaders/CopyShader.js"></script>
+        <script type="text/javascript" src="../js/shaders/FXAAShader.js"></script>
+        <script type="text/javascript" src="../js/shaders/ConvolutionShader.js"></script>
+        <script type="text/javascript" src="../js/shaders/LuminosityHighPassShader.js"></script>
+        <script type="text/javascript" src="../js/postprocessing/UnrealBloomPass.js"></script>
+        <script type="text/javascript" src="../js/pmrem/PMREMGenerator.js"></script>
+        <script type="text/javascript" src="../js/pmrem/PMREMCubeUVPacker.js"></script>
+        <script type="text/javascript" src="../js/hdr/RGBELoader.js"></script>
+        <script type="text/javascript" src="../js/hdr/HDRCubeTextureLoader.js"></script>
+        <script type="text/javascript" src="../js/VRControls.js"></script>
+        <script type="text/javascript" src="../js/VREffect.js"></script>
+        <script type="text/javascript" src="../js/OrbitControls.js"></script>
+        <script type="text/javascript" src="../js/MTLLoader.js"></script>
+        <script type="text/javascript" src="../js/OBJMTLLoader.js"></script>
+        <script type="text/javascript" src="../js/zip/jszip.js"></script>
+        <script type="text/javascript" src="../js/zip/utils/jszip-utils.js"></script>
+        <script type="text/javascript" src="../js/parser/fileIO.js"></script>
+        <script type="text/javascript" src="../js/parser/btree.js"></script>
+        <script type="text/javascript" src="../js/importer.js"></script>
+        <script type="text/javascript" src="../js/materials.js"></script>
+        <script type="text/javascript" src="../js/pathfinder.js"></script>
+        <script type="text/javascript" src="../js/rendering.js"></script>
+        <script type="text/javascript" src="../js/3d-client.vr.btn.js"></script>
+        <script type="text/javascript" src="../js/3d-client.js"></script>
+
+        <!--<script type="text/javascript" src="js/3d-client.libs.min.js"></script>
+                <script type="text/javascript" src="js/importer.js"></script>
+                <script type="text/javascript" src="js/materials.js"></script>
+                <script type="text/javascript" src="js/pathfinder.js"></script>
+                <script type="text/javascript" src="js/rendering.js"></script>
+                <script type="text/javascript" src="js/path-resolver.js"></script>
+        <script type="text/javascript" src="js/3d-client.js"></script>-->
+
+        <!--<script type="text/javascript" src="js/3d-client.min.js"></script>-->
+        <script type="text/javascript" src="productLoader.js"></script>
+        <script type="text/javascript" src="init.js"></script>
+	</body>
+
+</html>

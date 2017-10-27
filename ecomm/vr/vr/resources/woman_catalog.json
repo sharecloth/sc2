@@ -1,0 +1,318 @@
+{
+  "sizes": [
+    {
+      "id": 1,
+      "name": "48",
+      "shoulder": 30,
+      "bust": 96,
+      "waist": 76,
+      "hips": 101,
+      "avatar_ident": "d1745f2c-3bc2-40ff-8c79-12a8c29b6c35"
+    },
+    {
+      "id": 2,
+      "name": "50",
+      "shoulder": 40,
+      "bust": 100,
+      "waist": 82,
+      "hips": 108,
+      "avatar_ident": "dfe63ae3-0999-42af-a2cc-d9b41886ffb8"
+    },
+    {
+      "id": 3,
+      "name": "52",
+      "shoulder": 50,
+      "bust": 104,
+      "waist": 86,
+      "hips": 112,
+      "avatar_ident": "f06aac71-7606-4df5-bf8c-1ad829442c39"
+    },
+    {
+      "id": 4,
+      "name": "54",
+      "shoulder": 50,
+      "bust": 108,
+      "waist": 90,
+      "hips": 116,
+      "avatar_ident": "0869253c-b62d-45aa-9818-d698873a6352"
+    },
+    {
+      "id": 6,
+      "name": "56",
+      "shoulder": 50,
+      "bust": 112,
+      "waist": 94,
+      "hips": 120,
+      "avatar_ident": "9ac3d83f-78be-4fa3-acf0-dceace22259b"
+    },
+    {
+      "id": 7,
+      "name": "58",
+      "shoulder": 60,
+      "bust": 116,
+      "waist": 98,
+      "hips": 124,
+      "avatar_ident": "a450489b-62fd-41fd-9115-871d34bf66d3"
+    },
+    {
+      "id": 8,
+      "name": "60",
+      "shoulder": 65,
+      "bust": 120,
+      "waist": 102,
+      "hips": 128,
+      "avatar_ident": "97be7e76-68b2-426d-9012-3ce3e9e19cb2"
+    },
+    {
+      "id": 9,
+      "name": "62",
+      "shoulder": 70,
+      "bust": 124,
+      "waist": 106,
+      "hips": 132,
+      "avatar_ident": "97be7e76-68b2-426d-9012-3ce3e9e19cb2"
+    },
+    {
+      "id": 10,
+      "name": "64",
+      "shoulder": 70,
+      "bust": 128,
+      "waist": 110,
+      "hips": 136,
+      "avatar_ident": "97be7e76-68b2-426d-9012-3ce3e9e19cb2"
+    },
+    {
+      "id": 11,
+      "name": "66",
+      "shoulder": 72,
+      "bust": 132,
+      "waist": 114,
+      "hips": 140,
+      "avatar_ident": "97be7e76-68b2-426d-9012-3ce3e9e19cb2"
+    },
+    {
+      "id": 12,
+      "name": "68",
+      "shoulder": 80,
+      "bust": 136,
+      "waist": 118,
+      "hips": 144,
+      "avatar_ident": "97be7e76-68b2-426d-9012-3ce3e9e19cb2"
+    }
+  ],
+  "cloth": [
+    {
+      "id": 1,
+      "name": "TIGHT YOGINI LUX",
+      "price": 4990,
+      "description": "Эти суперклассические штаны входят в нашу линейку T7 — самую известную дизайнерскую серию от PUMA.",
+      "without_discount_price": 5500,
+      "discount_type": "pre-order",
+      "cloth_body_type": 0,
+      "sizes": [
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "5066ac3c-758e-4666-9c35-6a7016575562",
+          "name": "36"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "77433b2c-1251-4099-8a1a-cfc810113750",
+          "name": "44"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "7893f844-4de8-48c9-9c6c-6bc8152a7d1a",
+          "name": "54"
+        }
+      ],
+      "images": [
+        {
+          "path": "resources/woman_515726_02.jpg",
+          "use_as_preview": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Switshot_YOGINI_PULLOVER",
+      "price": 3790,
+      "description": "Меняй свой спортивный образ с помощью двусторонних шорт Reversible Short. Одна сторона выполнена из сетчатого материала, другую сторону украшает принт по всему изделию.",
+      "without_discount_price": 5500,
+      "discount_type": "pre-order",
+      "cloth_body_type": 1,
+      "sizes": [
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "b505ac41-272b-4133-9125-afb44561f74b",
+          "name": "36"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "a2cb5f4d-7112-4948-a40a-365b975c71f2",
+          "name": "44"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "95b85144-0230-422d-91b6-d38cab3626a7",
+          "name": "54"
+        }
+      ],
+      "images": [
+        {
+          "path": "resources/woman_swit_shot.jpg",
+          "use_as_preview": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "T-shit_ESS_TEE_HEATHER",
+      "price": 3990,
+      "description": "",
+      "without_discount_price": 5500,
+      "discount_type": "pre-order",
+      "cloth_body_type": 1,
+      "sizes": [
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "2fb581d9-2ff0-440f-b977-1d209a46259f",
+          "name": "36"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "a328b9b7-375f-41a7-a33a-8ecb4f3ee785",
+          "name": "44"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "ea35b1e6-c153-44f4-b117-a1198c3e3fdf",
+          "name": "54"
+        }
+      ],
+      "images": [
+        {
+          "path": "resources/woman_heater.jpg",
+          "use_as_preview": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "SKIRT_ARCHIVE_LOGO_PENCIL",
+      "price": 2990,
+      "description": "",
+      "without_discount_price": 3500,
+      "discount_type": "pre-order",
+      "cloth_body_type": 0,
+      "sizes": [
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "b467971c-f2ac-4bb9-b136-7df42c7aac79",
+          "name": "36"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "d7cce762-f653-4c7a-8735-a58e2ec38a12",
+          "name": "44"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "a4a2dea5-48ad-4828-8f77-561142905756",
+          "name": "54"
+        }
+      ],
+      "images": [
+        {
+          "path": "resources/woman_puma-archive-logo-pencil-skirt.jpg",
+          "use_as_preview": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "MESH_SHORT",
+      "price": 2990,
+      "description": "Мужская футболка с мягкими линиями кроя и узорчатым печатным рисунком – это новый стиль PUMA как для спортивного зала, так и для улицы. Не упустите возможность выглядеть модно и стильно.",
+      "without_discount_price": 3500,
+      "discount_type": "pre-order",
+      "cloth_body_type": 0,
+      "sizes": [
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "598f165b-4c00-4b78-9de6-6555f5bc215c",
+          "name": "36"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "92891d58-765e-4e1d-99a7-ddbf9960079b",
+          "name": "44"
+        },
+        {
+          "id": 190,
+          "size_id": 1,
+          "ident": "9e87ca16-3f0b-435f-93bf-31b8e4ca1ed6",
+          "name": "54"
+        }
+      ],
+      "images": [
+        {
+          "path": "resources/woman_mesh_short.jpg",
+          "use_as_preview": true
+        }
+      ]
+    }
+  ],
+  "user": {
+    "id": 1,
+    "email": "petun911@gmail.com",
+    "display_name": "Петр Марочкин",
+    "default_size_id": 6,
+    "avatars": [
+      {
+        "id": 132,
+        "name": "Woman",
+        "ident": "c1eba1e3-f9e2-4c74-a2fa-900edb194a61",
+        "is_default": false
+      },
+      {
+        "id": 705,
+        "name": "1.5 проверка",
+        "ident": "db841458-7301-452b-8a1e-7d813310147a",
+        "is_default": false
+      },
+      {
+        "id": 959,
+        "name": "Еще",
+        "ident": "e7966487-f8cb-40df-9594-70458306f496",
+        "is_default": false
+      },
+      {
+        "id": 974,
+        "name": "Манекен по умолчанию",
+        "ident": "9fd8ccaf-b187-4c85-973b-1b0aee5cf760",
+        "is_default": false
+      },
+      {
+        "id": 1093,
+        "name": "Мой аватар",
+        "ident": "e893974f-6299-4165-911b-45715510dc2a",
+        "is_default": true
+      }
+    ]
+  }
+}
