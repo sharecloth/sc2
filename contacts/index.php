@@ -136,10 +136,25 @@ Release in May'17">
                             <div class="col-md-5">
 	                            <div class="form-group"><label for="type">Request type</label>
 											<select id="type" name="type" class="form-control">
-												<option value="Products - 3D retail inquiry" selected="selected">Products - "3D retail" inquiry</option>
-												<option value="Products - Product development inquiry">Products - "Product development" inquiry</option>
-												<option value="Support">Support</option>
-												<option value="Feedback">Feedback</option>
+                                                <?php
+
+                                                $types = [
+                                                    '3d-retail' => 'Products - "3D retail" inquiry',
+                                                    'product-development' => 'Products - "Product development" inquiry',
+                                                    'services' => 'Services request',
+                                                    'creators' => 'ShareCloth Creators',
+                                                    'feedback' => 'Feedback',
+                                                    'support' => 'Support'
+                                                ];
+                                                $defaultType = !empty($_GET['from']) && in_array($_GET['from'], array_keys($types))
+                                                ?
+                                                    $_GET['from'] : 'feedback';
+                                                ?>
+
+                                                <?php foreach ($types as $key => $value) { ?>
+                                                    <?php $selected = $key == $defaultType ? 'selected="1"' : '';?>
+                                                    <option <?=$selected;?> value="<?=$value;?>"><?=$value;?></option>
+                                                <?php }?>
 											</select>
                                 </div>
                                 <div class="form-group"><label for="fname">Name <sup>*</sup></label><input type="text" name="name"
