@@ -4,7 +4,7 @@ $additionalCss = [
     '/demo_assets/css/style.css',
 ];
 
-$title = 'ShareCloth VR experience for Puma';
+$title = 'ShareCloth VR experience';
 ?>
 
 <?php
