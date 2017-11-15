@@ -958,3 +958,1156 @@
   };
 
 }(window.jQuery || window.Zepto || window.$));
+
+(function ($) {
+  "use strict";
+
+  // reference to SpriteSpin implementation
+  var SpriteSpin = window.SpriteSpin;
+
+  SpriteSpin.extendApi({
+    // Gets a value indicating whether the animation is currently running.
+    isPlaying: function(){
+      return this.data.animation !== null;
+    },
+
+    // Gets a value indicating whether the animation looping is enabled.
+    isLooping: function(){
+      return this.data.loop;
+    },
+
+    // Starts/Stops the animation playback
+    toggleAnimation: function(){
+      this.data.animate = !this.data.animate;
+      SpriteSpin.setAnimation(this.data);
+    },
+
+    // Stops animation playback
+    stopAnimation: function(){
+      this.data.animate = false;
+      SpriteSpin.setAnimation(this.data);
+    },
+
+    // Starts animation playback
+    startAnimation: function(){
+      this.data.animate = true;
+      SpriteSpin.setAnimation(this.data);
+    },
+
+    // Sets a value indicating whether the animation should be looped or not.
+    // This might start the animation (if the 'animate' data attribute is set to true)
+    loop: function(value){
+      this.data.loop = value;
+      SpriteSpin.setAnimation(this.data);
+      return this;
+    },
+
+    // Gets the current frame number
+    currentFrame: function(){
+      return this.data.frame;
+    },
+
+    // Updates SpriteSpin to the specified frame.
+    updateFrame: function(frame){
+      SpriteSpin.updateFrame(this.data, frame);
+      return this;
+    },
+
+    // Skips the given number of frames
+    skipFrames: function(step){
+      var data = this.data;
+      SpriteSpin.updateFrame(data, data.frame + (data.reverse ? - step : + step));
+      return this;
+    },
+
+    // Updates SpriteSpin so that the next frame is shown
+    nextFrame: function(){
+      return this.skipFrames(1);
+    },
+
+    // Updates SpriteSpin so that the previous frame is shown
+    prevFrame: function(){
+      return this.skipFrames(-1);
+    },
+
+    // Starts the animations that will play until the given frame number is reached
+    // options:
+    //   force [boolean] starts the animation, even if current frame is the target frame
+    //   nearest [boolean] animates to the direction with minimum distance to the target frame
+    playTo: function(frame, options){
+      var data = this.data;
+      options = options || {};
+      if (!options.force && data.frame === frame){
+        return;
+      }
+      if (options.nearest){
+        var a = frame - data.frame;                 // distance to the target frame
+        var b = frame > data.frame ? a - data.frames : a + data.frames;        // distance to last frame and the to target frame
+        var c = Math.abs(a) < Math.abs(b) ? a : b;  // minimum distance
+        data.reverse = c < 0;
+      }
+      data.animate = true;
+      data.loop = false;
+      data.stopFrame = frame;
+      SpriteSpin.setAnimation(data);
+      return this;
+    }
+  });
+
+}(window.jQuery || window.Zepto || window.$));
+
+(function ($) {
+  "use strict";
+
+  // https://github.com/sindresorhus/screenfull.js/blob/gh-pages/src/screenfull.js
+  var fn = (function () {
+    var val;
+    var valLength;
+
+    var fnMap = [
+      [
+        'requestFullscreen',
+        'exitFullscreen',
+        'fullscreenElement',
+        'fullscreenEnabled',
+        'fullscreenchange',
+        'fullscreenerror'
+      ],
+      // new WebKit
+      [
+        'webkitRequestFullscreen',
+        'webkitExitFullscreen',
+        'webkitFullscreenElement',
+        'webkitFullscreenEnabled',
+        'webkitfullscreenchange',
+        'webkitfullscreenerror'
+
+      ],
+      // old WebKit (Safari 5.1)
+      [
+        'webkitRequestFullScreen',
+        'webkitCancelFullScreen',
+        'webkitCurrentFullScreenElement',
+        'webkitCancelFullScreen',
+        'webkitfullscreenchange',
+        'webkitfullscreenerror'
+
+      ],
+      [
+        'mozRequestFullScreen',
+        'mozCancelFullScreen',
+        'mozFullScreenElement',
+        'mozFullScreenEnabled',
+        'mozfullscreenchange',
+        'mozfullscreenerror'
+      ],
+      [
+        'msRequestFullscreen',
+        'msExitFullscreen',
+        'msFullscreenElement',
+        'msFullscreenEnabled',
+        'MSFullscreenChange',
+        'MSFullscreenError'
+      ]
+    ];
+
+    var i = 0;
+    var l = fnMap.length;
+    var ret = {};
+
+    for (; i < l; i++) {
+      val = fnMap[i];
+      if (val && val[1] in document) {
+        for (i = 0, valLength = val.length; i < valLength; i++) {
+          ret[fnMap[0][i]] = val[i];
+        }
+        return ret;
+      }
+    }
+
+    return false;
+  })();
+
+  function requestFullscreen(e){
+    e = e || document.documentElement;
+    e[fn.requestFullscreen]();
+  }
+
+  function exitFullscreen(){
+    return document[fn.exitFullscreen]();
+  }
+
+  function fullscreenEnabled(){
+    return document[fn.fullscreenEnabled];
+  }
+
+  function fullscreenElement(){
+    return document[fn.fullscreenElement];
+  }
+
+  function isFullscreen(){
+    return !!fullscreenElement();
+  }
+
+  var changeEvent = fn.fullscreenchange + '.' + SpriteSpin.namespace + '-fullscreen';
+  function unbindChangeEvent(){
+    $(document).unbind(changeEvent);
+  }
+
+  function bindChangeEvent(callback){
+    unbindChangeEvent();
+    $(document).bind(changeEvent, callback);
+  }
+
+  var orientationEvent = 'orientationchange.' + SpriteSpin.namespace + '-fullscreen';
+  function unbindOrientationEvent() {
+    $(window).unbind(orientationEvent)
+  }
+  function bindOrientationEvent(callback) {
+    unbindOrientationEvent()
+    $(window).bind(orientationEvent, callback);
+  }
+
+  SpriteSpin.extendApi({
+    fullscreenEnabled: fullscreenEnabled,
+    fullscreenElement: fullscreenElement,
+    exitFullscreen: exitFullscreen,
+    toggleFullscreen: function(opts){
+      if (isFullscreen()) {
+        this.requestFullscreen(opts)
+      } else {
+        this.exitFullscreen()
+      }
+    },
+    requestFullscreen: function(opts){
+      opts = opts || {};
+      var api = this;
+      var data = api.data;
+      var oWidth = data.width;
+      var oHeight = data.height;
+      var oSource = data.source;
+      var oSize = data.sizeMode;
+      var oResponsive = data.responsive;
+      var enter = function() {
+        data.width = window.screen.width;
+        data.height = window.screen.height;
+        data.source = opts.source || oSource;
+        data.sizeMode = opts.sizeMode || 'fit';
+        data.responsive = false;
+        SpriteSpin.boot(data);
+      }
+      var exit = function() {
+        data.width = oWidth;
+        data.height = oHeight;
+        data.source = oSource;
+        data.sizeMode = oSize;
+        data.responsive = oResponsive;
+        SpriteSpin.boot(data);
+      }
+
+      bindChangeEvent(function(){
+        if (isFullscreen()){
+          enter();
+          bindOrientationEvent(enter);
+        } else {
+          unbindChangeEvent();
+          unbindOrientationEvent();
+          exit();
+        }
+      });
+      requestFullscreen(data.target[0]);
+    }
+  });
+
+}(window.jQuery || window.Zepto || window.$, window.SpriteSpin));
+
+(function ($, SpriteSpin) {
+  "use strict";
+
+  function click(e, data) {
+    if (data.loading || !data.stage.is(':visible')) return;
+    SpriteSpin.updateInput(e, data);
+
+    var half, pos, target = data.target, offset = target.offset();
+    if (data.orientation === "horizontal") {
+      half = target.innerWidth() / 2;
+      pos = data.currentX - offset.left;
+    } else {
+      half = target.innerHeight() / 2;
+      pos = data.currentY - offset.top;
+    }
+    SpriteSpin.updateFrame(data, data.frame + (pos > half ? 1 : -1));
+  }
+
+  SpriteSpin.registerModule('click', {
+    mouseup: click,
+    touchend: click
+  });
+
+}(window.jQuery || window.Zepto || window.$, window.SpriteSpin));
+(function ($, SpriteSpin) {
+  "use strict";
+
+  function dragStart(e, data) {
+    if (data.loading || data.dragging || !data.stage.is(':visible')) return;
+    data.dragFrame = data.frame || 0;
+    data.dragLane = data.lane || 0;
+    data.dragging = true;
+    SpriteSpin.updateInput(e, data);
+  }
+
+  function dragEnd(e, data) {
+    if (data.dragging) {
+      data.dragging = false;
+      SpriteSpin.resetInput(data);
+    }
+  }
+
+  function drag(e, data) {
+    if (!data.dragging) return;
+    SpriteSpin.updateInput(e, data);
+
+    // dont do anything if the drag distance exceeds the scroll threshold.
+    // this allows to use touch scroll on mobile devices.
+    if ((Math.abs(data.ddX) + Math.abs(data.ddY)) > data.scrollThreshold) {
+      data.dragging = false;
+      SpriteSpin.resetInput(data);
+      return;
+    }
+
+    // disable touch scroll
+    e.preventDefault();
+
+    var angle = 0;
+    if (typeof data.orientation === 'number') {
+      angle = (Number(data.orientation) || 0) * Math.PI / 180;
+    } else if (data.orientation === 'horizontal') {
+      angle = 0;
+    } else {
+      angle = Math.PI / 2;
+    }
+    var sn = Math.sin(angle);
+    var cs = Math.cos(angle);
+    var x = ((data.nddX * cs - data.nddY * sn) * data.sense) || 0;
+    var y = ((data.nddX * sn + data.nddY * cs) * (data.senseLane || data.sense)) || 0;
+
+    // accumulate
+    data.dragFrame += data.frames * x;
+    data.dragLane += data.lanes * y;
+
+    var frame = Math.floor(data.dragFrame);
+    var lane = Math.floor(data.dragLane);
+    SpriteSpin.updateFrame(data, frame, lane);
+    SpriteSpin.stopAnimation(data);
+  }
+
+  SpriteSpin.registerModule('drag', {
+    mousedown: dragStart,
+    mousemove: drag,
+    mouseup: dragEnd,
+
+    documentmousemove: drag,
+    documentmouseup: dragEnd,
+
+    touchstart: dragStart,
+    touchmove: drag,
+    touchend: dragEnd,
+    touchcancel: dragEnd
+  });
+
+  SpriteSpin.registerModule('move', {
+    mousemove: function(e, data){
+      dragStart.call(this, e, data);
+      drag.call(this, e, data);
+    },
+    mouseleave: dragEnd,
+
+    touchstart: dragStart,
+    touchmove: drag,
+    touchend: dragEnd,
+    touchcancel: dragEnd
+  });
+}(window.jQuery || window.Zepto || window.$, window.SpriteSpin));
+
+(function ($, SpriteSpin) {
+  "use strict";
+
+  function start(e, data) {
+    if (data.loading || data.dragging || !data.stage.is(':visible')) return;
+    SpriteSpin.updateInput(e, data);
+    data.dragging = true;
+    data.animate = true;
+    SpriteSpin.setAnimation(data);
+  }
+
+  function stop(e, data) {
+    data.dragging = false;
+    SpriteSpin.resetInput(data);
+    SpriteSpin.stopAnimation(data);
+  }
+
+  function update(e, data) {
+    if (!data.dragging) return;
+    SpriteSpin.updateInput(e, data);
+
+    var half, delta, target = data.target, offset = target.offset();
+    if (data.orientation === "horizontal") {
+      half = target.innerWidth() / 2;
+      delta = (data.currentX - offset().left - half) / half;
+    } else {
+      half = (data.height / 2);
+      delta = (data.currentY - offset().top - half) / half;
+    }
+    data.reverse = delta < 0;
+    delta = delta < 0 ? -delta : delta;
+    data.frameTime = 80 * (1 - delta) + 20;
+
+    if (((data.orientation === 'horizontal') && (data.dX < data.dY)) ||
+      ((data.orientation === 'vertical') && (data.dX < data.dY))) {
+      e.preventDefault();
+    }
+  }
+
+  SpriteSpin.registerModule('hold', {
+
+    mousedown: start,
+    mousemove: update,
+    mouseup: stop,
+    mouseleave: stop,
+
+    touchstart: start,
+    touchmove: update,
+    touchend: stop,
+    touchcancel: stop,
+
+    onFrame: function () {
+      $(this).spritespin("api").startAnimation();
+    }
+  });
+
+}(window.jQuery || window.Zepto || window.$, window.SpriteSpin));
+
+(function ($, SpriteSpin) {
+  "use strict";
+
+  function init(e, data) {
+    data.swipeFling = data.swipeFling || 10;
+    data.swipeSnap = data.swipeSnap || 0.50;
+  }
+
+  function start(e, data) {
+    if (!data.loading && !data.dragging){
+      SpriteSpin.updateInput(e, data);
+      data.dragging = true;
+    }
+  }
+
+  function update(e, data) {
+    if (!data.dragging) return;
+    SpriteSpin.updateInput(e, data);
+    var frame = data.frame;
+    var lane = data.lane;
+    SpriteSpin.updateFrame(data, frame, lane);
+  }
+
+  function end(e, data) {
+    if (!data.dragging) return;
+    data.dragging = false;
+
+    var frame = data.frame;
+    var lane = data.lane;
+    var snap = data.swipeSnap;
+    var fling = data.swipeFling;
+    var dS, dF;
+    if (data.orientation === "horizontal") {
+      dS = data.ndX;
+      dF = data.ddX;
+    } else {
+      dS = data.ndY;
+      dF = data.ddY;
+    }
+
+    if (dS > snap || dF > fling) {
+      frame = data.frame - 1;
+    } else if (dS < -snap || dF < -fling) {
+      frame = data.frame + 1;
+    }
+
+    SpriteSpin.resetInput(data);
+    SpriteSpin.updateFrame(data, frame, lane);
+    SpriteSpin.stopAnimation(data);
+  }
+
+  SpriteSpin.registerModule('swipe', {
+    onLoad: init,
+    mousedown: start,
+    mousemove: update,
+    mouseup: end,
+    mouseleave: end,
+
+    touchstart: start,
+    touchmove: update,
+    touchend: end,
+    touchcancel: end
+  });
+
+}(window.jQuery || window.Zepto || window.$, window.SpriteSpin));
+
+(function ($, SpriteSpin) {
+  "use strict";
+
+  var floor = Math.floor;
+
+  function drawSprite(data){
+    var index = data.lane * data.frames + data.frame;
+
+    var x = data.frameWidth * (index % data.framesX);
+    var y = data.frameHeight * floor(index / data.framesX);
+
+    if (data.renderer === 'canvas'){
+      var w = data.canvas[0].width / data.canvasRatio;
+      var h = data.canvas[0].height / data.canvasRatio;
+      data.context.clearRect(0, 0, w, h);
+      data.context.drawImage(data.images[0], x, y, data.frameWidth, data.frameHeight, 0, 0, w, h);
+      return;
+    }
+
+    x = -floor(x * data.scaleWidth);
+    y = -floor(y * data.scaleHeight);
+
+    if (data.renderer === 'background') {
+      data.stage.css({
+        "background-image"    : ["url('", data.source[0], "')"].join(""),
+        "background-position" : [x, "px ", y, "px"].join("")
+      });
+    } else {
+      $(data.images).css({ top: y, left: x, "max-width" : 'initial' });
+    }
+  }
+
+  function drawFrames(data){
+    var index = data.lane * data.frames + data.frame;
+
+    var img = data.images[index];
+    if (data.renderer === 'canvas'){
+      if (img && img.complete !== false){
+        var w = data.canvas[0].width / data.canvasRatio;
+        var h = data.canvas[0].height / data.canvasRatio;
+        data.context.clearRect(0, 0, w, h);
+        data.context.drawImage(img, 0, 0, w, h);
+      }
+    } else if (data.renderer === 'background') {
+      data.stage.css({
+        "background-image" : ["url('", data.source[index], "')"].join(""),
+        "background-position" : [0, "px ", 0, "px"].join("")
+      });
+    } else {
+      $(data.images).hide();
+      $(data.images[index]).show();
+    }
+  }
+
+  SpriteSpin.registerModule('360', {
+
+    onLoad: function(e, data){
+      var w, h;
+
+      // calculate scaling if we are in responsive mode
+      if (data.width && data.frameWidth) {
+        data.scaleWidth = data.width / data.frameWidth;
+      } else {
+        data.scaleWidth = 1;
+      }
+      if (data.height && data.frameHeight) {
+        data.scaleHeight = data.height / data.frameHeight;
+      } else {
+        data.scaleHeight = 1;
+      }
+
+      // assume that the source is a spritesheet, when there is only one image given
+      data.sourceIsSprite = data.images.length === 1;
+
+      // clear and enable the stage container
+      data.stage.empty().css({ "background-image" : 'none' }).show();
+
+      if (data.renderer === 'canvas')
+      {
+        var w = data.canvas[0].width / data.canvasRatio;
+        var h = data.canvas[0].height / data.canvasRatio;
+        data.context.clearRect(0, 0, w, h);
+        data.canvas.show();
+      }
+      else if (data.renderer === 'background')
+      {
+        // prepare rendering frames as background images
+
+        if (data.sourceIsSprite){
+          w = floor(data.sourceWidth * data.scaleWidth);
+          h = floor(data.sourceHeight * data.scaleHeight);
+        } else {
+          w = floor(data.frameWidth * data.scaleWidth);
+          h = floor(data.frameHeight * data.scaleHeight);
+        }
+        var background = [w, "px ", h, "px"].join("");
+
+        data.stage.css({
+          "background-repeat"   : "no-repeat",
+          // set custom background size to enable responsive rendering
+          "-webkit-background-size" : background, /* Safari 3-4 Chrome 1-3 */
+          "-moz-background-size"    : background, /* Firefox 3.6 */
+          "-o-background-size"      : background, /* Opera 9.5 */
+          "background-size"         : background  /* Chrome, Firefox 4+, IE 9+, Opera, Safari 5+ */
+        });
+      }
+      else if (data.renderer === 'image')
+      {
+        // prepare rendering frames as image elements
+        if (data.sourceIsSprite){
+          w = floor(data.sourceWidth * data.scaleWidth);
+          h = floor(data.sourceHeight * data.scaleHeight);
+        } else {
+          w = h = '100%';
+        }
+        $(data.images).appendTo(data.stage).css({
+          width: w,
+          height: h,
+          position: 'absolute'
+        });
+      }
+    },
+
+    onDraw: function(e, data){
+      if (data.sourceIsSprite){
+        drawSprite(data);
+      } else{
+        drawFrames(data);
+      }
+    }
+  });
+
+}(window.jQuery || window.Zepto || window.$, window.SpriteSpin));
+
+(function ($, SpriteSpin) {
+  "use strict";
+
+  function init(e, data) {
+    var scope = scopeFrom(data);
+    var css = SpriteSpin.calculateInnerLayout(data);
+    scope.canvas[0].width = data.width * data.canvasRatio;
+    scope.canvas[0].height = data.height * data.canvasRatio;
+    scope.canvas.css(css).show();
+    scope.context.scale(data.canvasRatio, data.canvasRatio);
+    data.target.append(scope.canvas);
+  }
+
+  function destroy(e, data) {
+    var scope = scopeFrom(data)
+    data.target.remove(data)
+    delete data.blurScope
+  }
+
+  function onFrame(e, data) {
+    var scope = scopeFrom(data);
+    trackFrame(data, scope)
+    if (scope.timeout == null) loop(data, scope);
+  }
+
+  function scopeFrom(data) {
+    data.blurScope = data.blurScope || {};
+    var scope = data.blurScope;
+    scope.canvas = scope.canvas || $("<canvas class='blur-layer'></canvas>");
+    scope.context = scope.context || scope.canvas[0].getContext("2d");
+    scope.steps = scope.steps || [];
+    scope.fadeTime = Math.max(data.blurFadeTime || 200, 1);
+    scope.frameTime = Math.max(data.blurFrameTime || data.frameTime, 16);
+    scope.trackTime = null;
+    scope.cssBlur = !!data.blurCss;
+    return scope;
+  }
+
+  function trackFrame(data, scope) {
+    var d = Math.abs(data.frame - data.lastFrame); // distance between frames
+    if (d >= data.frames / 2) d = data.frames - d; // get shortest distance
+    scope.steps.unshift({
+      index: data.lane * data.frames + data.frame,
+      live: 1,
+      step: scope.frameTime / scope.fadeTime,
+      d: d
+    });
+  }
+
+  var toRemove = []
+  function removeOldFrames(frames) {
+    toRemove.length = 0;
+    var i;
+    for (i = 0; i < frames.length; i += 1) {
+      if (frames[i].alpha <= 0) toRemove.push(i);
+    }
+    for (i = 0; i < toRemove.length; i += 1) {
+      frames.splice(toRemove[i], 1);
+    }
+  }
+
+  function loop(data, scope) {
+    scope.timeout = window.setTimeout(function(){
+      tick(data, scope);
+    }, scope.frameTime);
+  }
+
+  function killLoop(data, scope) {
+    window.clearTimeout(scope.timeout);
+    scope.timeout = null;
+  }
+
+  function applyCssBlur(canvas, d) {
+    d = Math.min(Math.max((d / 2) - 4, 0), 1.5);
+    canvas.css({
+      '-webkit-filter': 'blur(' + d + 'px)',
+      'filter': 'blur(' + d + 'px)'
+    });
+  }
+
+  function drawFrame(data, scope, step) {
+    var context = scope.context;
+    var index = step.index;
+    var img = (data.sourceIsSprite ? data.images[0] : data.images[index]);
+
+    if (step.alpha <= 0) return;
+    if (!img || img.complete === false) return
+
+    context.globalAlpha = step.alpha;
+    if (data.sourceIsSprite){
+      var x = data.frameWidth * (index % data.framesX);
+      var y = data.frameHeight * Math.floor(index / data.framesX);
+      context.drawImage(img, x, y, data.frameWidth, data.frameHeight, 0, 0, data.width, data.height);
+    } else {
+      context.drawImage(img, 0, 0, data.width, data.height);
+    }
+  }
+
+  function tick(data, scope) {
+    killLoop(data, scope);
+    if (!scope.context) return;
+
+    var i, step, context = scope.context, d = 0;
+    context.clearRect(0, 0, data.width, data.height);
+    for (i = 0; i < scope.steps.length; i += 1) {
+      step = scope.steps[i];
+      step.live = Math.max(step.live - step.step, 0);
+      step.alpha = Math.max(step.live - 0.25, 0);
+      drawFrame(data, scope, step);
+      d += step.alpha + step.d;
+    }
+    if (scope.cssBlur) {
+      applyCssBlur(scope.canvas, d)
+    }
+    removeOldFrames(scope.steps);
+    if (scope.steps.length) {
+      loop(data, scope);
+    }
+  }
+
+  SpriteSpin.registerModule('blur', {
+    onLoad: init,
+    onFrameChanged: onFrame
+  });
+
+}(window.jQuery || window.Zepto || window.$, window.SpriteSpin));
+
+(function ($, SpriteSpin) {
+  "use strict";
+
+  var max = Math.max
+  var min = Math.min
+
+  function init(e, data){
+    data.easeAbortAfterMs = max(data.easeAbortAfterMs || 250, 0);
+    data.easeDamping = max(min(data.easeDamping || 0.9, 0.999), 0);
+    data.easeSamples = max(data.easeSamples || 5, 1);
+    data.easeUpdateTime = max(data.easeUpdateTime || data.frameTime, 16);
+    data.easeScope = { samples: [], steps: [] };
+  }
+
+  function update(e, data) {
+    if (data.dragging) {
+      killLoop(data, data.easeScope);
+      sampleInput(data, data.easeScope);
+    }
+  }
+
+  function end(e, data) {
+    var ease = data.easeScope;
+
+    var last, sample, samples = ease.samples;
+    var lanes = 0, frames = 0, time = 0;
+
+    for(var i = 0; i < samples.length; i += 1) {
+      sample = samples[i];
+
+      if (!last) {
+        last = sample;
+        continue
+      }
+
+      var dt = sample.time - last.time;
+      if (dt > data.easeAbortAfterMs) {
+        lanes = frames = time = 0;
+        return killLoop(data, ease);
+      }
+
+      frames += sample.frame - last.frame;
+      lanes += sample.lane - last.lane;
+      time += dt;
+      last = sample;
+    }
+    samples.length = 0;
+    if (!time) {
+      return
+    }
+
+    ease.ms = data.easeUpdateTime;
+
+    ease.lane = data.lane;
+    ease.lanes = 0;
+    ease.laneStep = lanes / time * ease.ms;
+
+    ease.frame = data.frame;
+    ease.frames = 0;
+    ease.frameStep = frames / time * ease.ms;
+
+    loop(data, ease);
+  }
+
+  function sampleInput(data, ease) {
+    // add a new sample
+    ease.samples.push({
+      time: new Date().getTime(),
+      frame: data.dragFrame,
+      lane: data.dragLane
+    });
+    // drop old samples
+    while (ease.samples.length > data.easeSamples) {
+      ease.samples.shift();
+    }
+  }
+
+  function killLoop(data, ease) {
+    if (ease.timeout != null) {
+      window.clearTimeout(ease.timeout);
+      ease.timeout = null;
+    }
+  }
+
+  function loop(data, ease) {
+    ease.timeout = window.setTimeout(function(){
+      tick(data, ease);
+    }, ease.ms);
+  }
+
+  function tick(data, ease){
+    ease.lanes += ease.laneStep;
+    ease.frames += ease.frameStep;
+    ease.laneStep *= data.easeDamping;
+    ease.frameStep *= data.easeDamping;
+    var frame = Math.floor(ease.frame + ease.frames);
+    var lane = Math.floor(ease.lane + ease.lanes);
+
+    SpriteSpin.updateFrame(data, frame, lane);
+    if (data.dragging) {
+      killLoop(data, ease);
+    } else if (Math.abs(ease.frameStep) > 0.005 || Math.abs(ease.laneStep) > 0.005) {
+      loop(data, ease);
+    } else {
+      killLoop(data, ease);
+    }
+  }
+
+  SpriteSpin.registerModule('ease', {
+    onLoad: init,
+
+    mousemove: update,
+    mouseup: end,
+    mouseleave: end,
+
+    touchmove: update,
+    touchend: end,
+    touchcancel: end
+  });
+
+}(window.jQuery || window.Zepto || window.$, window.SpriteSpin));
+
+(function ($, SpriteSpin) {
+  "use strict";
+
+  function load(e, data){
+    data.galleryImages = [];
+    data.galleryOffsets = [];
+    data.gallerySpeed = 500;
+    data.galleryOpacity = 0.25;
+    data.galleryFrame = 0;
+    data.galleryStage = data.galleryStage || $('<div/>');
+    data.stage.prepend(data.galleryStage);
+    data.galleryStage.empty();
+
+    var size = 0, i;
+    for(i = 0; i < data.source.length; i+= 1){
+      var img = $("<img src='" + data.source[i] + "'/>");
+      data.galleryStage.append(img);
+      data.galleryImages.push(img);
+      var scale = data.height / img[0].height;
+      data.galleryOffsets.push(-size + (data.width - img[0].width * scale) / 2);
+      size += data.width;
+      img.css({
+        "max-width" : 'initial',
+        opacity : data.galleryOpacity,
+        width: data.width,
+        height: data.height
+      });
+    }
+    var css = SpriteSpin.calculateInnerLayout(data);
+    data.galleryStage.css(css).css({
+      width: size
+    });
+    data.galleryImages[data.galleryFrame].animate({
+      opacity : 1
+    }, data.gallerySpeed);
+  }
+
+  function draw(e, data){
+    if (data.galleryFrame !== data.frame && !data.dragging){
+      data.galleryStage.stop(true, false);
+      data.galleryStage.animate({
+        "left" : data.galleryOffsets[data.frame]
+      }, data.gallerySpeed);
+
+      data.galleryImages[data.galleryFrame].animate({ opacity : data.galleryOpacity }, data.gallerySpeed);
+      data.galleryFrame = data.frame;
+      data.galleryImages[data.galleryFrame].animate({ opacity : 1 }, data.gallerySpeed);
+    } else if (data.dragging || data.dX != data.gallerydX) {
+      data.galleryDX = data.DX;
+      data.galleryDDX = data.DDX;
+      data.galleryStage.stop(true, true).animate({
+        "left" : data.galleryOffsets[data.frame] + data.dX
+      });
+    }
+  }
+
+  SpriteSpin.registerModule('gallery', {
+    onLoad: load,
+    onDraw: draw
+  });
+}(window.jQuery || window.Zepto || window.$, window.SpriteSpin));
+(function ($, SpriteSpin) {
+  "use strict";
+
+  var floor = Math.floor;
+
+  SpriteSpin.registerModule('panorama', {
+
+    onLoad: function(e, data){
+      data.stage.empty().show();
+      data.frames = data.sourceWidth;
+      if (data.orientation === "horizontal"){
+        data.scale = data.height / data.sourceHeight;
+        data.frames = data.sourceWidth;
+      } else {
+        data.scale = data.width / data.sourceWidth;
+        data.frames = data.sourceHeight;
+      }
+      var w = floor(data.sourceWidth * data.scale);
+      var h = floor(data.sourceHeight * data.scale);
+      var background = [w, "px ", h, "px"].join("");
+      data.stage.css({
+        "max-width"               : 'initial',
+        "background-image"        : ["url('", data.source[0], "')"].join(""),
+        "background-repeat"       : "repeat-both",
+        // set custom background size to enable responsive rendering
+        "-webkit-background-size" : background, /* Safari 3-4 Chrome 1-3 */
+        "-moz-background-size"    : background, /* Firefox 3.6 */
+        "-o-background-size"      : background, /* Opera 9.5 */
+        "background-size"         : background  /* Chrome, Firefox 4+, IE 9+, Opera, Safari 5+ */
+      });
+    },
+
+    onDraw: function(e, data){
+      var x = 0, y = 0;
+      if (data.orientation === "horizontal"){
+        x = -floor((data.frame % data.frames) * data.scale);
+      } else {
+        y = -floor((data.frame % data.frames) * data.scale);
+      }
+      data.stage.css({
+        "background-position" : [x, "px ", y, "px"].join("")
+      });
+    }
+  });
+
+}(window.jQuery || window.Zepto || window.$, window.SpriteSpin));
+(function ($, SpriteSpin) {
+  "use strict";
+
+  function onCreate(e, data) {
+    if (data.zoomStage) return
+    data.zoomStage = $("<div class='spritezoom-stage'></div>")
+      .css({
+        width    : '100%',
+        height   : '100%',
+        top      : 0,
+        left     : 0,
+        bottom   : 0,
+        right    : 0,
+        position : 'absolute'
+      }).appendTo(data.target).hide();
+  }
+
+  function onDestroy(e, data) {
+    if (!data.zoomStage) return
+    data.zoomStage.remove()
+  }
+
+  function updateInput(e, data){
+    e.preventDefault();
+
+    // hack into drag/move module and disable dragging
+    // prevents frame change during zoom mode
+    data.dragging = false;
+
+    // access touch points from original event
+    if (!e.touches && e.originalEvent){
+      e.touches = e.originalEvent.touches;
+    }
+
+    // grab touch/cursor position
+    var x, y, dx, dy;
+    if (e.touches && e.touches.length){
+      x = e.touches[0].clientX || 0;
+      y = e.touches[0].clientY || 0;
+    } else {
+      x = e.clientX || 0;
+      y = e.clientY || 0;
+    }
+
+    // normalize cursor position into [0:1] range
+    x /= data.width;
+    y /= data.height;
+
+    if (data.zoomPX == null){
+      data.zoomPX = x;
+      data.zoomPY = y;
+    }
+    if (data.zoomX == null){
+      data.zoomX = x;
+      data.zoomY = y;
+    }
+
+    // calculate move delta since last frame and remember current position
+    dx = x - data.zoomPX;
+    dy = y - data.zoomPY;
+    data.zoomPX = x;
+    data.zoomPY = y;
+
+    // invert drag direction for touch events to enable 'natural' scrolling
+    if (e.type.match(/touch/)){
+      dx = -dx;
+      dy = -dy;
+    }
+
+    // accumulate display coordinates
+    data.zoomX = SpriteSpin.clamp(data.zoomX + dx, 0, 1);
+    data.zoomY = SpriteSpin.clamp(data.zoomY + dy, 0, 1);
+
+    SpriteSpin.updateFrame(data);
+  }
+
+  function onDraw(e, data) {
+    // calculate the frame index
+    var index = data.lane * data.frames + data.frame;
+
+    // get the zoom image. Use original frames as fallback. This won't work for spritesheets
+    var source = (data.zoomSource || data.source)[index];
+    if (!source) {
+      $.error("'zoomSource' option is missing or it contains unsufficient number of frames.")
+      return;
+    }
+
+    // get display position
+    var x = data.zoomX;
+    var y = data.zoomY;
+    // fallback to centered position
+    if (x == null || y == null){
+      x = data.zoomX = 0.5;
+      y = data.zoomY = 0.5;
+    }
+    // scale up from [0:1] to [0:100] range
+    x = (x * 100)|0;
+    y = (y * 100)|0;
+    // update background image and position
+    data.zoomStage.css({
+      "background-repeat"   : "no-repeat",
+      "background-image"    : ["url('", source, "')"].join(""),
+      "background-position" : [x, "% ", y, "%"].join("")
+    });
+  }
+
+  function onClick(e, data){
+    e.preventDefault();
+
+    // simulate double click
+
+    var clickTime = new Date().getTime();
+    if (!data.zoomClickTime) {
+      data.zoomClickTime = clickTime;
+      return;
+    }
+
+    var timeDelta = clickTime - data.zoomClickTime;
+    var doubleClickTime = data.zoomDoubleClickTime || 500;
+    if(timeDelta > doubleClickTime) {
+      data.zoomClickTime = clickTime;
+      return;
+    }
+
+    data.zoomClickTime = 0;
+    if ($(this).spritespin('api').toggleZoom()){
+      updateInput(e, data);
+    }
+  }
+
+  function onMove(e, data){
+    if (!data.zoomStage.is(':visible')) return;
+    updateInput(e, data);
+  }
+
+  function toggleZoom(){
+    var data = this.data;
+    if (!data.zoomStage){
+      $.error('zoom module is not initialized or is not available.');
+      return false;
+    }
+    if (data.zoomStage.is(':visible')){
+      data.zoomStage.fadeOut();
+      data.stage.fadeIn();
+    } else {
+      data.zoomStage.fadeIn();
+      data.stage.fadeOut();
+      return true;
+    }
+    return false;
+  }
+
+  SpriteSpin.registerModule('zoom', {
+    mousedown: onClick,
+    touchstart: onClick,
+    mousemove: onMove,
+    touchmove: onMove,
+
+    onInit: onCreate,
+    onDestroy: onDestroy,
+    onDraw: onDraw
+  });
+
+  SpriteSpin.extendApi({
+    toggleZoom: toggleZoom
+  });
+
+}(window.jQuery || window.Zepto || window.$, window.SpriteSpin));
