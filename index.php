@@ -85,10 +85,12 @@
     			<div class="container" style="padding-top: 130px">
 
                     <div class="row">
-						<div class="col-md-3 col-xs-10 col-md-offset-1 col-xs-offset-2">
-							<img src="img/sharecloth-logotype-blue.png" alt="logo" style="padding: 40px 0 40px 0px; "/>
+						<div class="col-md-5 col-xs-10">
+                            <div class="videoWrapper" style="margin-top: 26px;">
+                                <iframe src="https://www.youtube.com/embed/QKaGBXXOAGo?rel=0" frameborder="0" allowfullscreen></iframe>
+                            </div>
 						</div>
-                        <div class="col-md-8 col-md-offset-0" data-aos="fade-up-left">
+                        <div class="col-md-7" data-aos="fade-up-left">
                             <h1 class="headline-text">Introducing 3D Retail</h1>
 
                             <p class="subheading-text">
@@ -188,6 +190,33 @@
 				</div>
 				
 			</section>
+
+            <section id="front-cases" style="background-color: #fff;">
+                <div class="container">
+                    <div class="row mt20 mb50">
+                        <div class="col-md-8 col-md-offset-2 text text-center">
+                            <h1>Cases</h1>
+                            <h3>ShareCloth' 3Dretail offers various solutions for fashion digital retail</h3>
+                        </div>
+                    </div>
+
+                    <div class="row feature-single mb50">
+                        <div class="col-md-4 col-md-offset-2 text-center">
+                            <h3>Precise virtual 3D fitting</h3>
+                            <h5>Build new engaging 3D fitting experience for your customers over the web or mobile </h5>
+                            <p><a class="btn btn-success btn-lg btn-round">Learn more</a></p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <h3>VR shopping experience</h3>
+                            <h5>Create and distribute your new digital experience with zero lines of code</h5>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </section>
 		
 		
 		

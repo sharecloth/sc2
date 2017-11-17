@@ -125,12 +125,10 @@ section#final-cta {
 #front-what .thumbnail {
   min-height: 260px; }
 
-#front-data {
-  background-color: #fff; }
-  #front-data .feature-single img {
-    margin-top: 20px; }
-  #front-data .points {
-    margin-top: 30px; }
+#front-data .feature-single img {
+  margin-top: 20px; }
+#front-data .points {
+  margin-top: 30px; }
 
 .final-cta-front {
   margin-top: 0 !important;
@@ -187,6 +185,25 @@ section#final-cta {
     background-image: url("../img/services-head1.jpg") !important;
     background-size: cover;
     background-position: center center; }
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0; }
+
+.videoWrapper iframe,
+.videoWrapper object,
+.videoWrapper embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+video {
+  width: 100%    !important;
+  height: auto   !important; }
 
 .clear {
   zoom: 1; }
