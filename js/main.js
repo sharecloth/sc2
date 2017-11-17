@@ -272,3 +272,31 @@ $(function() {
       }
   )
 });
+
+
+$(function() {
+  debugger;
+  if ($("#mySpriteSpin").size() > 0) {
+
+      $("#mySpriteSpin").spritespin({
+          // path to the source images.
+          // source: '../img/360_1280_.png',
+          // width   : 720,  // width in pixels of the window/frame
+          // height  : 1280,  // height in pixels of the window/frame
+          // frames: 72,
+          // framesX: 72,
+          // sense: -1,
+          // frameTime         : 40,
+          // renderer: 'background',
+
+          source: '../img/360_640_.png',
+          width   : 480,  // width in pixels of the window/frame
+          height  : 640,  // height in pixels of the window/frame
+          frames: 72,
+          framesX: 72,
+          sense: -1,
+          frameTime         : 40,
+          renderer: 'background',
+      });
+  }
+});
