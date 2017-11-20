@@ -81,17 +81,18 @@ Release in May'17">
                 <div class="row" style="margin-bottom: 50px;">
                     <div class="col-md-10 col-md-offset-1 text-center">
                         <div class="heading">
-                            <h2>
-                                VR Experience for your website, mobile or VR-headset <br>
+                            <h2 style="font-size: 30px;">
+                                VR Experience for your web, mobile or dedicated VR-headset product<br>
 
                                 <small>
-                                    Transform new collection’s digital merchandising into an unbelievable virtual interactive experience with opportunity to try the collection on-the-fly
+                                    Transform digital merchandising into an unbelievable virtual interactive experience
+                                    with opportunity to try collections on-the-fly
                                 </small>
                             </h2>
                         </div>
 
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/QKaGBXXOAGo?rel=0" frameborder="0" allowfullscreen></iframe>
-
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/QKaGBXXOAGo" frameborder="0"
+                                allowfullscreen></iframe>
                     </div>
                 </div>
 
@@ -102,7 +103,8 @@ Release in May'17">
 
                         <div class="text">
                             <h5>Fast 3D content creation</h5>
-                            <p>Prepare the virtual 3D samples of garments autonomously in-house or outsource this job to the certified service providers</p>
+                            <p>Prepare the virtual 3D samples of garments autonomously in-house or outsource this job to
+                                certified service providers</p>
                         </div>
 
                     </div>
@@ -112,7 +114,7 @@ Release in May'17">
 
                         <div class="text">
                             <h5>Virtual environment</h5>
-                            <p>Customize of virtual environment for the best presentation of brand experience</p>
+                            <p>Customization of virtual environment for the best presentation of brand experience</p>
                         </div>
 
                     </div>
@@ -135,7 +137,8 @@ Release in May'17">
                         <i class="fa fa-female feature-icon"></i>
                         <div class="text">
                             <h5>Custom mannequin support</h5>
-                            <p>Let your visitors generate of an accurate mannequin with just a few clicks</p>
+                            <p>Let your visitors generate an accurate mannequin with their measurements with just a few
+                                clicks</p>
                         </div>
                     </div>
 
@@ -143,8 +146,8 @@ Release in May'17">
                         <i class="fa fa-filter feature-icon"></i>
                         <div class="text">
                             <h5>The trying-on of the whole range of sizes</h5>
-                            <p>Size of the item is selected automatically on the basis of the virtual
-                                mannequin created by the customer</p>
+                            <p>Size of the item is selected automatically on the basis of the virtual mannequin created
+                                by the customer</p>
                         </div>
                     </div>
 
@@ -152,9 +155,8 @@ Release in May'17">
                         <i class="fa fa-code feature-icon"></i>
                         <div class="text">
                             <h5>Support of WebVR and Oculus VR</h5>
-                            <p>The fitting only requires a smartphone and a cardboard-like VR
-                                headset. A standalone solution may be created on the Oculus VR
-                                platform</p>
+                            <p>The fitting only requires a smartphone and a cardboard-like VR headset. A standalone
+                                solution may be created on the Oculus VR platform.</p>
                         </div>
                     </div>
 

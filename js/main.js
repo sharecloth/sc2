@@ -275,7 +275,6 @@ $(function() {
 
 
 $(function() {
-  debugger;
   if ($("#mySpriteSpin").size() > 0) {
 
       $("#mySpriteSpin").spritespin({
