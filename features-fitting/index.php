@@ -79,9 +79,9 @@ Release in May'17">
                 <div class="row">
                     <div class="col-md-12">
                         <h2>
-                            Precise 3D fitting experience <br>
+                            Precise 3D fitting experience<br>
                             <small>
-                                Interactive and precise virtual fitting for your e-store, online tailoring shop or mobile application
+                                Interactive and precise virtual fitting for your e-commerce, online tailoring shop or mobile application
                             </small>
                         </h2>
                     </div>
@@ -107,7 +107,7 @@ Release in May'17">
 
                                     <div class="text">
                                         <p>
-                                            Create accurate 3D samples of items for fitting with the help of the easy-to-use desktop editor or the <a href="./services.html">outsourcing service</a>
+                                            Create accurate 3D samples of your apparel for fitting with the help of easy-to-use desktop editor or <a href="../services.html">outsourcing service</a>
                                         </p>
                                     </div>
 
@@ -155,7 +155,7 @@ Release in May'17">
 
                                     <div class="text">
                                         <p>
-                                            Allow your customers to try clothes together online without an obligatory store visit
+                                            Enable your customers to try clothes and combine looks together online on any device without an obligatory store visit
                                         </p>
                                     </div>
 
@@ -172,7 +172,7 @@ Release in May'17">
 
                             <div class="col-sm-3">
                                 <div class="features-item">
-                                    <h4>“Tight fit”</h4>
+                                    <h4>“Tight fit” feature</h4>
 
                                     <div class="image hidden-sm">
                                         <img src="img/features-fitting/5.png" class="small-img" alt="">
@@ -180,7 +180,7 @@ Release in May'17">
 
                                     <div class="text">
                                         <p>
-                                            Assist the customer in figuring out the right size and fit with the help of detailed hints
+                                            Assist the customer in figuring out the right size and fit with the help of detailed AI hints
                                         </p>
                                     </div>
 
@@ -196,7 +196,7 @@ Release in May'17">
 
                                     <div class="text">
                                         <p>
-                                            Allow the customers to autonomously create their accurate mannequin without extra efforts
+                                            Allow the customers to autonomously create their accurate virtual mannequin without extra efforts
                                         </p>
                                     </div>
 
@@ -228,7 +228,7 @@ Release in May'17">
 
                                     <div class="text">
                                         <p>
-                                            Save your company time and money by implementing the single product and content for all major platforms
+                                            Save your company time and money by implementing single product and content for all major platforms
                                         </p>
                                     </div>
 

@@ -294,7 +294,7 @@ $(function() {
           frames: 72,
           framesX: 72,
           sense: -1,
-          frameTime         : 40,
+          frameTime         : 80,
           renderer: 'background',
       });
   }
