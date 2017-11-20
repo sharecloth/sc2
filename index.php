@@ -120,15 +120,15 @@
 					<div class="row mb50">
 						<div class="col-md-8 col-md-offset-2 text text-center">
 							<h1 class="mb20">What we offer</h1>
-							<h4>3D Retail enables speedy creation of 3D-samples of clothing and their upload to your website, mobile app or virtual reality for online-fitting – all without any additional software development</h4>
+							<h4>3Dretail helps to build the fashion brand's new interactive virtual shopping and fitting experience and its distribution over web, mobile, and VR – all without software development</h4>
 							
 							<div class="row mt20">
 								<div class="col-sm-4 col-md-4 col-md-offset-0">
 									<div class="thumbnail">
 										<img src="img/index-product-1.jpg" alt="...">
 										<div class="caption">
-											<h3>Editor</h3>
-											<p>Create precise and beautiful 3D-samples of clothes in a matter of 5-10 minutes</p>
+											<h3>Creation</h3>
+											<p>Generate precise and beautiful 3D-samples of clothes in a matter of 5-15 minutes</p>
 										</div>
 									</div>
 								</div>
@@ -137,8 +137,8 @@
 									<div class="thumbnail">
 										<img src="img/index-product-2.jpg" alt="Cloud pic">
 										<div class="caption">
-											<h3>Cloud</h3>
-											<p>Upload the created models to the ShareCloth cloud</p>
+											<h3>Distribution</h3>
+											<p>Deliver the 3D fitting experience to your website, e-commerce, mobile app or virtual reality within a few clicks</p>
 										</div>
 									</div>
 								</div>
@@ -147,17 +147,14 @@
 									<div class="thumbnail">
 										<img src="img/index-product-3.jpg" alt="Fitting">
 										<div class="caption">
-											<h3>Fitting</h3>
-											<p>Integrate the fitting option with your website, e-commerce store, mobile app or virtual reality with a few clicks of a mouse and the help of ready-made modules. 
+											<h3>Analytics</h3>
+											<p>Learn how the item’s cut, body shapes, total look or color influences the decision to buy
 											</p>
 										</div>
 									</div>
 								</div>
 								
 							</div>
-							
-							<h4>Even more options <a href="https://github.com/sharecloth/ShareCloth-API" style="cursor:pointer;">inside our API</a></h4>
-						
 						</div>
 					</div>
 					
@@ -165,24 +162,28 @@
 					<div class="row">
 						<div class="col-md-12 col-md-offset-0">
 							<div class="additional-header">
-								<h3>What your customer gets?</h3>
+								<h3>What do you get?</h3>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<div class="col-sm-12 col-md-4 text text-center">	
-								<h3>Fitting on the web</h3>
+							<div class="col-sm-12 col-md-3 text text-center">
+								<h3>Engaging 3D shopping experience for your visitors</h3>
 								<div class="front-customer-block" id="customer-web"></div>
 							</div>
-							<div class="col-sm-12 col-md-4 text text-center">	
-								<h3>In mobile app</h3>
+							<div class="col-sm-12 col-md-3 text text-center">
+								<h3>Online business efficiency improved</h3>
 								<div class="front-customer-block" id="customer-mobile"></div>
 							</div>
-							<div class="col-sm-12 col-md-4 text text-center">	
-								<h3>In virtual reality</h3>
+							<div class="col-sm-12 col-md-3 text text-center">
+								<h3>New personalisation opportunities</h3>
 								<div class="front-customer-block" id="customer-vr"></div>
 							</div>
+                            <div class="col-sm-12 col-md-3 text text-center">
+                                <h3>Cross-platform solution for web, mobile and VR</h3>
+                                <div class="front-customer-block" id="customer-vr"></div>
+                            </div>
 
 						</div>
 					</div>
@@ -196,19 +197,20 @@
                     <div class="row mt20 mb50">
                         <div class="col-md-8 col-md-offset-2 text text-center">
                             <h1>Cases</h1>
-                            <h3>ShareCloth' 3Dretail offers various solutions for fashion digital retail</h3>
+                            <h3>ShareCloth's 3Dretail platform offers various products for digital fashion retail</h3>
                         </div>
                     </div>
 
                     <div class="row feature-single mb50">
                         <div class="col-md-4 col-md-offset-2 text-center">
                             <h3>Precise virtual 3D fitting</h3>
-                            <h5>Build new engaging 3D fitting experience for your customers over the web or mobile </h5>
-                            <p><a class="btn btn-success btn-lg btn-round">Learn more</a></p>
+                            <h5>Build new and engaging 3D fitting experience for your customers over web or mobile</h5>
+                            <p><a href="#" class="btn btn-success btn-lg btn-round">Learn more</a></p>
                         </div>
                         <div class="col-md-4 text-center">
                             <h3>VR shopping experience</h3>
                             <h5>Create and distribute your new digital experience with zero lines of code</h5>
+                            <p><a href="/ecomm/vr" class="btn btn-success btn-lg btn-round">Watch demo</a></p>
                         </div>
                     </div>
 
