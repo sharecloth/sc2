@@ -86,7 +86,7 @@
 
                     <div class="row">
 						<div class="col-md-5 col-xs-10">
-                            <div class="videoWrapper" style="margin-top: 26px;">
+                            <div class="videoWrapper" style="margin-top: 26px; padding-bottom: 50.25%">
                                 <iframe src="https://www.youtube.com/embed/QKaGBXXOAGo?rel=0" frameborder="0" allowfullscreen></iframe>
                             </div>
 						</div>
