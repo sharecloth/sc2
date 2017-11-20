@@ -90,7 +90,7 @@
                                 <iframe src="https://www.youtube.com/embed/QKaGBXXOAGo?rel=0" frameborder="0" allowfullscreen></iframe>
                             </div>
 						</div>
-                        <div class="col-md-7" data-aos="fade-up-left">
+                        <div class="col-md-offset-1 col-md-6 aos-init aos-animate" data-aos="fade-up-left">
                             <h1 class="headline-text">Introducing 3D Retail</h1>
 
                             <p class="subheading-text">
@@ -205,12 +205,12 @@
                         <div class="col-md-4 col-md-offset-2 text-center">
                             <h3>Precise virtual 3D fitting</h3>
                             <h5>Build new and engaging 3D fitting experience for your customers over web or mobile</h5>
-                            <p><a href="#" class="btn btn-success btn-lg btn-round">Learn more</a></p>
+                            <p><a href="/features-fitting/" class="btn btn-success btn-lg btn-round">Learn more</a></p>
                         </div>
                         <div class="col-md-4 text-center">
                             <h3>VR shopping experience</h3>
                             <h5>Create and distribute your new digital experience with zero lines of code</h5>
-                            <p><a href="/ecomm/vr" class="btn btn-success btn-lg btn-round">Watch demo</a></p>
+                            <p><a href="/features-vr/" class="btn btn-success btn-lg btn-round">Watch demo</a></p>
                         </div>
                     </div>
 
