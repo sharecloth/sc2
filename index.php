@@ -167,22 +167,22 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12">
+						<div class="col-md-12 what-you-get">
 							<div class="col-sm-12 col-md-3 text text-center">
+                                <div><img src="img/index/1.png" alt="" class="img-responsive" /></div>
 								<h3>Engaging 3D shopping experience for your visitors</h3>
-								<div class="front-customer-block" id="customer-web"></div>
 							</div>
 							<div class="col-sm-12 col-md-3 text text-center">
-								<h3>Online business efficiency improved</h3>
-								<div class="front-customer-block" id="customer-mobile"></div>
+                                <div><img src="img/index/2.png" alt="" class="img-responsive" /></div>
+								<h3>Online business efficiency improved <br /></h3>
 							</div>
 							<div class="col-sm-12 col-md-3 text text-center">
-								<h3>New personalisation opportunities</h3>
-								<div class="front-customer-block" id="customer-vr"></div>
+                                <div><img src="img/index/3.png" alt="" class="img-responsive" /></div>
+								<h3>New personalisation opportunities <br /></h3>
 							</div>
                             <div class="col-sm-12 col-md-3 text text-center">
+                                <div><img src="img/index/4.png" alt="" class="img-responsive" /></div>
                                 <h3>Cross-platform solution for web, mobile and VR</h3>
-                                <div class="front-customer-block" id="customer-vr"></div>
                             </div>
 
 						</div>

@@ -211,16 +211,17 @@ section#final-cta {
     background-position: center center;
 }
 
-#customer-web {
-    background-image: url('../img/customer-web-2.png');
-}
-
-#customer-mobile {
-    background-image: url('../img/customer-mobile.png');
-}
-
-#customer-vr {
-    background-image: url('../img/customer-vr3.png');
+.what-you-get {
+    img {
+        width: 60%;
+        margin: 0 auto;
+    }
+    .text {
+        margin-bottom: 50px;
+        @media (min-width: 768px) {
+            margin-bottom: 0;
+        }
+    }
 }
 
 #features dl dd {
