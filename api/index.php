@@ -6,19 +6,6 @@ $additionalCss = [
 
 <?php include "../_header.php"; ?>
 
-
-<div class="section-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>
-                    ShareCloth API Demo <br>
-                </h2>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="container">
     <section class="login-form ta-center">
         <div class="row ">

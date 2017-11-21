@@ -59,34 +59,15 @@ Release in Sep'17">
             <link rel="stylesheet" type="text/css" href="<?=$css;?>">
         <?php } ?>
     <?php } ?>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WCXG39T');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <body>
 
-<nav class="navbar navbar-inverse navbar-custom-dark" role="navigation">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">
-                Sharecloth
-            </a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-top-collapse" id="bs-navbar-collapse-1">
-
-            <ul class="nav navbar-nav navbar-left">
-                <li>
-                    <a href="/contacts/">
-                        <i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us</a>
-                </li>
-            </ul>
-
-        </div><!-- /.navbar-collapse -->
-    </div><!-- container -->
-</nav>
+<?php include __DIR__ . '/_blue_menu.php'; ?>

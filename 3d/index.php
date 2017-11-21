@@ -7,6 +7,7 @@
 <html itemscope itemtype="https://schema.org/" lang="en-US">
 <!--<![endif]-->
 <head>
+    <base href="/" />
   <meta charset="utf-8">
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +17,7 @@
 <meta content="yes" name="apple-mobile-web-app-capable">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-<link rel="icon" type="image/png" href="favicon_sc2.png">
+<link rel="icon" type="image/png" href="../favicon_sc2.png">
 
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-TileImage" content="/mstile-144x144.png">
@@ -55,96 +56,56 @@ Release in Sep'17">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <link rel="stylesheet" type="text/css" href="css/custom.css?rev=4">
 
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WCXG39T');</script>
+    <!-- End Google Tag Manager -->
+
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-transparent navbar-color-blue" role="navigation">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">
-                ShareCloth
-            </a>
-        </div>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCXG39T"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<nav class="navbar navbar-inverse navbar-transparent" role="navigation">
+	  <!-- Brand and toggle get grouped for better mobile display -->
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="/">
+	        ShareCloth
+	      </a>
+	    </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-top-collapse" id="bs-navbar-collapse-1">
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse navbar-top-collapse" id="bs-navbar-collapse-1">
 
-            <ul class="nav navbar-nav navbar-left">
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="material-icons">home</i> Solutions <span class="caret"></span>
-                    </a>
-
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="index.html">
-                                <i class="material-icons">grade</i> Variant #1
-                            </a>
-                        </li>
-                        <li>
-                            <a href="index-2.html">
-                                <i class="material-icons">switch_camera</i> Variant #2
-                            </a>
-                        </li>
-                        <li>
-                            <a href="index-3.html">
-                                <i class="material-icons">switch_video</i> Mobile App
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="material-icons">pages</i> Products <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="pricing.html">
-                                <i class="material-icons">monetization_on</i> Pricing
-                            </a>
-                        </li>
-                        <li>
-                            <a href="services.html">
-                                <i class="material-icons">done_all</i> Services
-                            </a>
-                        </li>
-                        <li>
-                            <a href="features.html">
-                                <i class="material-icons">new_releases</i> Features
-                            </a>
-                        </li>
-                        <li>
-                            <a href="about.html">
-                                <i class="material-icons">face</i> About
-                            </a>
-                        </li>
-                        <li>
-                            <a href="contact-us.html">
-                                <i class="material-icons">contact_mail</i> Contact Us
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="material-icons">dashboard</i> Contacts <span class="caret"></span>
-                    </a>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- container -->
-</nav>
+	      <ul class="nav navbar-nav navbar-right">
+              <li>
+                  <a href="future/">
+                      <i class="material-icons">print</i> 3D-printed future whitepaper</a>
+              </li>
+              <li>
+                  <a href="contacts/">
+                      <i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us</a>
+              </li>
+              <li>
+                  <a href="http://bit.ly/2nqRz4P">
+                      <i class="material-icons">present_to_all</i> Press kit <sup>[ext]</sup>
+                  </a>
+              </li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- container -->
+	</nav>
 
   <div id="barba-wrapper">
     <div class="barba-container">
@@ -176,40 +137,6 @@ Release in Sep'17">
               Take a tour &rarr;
             </a>
           </div>
-
-
-            <div class="additional-buttons">
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-3">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#">
-                                    <i class="material-icons">print</i>
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <a href="#">
-                                <h4 class="media-heading"> 3D-printed future whitepaper</h4>
-                                    </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#">
-                                    <i class="material-icons">present_to_all</i>
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <a href="#">
-                                <h4 class="media-heading"> Press kit <sup>[ext]</sup></h4>
-                                    </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
         </div>
@@ -383,6 +310,8 @@ Release in Sep'17">
                 <div id="custom-search-input">
                     <div class="input-group col-md-10 col-md-offset-1">
                         <input type="text" class="input-lg form-control" name="email" placeholder="Your email address">
+                        <input type="hidden" name="internalSource" value="3D printing" />
+                        <input type="hidden" name="type" value="News" />
                         <span class="input-group-btn">
                             <input type="submit" class="btn btn-default btn-lg" value="Keep me informed!" />
                         </span>
@@ -445,7 +374,7 @@ Release in Sep'17">
 
         <ul>
           <li>
-            <a href="index.html">
+            <a href="index.php">
               Default home page with 2
             </a>
           </li>
@@ -492,6 +421,7 @@ Release in Sep'17">
     <!-- endbuild -->
 
   <script type="text/javascript" src="js/main.js"></script>
+
 
 
 </body>
