@@ -162,7 +162,7 @@
 					<div class="row">
 						<div class="col-md-12 col-md-offset-0">
 							<div class="additional-header">
-								<h3>What do you get?</h3>
+								<h4>What do you get?</h4>
 							</div>
 						</div>
 					</div>
