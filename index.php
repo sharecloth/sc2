@@ -162,7 +162,7 @@
 					<div class="row">
 						<div class="col-md-12 col-md-offset-0">
 							<div class="additional-header">
-								<h4>What do you get?</h4>
+								<h3>What do you get?</h3>
 							</div>
 						</div>
 					</div>
@@ -170,19 +170,19 @@
 						<div class="col-md-12 what-you-get">
 							<div class="col-sm-12 col-md-3 text text-center">
                                 <div><img src="img/index/1.png" alt="" class="img-responsive" /></div>
-								<h3>Engaging 3D shopping experience for your visitors</h3>
+								<h4>Engaging 3D shopping experience for your visitors</h4>
 							</div>
 							<div class="col-sm-12 col-md-3 text text-center">
                                 <div><img src="img/index/2.png" alt="" class="img-responsive" /></div>
-								<h3>Online business efficiency improved <br /></h3>
+								<h4>Online business efficiency improved <br /></h4>
 							</div>
 							<div class="col-sm-12 col-md-3 text text-center">
                                 <div><img src="img/index/3.png" alt="" class="img-responsive" /></div>
-								<h3>New personalisation opportunities <br /></h3>
+								<h4>New personalisation opportunities <br /></h4>
 							</div>
                             <div class="col-sm-12 col-md-3 text text-center">
                                 <div><img src="img/index/4.png" alt="" class="img-responsive" /></div>
-                                <h3>Cross-platform solution for web, mobile and VR</h3>
+                                <h4>Cross-platform solution for web, mobile and VR</h4>
                             </div>
 
 						</div>
@@ -197,14 +197,14 @@
                     <div class="row mt20 mb50">
                         <div class="col-md-8 col-md-offset-2 text text-center">
                             <h1>Cases</h1>
-                            <h3>ShareCloth's 3Dretail platform offers various products for digital fashion retail</h3>
+                            <h3>ShareCloth' 3Dretail offers various solutions for fashion digital retail</h3>
                         </div>
                     </div>
 
                     <div class="row feature-single mb50">
                         <div class="col-md-4 col-md-offset-2 text-center">
                             <h3>Precise virtual 3D fitting</h3>
-                            <h5>Build new and engaging 3D fitting experience for your customers over web or mobile</h5>
+                            <h5>Build new engaging 3D fitting experience for your customers over the web or mobile </h5>
                             <p><a href="/features-fitting/" class="btn btn-success btn-lg btn-round">Learn more</a></p>
                         </div>
                         <div class="col-md-4 text-center">
@@ -213,11 +213,7 @@
                             <p><a href="/features-vr/" class="btn btn-success btn-lg btn-round">Watch demo</a></p>
                         </div>
                     </div>
-
-
-
                 </div>
-
             </section>
 		
 		
