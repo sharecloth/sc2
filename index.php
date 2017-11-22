@@ -204,12 +204,12 @@
                     <div class="row feature-single mb50">
                         <div class="col-md-4 col-md-offset-2 text-center">
                             <h3>Precise virtual 3D fitting</h3>
-                            <h5>Build new engaging 3D fitting experience for your customers over the web or mobile </h5>
+                            <p class="lead">Build new engaging 3D fitting experience for your customers over the web or mobile </p>
                             <p><a href="/features-fitting/" class="btn btn-success btn-lg btn-round">Learn more</a></p>
                         </div>
                         <div class="col-md-4 text-center">
                             <h3>VR shopping experience</h3>
-                            <h5>Create and distribute your new digital experience with zero lines of code</h5>
+                            <p class="lead">Create and distribute your new digital experience with zero lines of code</p>
                             <p><a href="/features-vr/" class="btn btn-success btn-lg btn-round">Watch demo</a></p>
                         </div>
                     </div>
