@@ -104,7 +104,7 @@ Release in May'17">
 
                                                 <?php foreach ($types as $key => $value) { ?>
                                                     <?php $selected = $key == $defaultType ? 'selected="1"' : '';?>
-                                                    <option <?=$selected;?> value="<?=$value;?>"><?=$value;?></option>
+                                                    <option <?=$selected;?> value="<?=str_replace('"', '', $value);?>"><?=$value;?></option>
                                                 <?php }?>
 											</select>
                                 </div>
