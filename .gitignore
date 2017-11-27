@@ -3,3 +3,4 @@
 php/config.php
 *.tmproj
 php/contacts.sqlite
+php/handler_config.php
