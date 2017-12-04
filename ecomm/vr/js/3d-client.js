@@ -67,6 +67,7 @@ function Plugin3d(container, options) {
     var renderer;
     var controls;
     var vrEffect, vrControls;
+    var vrDisplay = null;
     var chrome = navigator.userAgent.indexOf('Chrome') > -1;
     var stats;
     var vrButtonsGroup = new THREE.Object3D();
@@ -301,6 +302,13 @@ function Plugin3d(container, options) {
         }
 
         initRenderer();
+
+        navigator.getVRDisplays().then(function (displays) {
+            if (displays.length > 0) {
+                vrDisplay = displays[0];
+                vrDisplay.requestAnimationFrame(render);
+            }
+        });
       
         controls = new THREE.OrbitControls(camera, renderer.domElement);
         controls.minPolarAngle = Math.PI / 4;
@@ -313,9 +321,13 @@ function Plugin3d(container, options) {
 
         var usePostprocessing = maxBufferSize && maxBufferSize >= settings.minRenderbufferSizeForPostprocessing;
 
-        vrEffect = new THREE[usePostprocessing && !Util.isMobile () ? 'VREffectAlternative': 'VREffect' ] (renderer, null,
-            // extra params that VREffect does not need
-            scene, camera, settings.width, settings.height);
+        //vrEffect = new THREE[usePostprocessing && !Util.isMobile () ? 'VREffectAlternative': 'VREffect' ] (renderer, null,
+        //    // extra params that VREffect does not need
+        //    scene, camera, settings.width, settings.height);
+
+
+        vrEffect = new THREE.VREffect(renderer);
+        vrEffect.setSize(settings.width, settings.height, false);
 
         setInitialCameraPosition ();
 
@@ -340,9 +352,44 @@ function Plugin3d(container, options) {
         var intervals = {},
             mousedown = 'mousedown touchstart',
             mouseup = 'mouseup mouseleave touchend touchleave touchcancel',
-            sup = '.up', sdown = '.down', splus = '.plus', sminus = '.minus', sfs = '.fs', svr = '.vr';
+            sup = '.up', sdown = '.down', splus = '.plus', sminus = '.minus', sfs = '.fs', svr = '.vr', svrExit = '.vrExit';
 
-     
+        var vrNotSupportPopup = $('<div class="vrNotSupportPopup">' +
+            '<div class="centerContainer" >' +
+            '<h2> How to experience VR</h2>' +
+            '<p>To enter VR, use a <a href="http://webvr.info" target="_blank" rel="noopener noreferrer" style="color: rgb(255, 255, 255);">WebVR-compatible browser</a>' +
+            '</div>' +
+            '</div>');
+
+        var vrNotSupportPopupCloseBtn = $('<img src="images/close-out-x-square.png" class="closeBtn" />').click(function () {
+            vrNotSupportPopup.hide();
+        });
+
+        vrNotSupportPopup.hide();
+        vrNotSupportPopup.append(vrNotSupportPopupCloseBtn);
+        subcontainer.append(vrNotSupportPopup);
+
+        self.exitVR = function () {
+            if (!vrDisplay.isPresenting) {
+                $('#rightMenu').show();
+            } else {
+                vrDisplay.exitPresent();
+            }
+
+            $("#rightMenu .vrExit").hide();
+            $("#rightMenu .vr").show();
+            setTimeout(function () {
+                container.css({ 'position': 'relative', 'width': container.sizes.previousWidth });
+                self.resize(container.sizes.w, container.sizes.h, true);
+            }, 500);
+            vrButtonsGroup.visible = false;
+            vrButtonsStaticGroup.visible = false;
+            vrButtons.showHideCrosshair(false);
+            loadingPlane.visible = false;
+        };
+
+
+        var lockVRExit = false;
         self.goVR = function () { 
             container.sizes = {
                 previousWidth: container.width(),
@@ -354,80 +401,90 @@ function Plugin3d(container, options) {
             setTimeout(function () {
                 controls.lockTouch();
             }, 500);
-            $('#rightMenu').hide();
-            vrEffect.requestPresent();
+            $("#rightMenu .vrExit").show();
+            $("#rightMenu .vr").hide();
+            if (Util.isMobile())
+                $('#rightMenu').hide();
+
+            lockVRExit = true;
+
+            setTimeout(function () {
+                lockVRExit = false;
+            }, 1000);
+
+            vrDisplay.requestPresent([{ source: renderer.domElement }]).catch(function (reason) {
+                vrNotSupportPopup.show();
+                self.exitVR();
+            });
+
             setInitialCameraPosition();
             vrButtonsGroup.visible = true;
             vrButtonsStaticGroup.visible = true;
             vrButtons.showHideCrosshair(true);
+
+
         };
 
-        self.exitVR = function () {
-            if (!vrEffect.isPresenting) {
-                setTimeout(function () {
-                    container.css({ 'position': 'relative', 'width': container.sizes.previousWidth });
-                    self.resize(container.sizes.w, container.sizes.h, true);   
-                }, 500);
-                vrButtonsGroup.visible = false;
-                vrButtonsStaticGroup.visible = false;
-                vrButtons.showHideCrosshair(false);
-                loadingPlane.visible = false;
-                $('#rightMenu').show();
-            }
-        };
-
-        subcontainer.append(
-            $('<div id="rightMenu" class="controls">' +
-                '<span class="up"></span>' +
-                '<span class="down"></span>' +
-                '<span class="plus"></span>' +
-                '<span class="minus"></span>' +
-                '<span class="fs"></span>' +
-                (Util.isMobile() ? '<span class="vr"></span>' : '') +
+        var rightMenu = $('<div id="rightMenu" class="controls">' +
+            '<span class="up"></span>' +
+            '<span class="down"></span>' +
+            '<span class="plus"></span>' +
+            '<span class="minus"></span>' +
+            '<span class="fs"></span>' +
+            '<span class="vrExit" style="display: none"></span>' +
+            '<span class="vr"></span>' +
             '</div>').on(mousedown, sup, function () {
-                intervals.sup = setInterval (function () {
+                intervals.sup = setInterval(function () {
                     holder.position.y = Math.min(holder.position.y + 0.03, controls.maxUpDown);
                 }, 20)
             }).on(mouseup, sup, function () {
-                clearInterval (intervals.sup);
+                clearInterval(intervals.sup);
 
             }).on(mousedown, sdown, function () {
-                intervals.sdown = setInterval (function () {
+                intervals.sdown = setInterval(function () {
                     holder.position.y = Math.max(holder.position.y - 0.03, controls.minUpDown);
                 }, 20)
             }).on(mouseup, sdown, function () {
-                clearInterval (intervals.sdown);
+                clearInterval(intervals.sdown);
 
             }).on(mousedown, splus, function () {
-                intervals.splus = setInterval (function () {
+                intervals.splus = setInterval(function () {
                     controls.zoomIn(0.96);
                 }, 20)
             }).on(mouseup, splus, function () {
-                clearInterval (intervals.splus);
+                clearInterval(intervals.splus);
 
             }).on(mousedown, sminus, function () {
-                intervals.sminus = setInterval (function () {
+                intervals.sminus = setInterval(function () {
                     controls.zoomOut(0.95);
                 }, 20)
             }).on(mouseup, sminus, function () {
-                clearInterval (intervals.sminus);
+                clearInterval(intervals.sminus);
 
             }).on('mouseup touchend', sfs, function () { // can't use list of events for fullscreen, fu jquery
-                toggleFullScreen (container[0]);
+                toggleFullScreen(container[0]);
 
-            }).on('mouseup touchend', svr, function () {
+            }).on('mouseup touchend', svr, function (obj) {
                 self.goVR();
-            })
-        );
+            }).on('mouseup touchend', svrExit, function (obj) {
+                self.exitVR();
+            });
+
+
+   
+        subcontainer.append(rightMenu);
+         
+
         }
 
         window.addEventListener('vrdisplaypresentchange', function () {
-            self.exitVR();
+            if(!lockVRExit)
+                self.exitVR();
         }, false);
 
 
         window.addEventListener('resize', function () {
-            if (vrEffect.isPresenting) {
+            if (vrDisplay.isPresenting) {
                 container.css({
                     "position":"fixed",
                     "top": "0px",
@@ -476,8 +533,6 @@ function Plugin3d(container, options) {
             window.camera = camera;
             window.renderer = renderer;
         }
-
-        render();
 
         } catch (ohnoes) {
             if (settings.error) {
@@ -546,6 +601,7 @@ function Plugin3d(container, options) {
         renderer.setSize(settings.width, settings.height);
         renderer.setClearColor(settings.transparent ? 0 : settings.clearColor, settings.transparent ? 0 : 1);
         renderer.shadowMap.enabled = true;
+        renderer.vr.enabled = true;
 
         renderer.gammaInput = true;
         renderer.gammaOutput = true;
@@ -657,8 +713,6 @@ function Plugin3d(container, options) {
         if (debug)
             stats.update();
 
-        vrEffect.requestAnimationFrame(render);
-
         if (avatarPose && avatarSkins) {
 
             for (var boneName in avatarPose) {
@@ -686,7 +740,7 @@ function Plugin3d(container, options) {
         });
 
         // SHOW VR ON DESKTOP
-        if (vrEffect.isPresenting) {
+        if (vrDisplay.isPresenting) {
             vrControls.update();
             vrButtons.update();
             // work around camera inside avatar thing
@@ -697,6 +751,8 @@ function Plugin3d(container, options) {
         }
 
         renderSingleFrame();
+
+        vrDisplay.requestAnimationFrame(render);
     }
 
     function renderSingleFrame() {
