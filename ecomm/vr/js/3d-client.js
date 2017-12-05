@@ -50,6 +50,7 @@ function Plugin3d(container, options) {
         'minRenderbufferSizeForPostprocessing': 16384,
         'showAddToHomeScreenBlock': false,
         'VRLoader': options.images + 'loading.png',
+        'VRErrorClose': options.images + 'close-out-x-square.png',
         'showGallery': false,
     }, options);
 
@@ -361,7 +362,7 @@ function Plugin3d(container, options) {
             '</div>' +
             '</div>');
 
-        var vrNotSupportPopupCloseBtn = $('<img src="images/close-out-x-square.png" class="closeBtn" />').click(function () {
+        var vrNotSupportPopupCloseBtn = $('<img src="' + settings.VRErrorClose + '" class="closeBtn" />').click(function () {
             vrNotSupportPopup.hide();
         });
 
