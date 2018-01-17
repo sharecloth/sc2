@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <title>Sharecloth web viewer example</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
+
+    <!-- include stylesheet -->
+    <link rel="stylesheet" type="text/css" href="http://plugin-web.globedrobe.com/3d-plugin-gl/0.5/plugin.css"/>
+
+    <!--- plugin uses jquery lib -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div align="center" id="plugin-3d"></div>
+<!-- connect web plugin viewer -->
+<script type="text/javascript" src="http://plugin-web.globedrobe.com/3d-plugin-gl/0.5/js/3d-client.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var plugin = new Plugin3d($('#plugin-3d'),
+            {
+                'host': 'http://plugin-web.globedrobe.com/api',
+                'images': 'http://plugin-web.globedrobe.com/3d-plugin-gl/0.5/images/'
+            });
+
+        // load scene
+        plugin.loadScene(8);
+
+        // load dummy
+        plugin.loadDummy(24);
+
+        //load product
+        plugin.loadProducts('c-e5f2b05c-8720-47e1-9f65-6e29cd33b9df');
+    });
+</script>
+</body>
+
+</html>
