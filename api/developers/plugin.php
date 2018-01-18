@@ -1,3 +1,8 @@
+<?php
+$additionalCss = [
+    'http://plugin-web.globedrobe.com/3d-plugin-gl/0.5/plugin.css'
+];
+?>
 <?php include "../../_header.php"; ?>
 
 <section class="api">
@@ -55,8 +60,8 @@
             <p><strong>plugin.loadProducts(productId)</strong> - загрузить результаты сшивки. productId - это идендификатор вещи, созданной в нашем редакторе ShareClothEditor.</p>
 
             <h4>Демо</h4>
-            <p>//todo</p>
-
+            <div id="plugin-3d" style="width: 480px; height: 600px; background: #c8c9cc; margin-bottom: 10px;"></div>
+            <p><a href="#" id="plugin-load-data" class="btn btn-primary">Загрузить данные</a></p>
 
             <hr/>
             <h1>Использование спрайтов</h1>
@@ -85,7 +90,9 @@
 <?php
 $additionalScripts = [
     '../../plugins/spritespin.js',
-    'sprite.js'
+    'sprite.js',
+    'http://plugin-web.globedrobe.com/3d-plugin-gl/0.5/js/3d-client.min.js',
+    'plugin.js',
 ];
 ?>
 
