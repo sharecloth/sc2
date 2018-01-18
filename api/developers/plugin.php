@@ -2,15 +2,16 @@
 
 <section class="api">
     <div class="row">
-        <div class="col-md-3">
-            <ul>
-                <li><a href="/api/developers/index.php">Описание технологии</a></li>
-                <li><a href="/api/developers/plugin.php">Web Viewer</a></li>
-                <li><a href="/api/developers/data.php">DATA API</a></li>
-            </ul>
-
+        <div class="col-md-2">
+            <div class="api-menu">
+                <ul>
+                    <li><a href="/api/developers/index.php">Описание технологии</a></li>
+                    <li class="active"><a href="/api/developers/plugin.php">Web Viewer</a></li>
+                    <li><a href="/api/developers/data.php">DATA API</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-10">
             <h1 class="mb20">Web Viewer</h1>
             <p>Позволяет вам создавать веб приложения для просмотра аватаров, а так же отображения
                 результатов сшивки.</p>
@@ -52,8 +53,40 @@
 
             <p><strong>plugin.loadDummy(avatarId)</strong> - загрузить аватар. ID аватара можно получить, используя наш <a href="data.php">DATA API</a> </p>
             <p><strong>plugin.loadProducts(productId)</strong> - загрузить результаты сшивки. productId - это идендификатор вещи, созданной в нашем редакторе ShareClothEditor.</p>
+
+            <h4>Демо</h4>
+            <p>//todo</p>
+
+
+            <hr/>
+            <h1>Использование спрайтов</h1>
+            <p>Наша технология позволяет на выходе сшивки получать не только 3D объекты, но и простые спрайты.</p>
+            <p>Ниже приведен пример кода, обрабатывающий готовый спрайт с помощью jQuery плагина <a
+                        href="http://spritespin.ginie.eu" target="_blank">SpriteSpin</a>:</p>
+
+            <pre>
+                <code>
+<?php echo htmlspecialchars(file_get_contents('sprite.html')); ?>
+                </code>
+            </pre>
+
+            <p>В итоге получается результат, представленный ниже.</p>
+
+            <div id="sprite">
+            </div>
+
+            <div class="mb50"></div>
+
+
         </div>
     </div>
 </section>
+
+<?php
+$additionalScripts = [
+    '../../plugins/spritespin.js',
+    'sprite.js'
+];
+?>
 
 <?php include "../../_footer.php"; ?>
