@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <title>Sprite Example</title>
+
+    <!--- plugin uses jquery lib -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="../../plugins/spritespin.js"></script>
+</head>
+<body style="background: #8b929f;">
+<div id="sprite" style="margin: 0 auto;"></div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#sprite").spritespin({
+
+            source: 'sprite360shot1.jpg',
+            width: 720,  // width in pixels of the window/frame
+            height: 1280,  // height in pixels of the window/frame
+            frames: 72,
+            framesX: 72,
+            sense: -1,
+            frameTime: 80,
+            renderer: 'background'
+
+        });
+    });
+</script>
+</body>
+
+
+</html>
