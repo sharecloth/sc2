@@ -1,0 +1,7 @@
+.navigator-bottom {
+    margin-bottom: 10px;
+}
+
+.btn-success:hover, .btn-success:focus {
+    background-color: #419641;
+}

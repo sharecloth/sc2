@@ -1,0 +1,459 @@
+<html>
+<head>
+    <title>Sharecloth Demo</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- fotorama.css & fotorama.js. -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+
+    <link rel="stylesheet" href="http://fitbuyshop.ru/css/style.css?_=1509709862">
+    <link rel="stylesheet" href="http://fitbuyshop.ru/css/custom.css?_=1510917125">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://use.fontawesome.com/59ca8723ea.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container-fluid">
+    <div class="navigator-bottom">
+        <ul class="nav nav-pills nav-fill" id="myTabs">
+            <li class="nav-item active">
+                <a class="nav-link" href="#fitting">Fitting</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#analytics">Analytics</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#blind-fitting">Blind fitting</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#presentation">Presentation</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#sharing">Sharing</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="fitting">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <ul class="nav nav-tabs product-view-tabs">
+                        <li role="presentation" class="active toggle-3d-tooltip">
+                            <a class="-fit" href="#">3D</a>
+                        </li>
+                        <li role="presentation" class=""><a href="#">Photo</a></li>
+                    </ul>
+
+                    <div class="main-image">
+                        <div class="main-image-large">
+                            <div id='sprite'></div>
+                        </div>
+                    </div>
+                    <!--
+                    <p>
+                        <a href="#" data-toggle="modal" data-target="#avatarEditModal"
+                           class="btn btn-look try-it-button">Change my avatar</a>
+
+                        <a href="#" class="btn btn-look" id="stress-map-button">Narrow places</a>
+                    </p>
+                    -->
+
+                </div>
+                <div class="col-md-5 col-sm-6">
+
+
+                    <h1>
+                        T-Short ASOS CURVE
+                        <a class="add-to-fav" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                           data-placement="left">
+                            <i class="glyphicon glyphicon-heart"></i>
+                        </a>
+                    </h1>
+                    <!-- price block -->
+                    <div class="price price-big"><span>690<i class="fa fa-rouble"></i></span></div>
+                    <!-- / price block -->
+
+                    <!-- buy buttons and collection logo -->
+                    <div class="single-product-buttons mb20 clear">
+                        <div class="pull-left">
+                            <a id="buy-external" class="btn btn-green btn-lg" href="#">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"> </i>
+                                Buy on asos.com </a>
+                        </div>
+                    </div>
+                    <!-- / buy buttons and collection logo -->
+
+                    <!-- sizes -->
+                    <form id="size-form" class="mb30">
+                        <h3>Sizes</h3>
+                        <div class="size-list">
+                            <input type="hidden" name="size_id" value="707">
+                            <input type="hidden" name="cloth_id" value="327">
+                            <div class="size-list-desc">
+                                <div class="pull-left">
+                                    <div class="size-list-items">
+                                        <div class="size-list-item active">
+                                            <a href="#">XS</a>
+                                        </div>
+                                        <div class="size-list-item">
+                                            <a href="#">XL</a>
+                                        </div>
+
+                                        <div class="size-list-item">
+                                            <a href="#">XXL</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="#">Size guide</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- / sizes -->
+
+                    <!-- social buttons -->
+                    <div class="clear mb20">
+                        <div class="add-this">
+                            <div class="addthis_inline_share_toolbox" data-url="http://fitbuyshop.ru/item/327?3d=1"
+                                 data-title="Футболка свободного кроя ASOS CURVE" style="clear: both;">
+                            </div>
+                            <p>Остаются сомнения? Спросите близких!</p>
+                        </div>
+                    </div>
+                    <!-- / social buttons -->
+
+                    <!-- description -->
+                    <div class="single-product-description">
+                        Мягкий и легкий трикотаж<br>
+                        Круглый вырез<br>
+                        Расклешенный силуэт<br>
+                        Свободный крой<br>
+                        Машинная стирка<br>
+                        100% хлопок
+                    </div>
+                </div>
+                <div class="col-md-3 hidden-sm">
+                    <div class="cloth-recommendations mb20">
+                        <h3>Add look</h3>
+                        <div class="row">
+
+                            <div class="col-md-6 col-xs-6 mb20">
+                                <a role="look-trg" data-id="324"
+                                   data-name="Юбка-карандаш с завышенной талией ASOS CURVE" data-cloth-body-type="1"
+                                   data-curve-ident="9e59fd8b-7747-4a5b-af74-38bbb36a51b1"
+                                   data-presentation-size-id="2" data-index="0" data-price="1490"
+                                   data-sizes="[{&quot;id&quot;:701,&quot;cloth_body_type&quot;:1,&quot;size_id&quot;:2,&quot;ident&quot;:&quot;9e59fd8b-7747-4a5b-af74-38bbb36a51b1&quot;,&quot;name&quot;:&quot;50&quot;},{&quot;id&quot;:699,&quot;cloth_body_type&quot;:1,&quot;size_id&quot;:4,&quot;ident&quot;:&quot;9aec6e86-dc5e-4c97-b9d6-084400460819&quot;,&quot;name&quot;:&quot;54&quot;},{&quot;id&quot;:700,&quot;cloth_body_type&quot;:1,&quot;size_id&quot;:7,&quot;ident&quot;:&quot;eb9e300f-dfdc-482f-b3b5-a5bbfb001f84&quot;,&quot;name&quot;:&quot;58&quot;}]"
+                                   class=" look-cloth-324" href="/item/327?look_id=324&amp;3d=1">
+                                    <img class="img-responsive"
+                                         src="http://fitbuyshop.ru/icache/cloth/285x428_zc_cloth_5a784d35accc80_27857903.jpg"
+                                         alt="">
+                                </a>
+                            </div>
+
+                            <div class="col-md-6 col-xs-6 mb20">
+                                <a role="look-trg" data-id="322"
+                                   data-name="Укороченные спортивные штаны с полосками по бокам ASOS CURVE"
+                                   data-cloth-body-type="1" data-curve-ident="e4fb9b6d-91e9-46a3-9059-488c57ec6dcd"
+                                   data-presentation-size-id="7" data-index="1" data-price="2290"
+                                   data-sizes="[{&quot;id&quot;:695,&quot;cloth_body_type&quot;:1,&quot;size_id&quot;:2,&quot;ident&quot;:&quot;393d8a31-edc6-4a1c-9dab-25c6dfed71ae&quot;,&quot;name&quot;:&quot;50&quot;},{&quot;id&quot;:694,&quot;cloth_body_type&quot;:1,&quot;size_id&quot;:4,&quot;ident&quot;:&quot;f5a485e2-70ec-4ec2-901b-24c30c94d464&quot;,&quot;name&quot;:&quot;54&quot;},{&quot;id&quot;:696,&quot;cloth_body_type&quot;:1,&quot;size_id&quot;:7,&quot;ident&quot;:&quot;e4fb9b6d-91e9-46a3-9059-488c57ec6dcd&quot;,&quot;name&quot;:&quot;58&quot;}]"
+                                   class=" look-cloth-322" href="/item/327?look_id=322&amp;3d=1">
+                                    <img class="img-responsive"
+                                         src="http://fitbuyshop.ru/icache/cloth/285x428_zc_cloth_5a7476eada93d6_03652597.jpg"
+                                         alt="">
+                                </a>
+                            </div>
+
+                            <div class="col-md-6 col-xs-6 mb20">
+                                <a role="look-trg" data-id="320"
+                                   data-name="Серые леггинсы с завышенной талией Nike Plus Leg-A-See"
+                                   data-cloth-body-type="1" data-curve-ident="e390ca48-3fa7-4fa3-bc4b-21cfcf7ece87"
+                                   data-presentation-size-id="4" data-index="2" data-price="2690"
+                                   data-sizes="[{&quot;id&quot;:692,&quot;cloth_body_type&quot;:1,&quot;size_id&quot;:2,&quot;ident&quot;:&quot;cfc1acaa-7ebb-4b2e-ba9a-c0014e0a2ed6&quot;,&quot;name&quot;:&quot;50&quot;},{&quot;id&quot;:693,&quot;cloth_body_type&quot;:1,&quot;size_id&quot;:4,&quot;ident&quot;:&quot;e390ca48-3fa7-4fa3-bc4b-21cfcf7ece87&quot;,&quot;name&quot;:&quot;54&quot;}]"
+                                   class=" look-cloth-320" href="/item/327?look_id=320&amp;3d=1">
+                                    <img class="img-responsive"
+                                         src="http://fitbuyshop.ru/icache/cloth/285x428_zc_cloth_5a743dffe7b5e9_81890295.jpg"
+                                         alt="">
+                                </a>
+                            </div>
+
+                            <div class="col-md-6 col-xs-6 mb20">
+                                <a role="look-trg" data-id="319"
+                                   data-name="Черные леггинсы с завышенной талией Nike Plus Leg-A-See"
+                                   data-cloth-body-type="1" data-curve-ident="9df2fd0d-8f08-4ce5-9424-b682a160d20c"
+                                   data-presentation-size-id="4" data-index="3" data-price="2690"
+                                   data-sizes="[{&quot;id&quot;:690,&quot;cloth_body_type&quot;:1,&quot;size_id&quot;:2,&quot;ident&quot;:&quot;b273a071-4df6-4a1f-8b00-249ccf34bccf&quot;,&quot;name&quot;:&quot;50&quot;},{&quot;id&quot;:691,&quot;cloth_body_type&quot;:1,&quot;size_id&quot;:4,&quot;ident&quot;:&quot;9df2fd0d-8f08-4ce5-9424-b682a160d20c&quot;,&quot;name&quot;:&quot;54&quot;}]"
+                                   class=" look-cloth-319" href="/item/327?look_id=319&amp;3d=1">
+                                    <img class="img-responsive"
+                                         src="http://fitbuyshop.ru/icache/cloth/285x428_zc_cloth_5a742ecdc079d6_93718692.jpg"
+                                         alt="">
+                                </a>
+                            </div>
+
+                            <div class="col-md-6 col-xs-6 mb20">
+                                <a role="look-trg" data-id="312" data-name="Черно-белая юбка-брюки ASOS CURVE"
+                                   data-cloth-body-type="1" data-curve-ident="645a6412-d945-4512-94c3-90b06ded2c98"
+                                   data-presentation-size-id="7" data-index="4" data-price="1790"
+                                   data-sizes="[{&quot;id&quot;:673,&quot;cloth_body_type&quot;:1,&quot;size_id&quot;:2,&quot;ident&quot;:&quot;3fc23254-6d38-4dad-ad84-d795c0caab94&quot;,&quot;name&quot;:&quot;50&quot;},{&quot;id&quot;:671,&quot;cloth_body_type&quot;:1,&quot;size_id&quot;:4,&quot;ident&quot;:&quot;fa25c13e-5d9a-42e1-869d-819cda6f907a&quot;,&quot;name&quot;:&quot;54&quot;},{&quot;id&quot;:674,&quot;cloth_body_type&quot;:1,&quot;size_id&quot;:7,&quot;ident&quot;:&quot;645a6412-d945-4512-94c3-90b06ded2c98&quot;,&quot;name&quot;:&quot;58&quot;}]"
+                                   class=" look-cloth-312" href="/item/327?look_id=312&amp;3d=1">
+                                    <img class="img-responsive"
+                                         src="http://fitbuyshop.ru/icache/cloth/285x428_zc_cloth_5a71efb2e74004_45516163.jpg"
+                                         alt="">
+                                </a>
+                            </div>
+
+                            <div class="col-md-6 col-xs-6 mb20">
+                                <a role="look-trg" data-id="293" data-name="Юбка с эффектом металлик Junarose"
+                                   data-cloth-body-type="1" data-curve-ident="dcbd8879-1b50-43a8-ba23-bbc068794c18"
+                                   data-presentation-size-id="2" data-index="5" data-price="1390"
+                                   data-sizes="[{&quot;id&quot;:616,&quot;cloth_body_type&quot;:1,&quot;size_id&quot;:2,&quot;ident&quot;:&quot;dcbd8879-1b50-43a8-ba23-bbc068794c18&quot;,&quot;name&quot;:&quot;50&quot;}]"
+                                   class=" look-cloth-293" href="/item/327?look_id=293&amp;3d=1">
+                                    <img class="img-responsive"
+                                         src="http://fitbuyshop.ru/icache/cloth/285x428_zc_cloth_5a6b162822d4c0_99105691.jpg"
+                                         alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="analytics">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="fotorama">
+                        <img src="http://s.fotorama.io/1.jpg">
+                        <img src="http://s.fotorama.io/2.jpg">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="fotorama-texts">
+                        <div class="fotorama-text fotorama-text-1" style="display: none">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, laborum praesentium quasi
+                                repudiandae sed soluta suscipit voluptate. At et facere ipsa minus omnis quasi ratione!
+                                Cupiditate, hic illum iste modi molestiae non numquam quod rerum suscipit voluptates?
+                                Adipisci dolorem earum et, excepturi exercitationem magni numquam quae sequi suscipit,
+                                velit voluptatum.</p>
+                        </div>
+                        <div class="fotorama-text fotorama-text-2" style="display: none">
+                            <p>test 2</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="blind-fitting">
+            <div class="row">
+                <div class="col-md-6">
+                    123
+                </div>
+                <div class="col-md-6">
+                    123123
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="presentation">
+            <h2>Test</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolore exercitationem illum, molestias
+                nobis officia porro quas ut veniam voluptates?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam asperiores beatae delectus dicta
+                dolores et excepturi expedita facere illum nulla possimus quas, quidem, reiciendis tempore! Ad autem
+                iure unde?</p>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="sharing">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-3" style="padding-top: 100px;">
+                    <h3>Let's keep in touch</h3>
+                    <p>Fell this small form for future updates</p>
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Email</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                   placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-success">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="../../sprite/spritespin.js"></script>
+
+<script src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59f6eb80b5ea8fb5"></script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+    $('#myTabs a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    });
+
+    $(function () {
+        $(function () {
+
+            var sizes = calcSize();
+            var $sprite = $("#sprite");
+            $sprite.spritespin({
+                // path to the source images.
+                source: [
+                    'sprites/1/0001.jpg',
+                    'sprites/1/0002.jpg',
+                    'sprites/1/0003.jpg',
+                    'sprites/1/0004.jpg',
+                    'sprites/1/0005.jpg',
+                    'sprites/1/0006.jpg',
+                    'sprites/1/0007.jpg',
+                    'sprites/1/0008.jpg',
+                    'sprites/1/0009.jpg',
+                    'sprites/1/0010.jpg',
+                    'sprites/1/0011.jpg',
+                    'sprites/1/0012.jpg',
+                    'sprites/1/0013.jpg',
+                    'sprites/1/0014.jpg',
+                    'sprites/1/0015.jpg',
+                    'sprites/1/0016.jpg',
+                    'sprites/1/0017.jpg',
+                    'sprites/1/0018.jpg',
+                    'sprites/1/0019.jpg',
+                    'sprites/1/0020.jpg',
+                    'sprites/1/0021.jpg',
+                    'sprites/1/0022.jpg',
+                    'sprites/1/0023.jpg',
+                    'sprites/1/0024.jpg',
+                    'sprites/1/0025.jpg',
+                    'sprites/1/0026.jpg',
+                    'sprites/1/0027.jpg',
+                    'sprites/1/0028.jpg',
+                    'sprites/1/0029.jpg',
+                    'sprites/1/0030.jpg',
+                    'sprites/1/0031.jpg',
+                    'sprites/1/0032.jpg',
+                    'sprites/1/0033.jpg',
+                    'sprites/1/0034.jpg',
+                    'sprites/1/0035.jpg',
+                    'sprites/1/0036.jpg',
+                    'sprites/1/0037.jpg',
+                    'sprites/1/0038.jpg',
+                    'sprites/1/0039.jpg',
+                    'sprites/1/0040.jpg',
+                    'sprites/1/0041.jpg',
+                    'sprites/1/0042.jpg',
+                    'sprites/1/0043.jpg',
+                    'sprites/1/0044.jpg',
+                    'sprites/1/0045.jpg',
+                    'sprites/1/0046.jpg',
+                    'sprites/1/0047.jpg',
+                    'sprites/1/0048.jpg',
+                    'sprites/1/0049.jpg',
+                    'sprites/1/0050.jpg',
+                    'sprites/1/0051.jpg',
+                    'sprites/1/0052.jpg',
+                    'sprites/1/0053.jpg',
+                    'sprites/1/0054.jpg',
+                    'sprites/1/0055.jpg',
+                    'sprites/1/0056.jpg',
+                    'sprites/1/0057.jpg',
+                    'sprites/1/0058.jpg',
+                    'sprites/1/0059.jpg',
+                    'sprites/1/0060.jpg',
+                    'sprites/1/0061.jpg',
+                    'sprites/1/0062.jpg',
+                    'sprites/1/0063.jpg',
+                    'sprites/1/0064.jpg',
+                    'sprites/1/0065.jpg',
+                    'sprites/1/0066.jpg',
+                    'sprites/1/0067.jpg',
+                    'sprites/1/0068.jpg',
+                    'sprites/1/0069.jpg',
+                    'sprites/1/0070.jpg',
+                    'sprites/1/0071.jpg',
+                    'sprites/1/0072.jpg'
+                ],
+                width: sizes.w,  // width in pixels of the window/frame
+                height: sizes.h,  // height in pixels of the window/frame
+            });
+
+            function calcSize() {
+                var width = $('.main-image-large').width();
+                var height = width * 640 / 360;
+
+                console.log('%s - %s', width, height);
+
+                return {w: width, h: height};
+            }
+
+            function resizeSprite() {
+                var sizes = calcSize();
+                $sprite.width(sizes.w);
+                $sprite.height(sizes.h);
+            }
+
+            resizeSprite();
+
+            $(window).on('resize', resizeSprite);
+        });
+    });
+
+
+    $(function () {
+        // 1. Initialize fotorama manually.
+        var $fotoramaDiv = $('#fotorama').fotorama();
+
+        // 2. Get the API object.
+        var fotorama = $fotoramaDiv.data('fotorama');
+
+        // 3. Inspect it in console.
+        $('.fotorama')
+        // Listen to the events
+            .on(
+                'fotorama:show',
+                function (e, fotorama, extra) {
+                    $('.fotorama-text').hide();
+                    var i = fotorama.activeFrame.i;
+                    $('.fotorama-text-' + i).show();
+                }
+            )
+    });
+</script>
+</body>
+</html>
