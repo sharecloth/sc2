@@ -24,6 +24,7 @@
 
     <link rel="stylesheet" href="http://fitbuyshop.ru/css/style.css?_=1509709862">
     <link rel="stylesheet" href="http://fitbuyshop.ru/css/custom.css?_=1510917125">
+    <link rel="stylesheet" type="text/css" href="../../vendor/petun/forms/frontend/css/petun-forms.css">
     <link rel="stylesheet" href="style.css">
 
     <script src="https://use.fontawesome.com/59ca8723ea.js"></script>
@@ -291,17 +292,20 @@
                 <div class="col-md-4 col-md-offset-3" style="padding-top: 100px;">
                     <h3>Let's keep in touch</h3>
                     <p>Fell this small form for future updates</p>
-                    <form>
+                    <form id="contact-us-form">
+                        <input type="hidden" name="formId" value="demoForm" />
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                            <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Email</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1"
-                                   placeholder="Password">
+                            <input type="email" name="email" class="form-control" id="exampleInputPassword1"
+                                   placeholder="">
                         </div>
                         <button type="submit" class="btn btn-success">Subscribe</button>
+
+                        <div class="form-result"></div>
                     </form>
                 </div>
             </div>
@@ -309,8 +313,9 @@
     </div>
 </div>
 
-
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<script type="text/javascript" src="../../vendor/petun/forms/frontend/js/jquery.petun-forms.js"></script>
 <script src="../../sprite/spritespin.js"></script>
 
 <script src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59f6eb80b5ea8fb5"></script>
@@ -453,6 +458,25 @@
                     $('.fotorama-text-' + i).show();
                 }
             )
+    });
+
+    $(function() {
+        // this is default options
+        $('#contact-us-form').ptmForm(
+            {
+                'handler': '../../php/handler.php',
+                'onSuccess' : function() {
+                    $('#contact-us-form').find('.form-result').removeClass('alert-danger').addClass('alert alert-success');
+                },
+                'onError' : function() {
+                    $('#contact-us-form').find('.form-result').removeClass('alert-success').addClass('alert alert-danger');
+                },
+                'beforeSubmit': function() {
+                    $('#contact-us-form').find('.form-result').removeClass('alert-success').removeClass('alert-danger');
+                }
+
+            }
+        )
     });
 </script>
 </body>
