@@ -7,6 +7,11 @@ namespace Site;
 use Petun\Forms\Actions\BaseAction;
 use ZfrMailChimp\Client\MailChimpClient;
 
+/**
+ * No usage at this time
+ * Class MailChimpAction
+ * @package Site
+ */
 class MailChimpAction extends BaseAction
 {
 

@@ -68,23 +68,3 @@ $(function () {
             }
         )
 });
-
-//contact us form
-$(function () {
-    // this is default options
-    $('#contact-us-form').ptmForm(
-        {
-            'handler': '../../php/handler.php',
-            'onSuccess': function () {
-                $('#contact-us-form').find('.form-result').removeClass('alert-danger').addClass('alert alert-success');
-            },
-            'onError': function () {
-                $('#contact-us-form').find('.form-result').removeClass('alert-success').addClass('alert alert-danger');
-            },
-            'beforeSubmit': function () {
-                $('#contact-us-form').find('.form-result').removeClass('alert-success').removeClass('alert-danger');
-            }
-
-        }
-    )
-});
