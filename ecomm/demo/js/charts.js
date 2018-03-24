@@ -18,12 +18,14 @@ var Charts = (function () {
                     formatter: function () {
                         return this.value; // clean, unformatted number for year
                     }
-                }
+                },
             },
             yAxis: {
                 title: {
                     text: 'Pressure (Pa)'
                 },
+                min: 1000,
+                max: 1450
                 // labels: {
                 //     formatter: function () {
                 //         return this.value / 1000 + 'k';
