@@ -7,6 +7,11 @@ $('#myTabs a').click(function (e) {
 // sprites
 $(function () {
     var $sprite = $("#sprite");
+    var map = {
+        1: 2,
+        3: 4
+    };
+    var activeCloth = 1;
 
     function calcSize() {
         var width = $('.main-image-large').width();
@@ -35,14 +40,20 @@ $(function () {
         $sprite.height(sizes.h);
     }
 
-    initSprite(window.SOURCES['source1']);
+    initSprite(window.SOURCES['source' + activeCloth]);
     resizeSprite();
 
     $(window).on('resize', resizeSprite);
 
     $('a[role=look-trg]').on('click', function(e) {
         e.preventDefault();
-        var key = 'source' + $(this).data('id');
+        var id = $(this).data('id');
+        if (id === 'vary') {
+            id = map[activeCloth];
+        } else {
+            activeCloth = id;
+        }
+        var key = 'source' + id;
         initSprite(window.SOURCES[key]);
     });
 });
