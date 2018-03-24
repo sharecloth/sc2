@@ -76,6 +76,13 @@ $(function () {
                 $('.fotorama-text').hide();
                 var i = fotorama.activeFrame.i;
                 $('.fotorama-text-' + i).show();
+
+
+                if (i === 1) {
+                    Charts.initPressure();
+                } else if (i === 2) {
+                    Charts.initPercent();
+                }
             }
         )
 });

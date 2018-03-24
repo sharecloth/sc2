@@ -218,11 +218,17 @@
                             </ul>
                             <br>
                             <h2>Works as on-demand solution as well as data collection</h2>
+
+                            <!-- это график для давления -->
+                            <div id="chart-pressure" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
                         </div>
                         <div class="fotorama-text fotorama-text-2" style="display: none">
                             <h2>Length analysis</h2>
                             <h2>Fabric pressure analysis</h2>
                             <h2>Overall fit prediction</h2>
+
+                            <!-- это график для процентов -->
+                            <div id="chart-percent" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
                         </div>
                         <div class="fotorama-text fotorama-text-3" style="display: none">
                             <h1>Behavioural data</h1>
@@ -308,8 +314,6 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-
-<script type="text/javascript" src="../../vendor/petun/forms/frontend/js/jquery.petun-forms.js"></script>
 <script src="../../sprite/spritespin.js"></script>
 
 <script src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59f6eb80b5ea8fb5"></script>
@@ -320,8 +324,11 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
 
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
 
 <script type="text/javascript" src="js/souces.js"></script>
+<script type="text/javascript" src="js/charts.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
-
+</body>
 </html>
