@@ -10,7 +10,7 @@ var Charts = (function () {
                 text: 'Pressure Map'
             },
             subtitle: {
-                text: 'Sub title text here'
+                text: ''
             },
             xAxis: {
                 allowDecimals: false,
@@ -51,50 +51,11 @@ var Charts = (function () {
                 }
             },
             series: [{
-                name: 'Bust',
+                name: 'Pressure points',
                 data: [
-                    1300, 1345, 1420, 1345, 1322
-                ]
-            }, {
-                name: 'Waist',
-                data: [
-                    1017, 900, 1000, 1002, 1050
-                ]
-            }, {
-                name: 'Hips',
-                data: [
-                    1097, 1090, 1050, 1100, 1097
-                ]
-            }, {
-                name: 'Hip',
-                data: [
-                    1190, 1180, 1179, 1179, 1179
-                ]
-            },
-                {
-                    name: 'Caviar Muscle',
-                    data: [
-                        1190, 1195, 1170, 1172, 1173
-                    ]
-                },
-                {
-                    name: 'Neck',
-                    data: [
-                        1030, 1031, 1032, 1030, 1025
-                    ]
-                },
-                {
-                    name: 'Biceps',
-                    data: [
-                        1190, 1000, 1001, 1002, 1003
-                    ]
-                },
-                {
-                    name: 'Wrist',
-                    data: [
-                        1097, 1050, 1051, 1052, 1053
-                    ]
-                }
+                    1300, 1345, 1420, 1345, 1130
+                ],
+            }              
             ]
         });
     }
@@ -109,7 +70,7 @@ var Charts = (function () {
                 type: 'pie'
             },
             title: {
-                text: 'Cloth Match'
+                text: 'Fit Match'
             },
             tooltip: {
                 pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'

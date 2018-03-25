@@ -196,44 +196,74 @@
             </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="analytics">
-
+			<style>
+				div.fotorama-text > ul  {font-size:20px; list-style-type: circle; margin-top: 15px; 0px; 0 0;}
+				h1, h2 {text-align:center; margin-top:15px;}
+			</style>
             <div class="row">
                 <div class="col-md-6">
                     <div class="fotorama">
-                        <img src="analytics/untitled87.png">
                         <img src="analytics/untitled88.png">
+                        <img src="analytics/untitled87.png">
                         <img src="analytics/untitled88_2.png">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="fotorama-texts">
                         <div class="fotorama-text fotorama-text-1">
-                            <h2>The precise garment simulation analyses the fit on-the-fly</h2>
-                            <ul style="font-size:24px;">
-                                <li>Garment length</li>
-                                <li>Fabric tension</li>
-                                <li>Fabric pressure to the body</li>
-                                <li>Fabric behaviour in different body positions</li>
-                                <li>Consumption aspects</li>
-                            </ul>
-                            <br>
-                            <h2>Works as on-demand solution as well as data collection</h2>
-
-                            <!-- это график для давления -->
-                            <div id="chart-pressure" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+							<h2 style="text-align:center;">ShareCloth Analytics based on the precise garment virtual simulation <br> <small>On-demand data collection and analytics platform</small></h2>
+							<h2>Types of analytics:</h3>
+							<ul>
+			                    <li>Fit analytics</li>
+			                    <li>Body analytics</li>
+			                    <li>Behaviour analytics</li>
+			                </ul>
+			
+							<h2>Types of product:</h3>
+							<ul>
+			                    <li>On-demand fitting analytics data</li>
+			                    <li>Data collection & analytics</li>
+			                </ul>
                         </div>
                         <div class="fotorama-text fotorama-text-2" style="display: none">
-                            <h2>Length analysis</h2>
-                            <h2>Fabric pressure analysis</h2>
-                            <h2>Overall fit prediction</h2>
-
-                            <!-- это график для процентов -->
-                            <div id="chart-percent" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+			                <h2 style="text-align:center;">
+								Know how exactly garment fits to your customer <br>
+								<small>The data extracted directly from the on-the-fly fit analysis</small>
+							</h2>
+			                <ul>
+			                    <li>Garment fit estimation</li>
+			                    <li>Garment measurements</li>
+								<li>Fit prediction and recommendation</li>
+			                    <li>Fabric tension</li>
+			                    <li>Fabric pressure to the body</li>
+			                    <li>Garment behaviour (fit) in different body positions</li>
+			                </ul>
+							<br>
+			                <!-- это график для процентов -->
+                            <div id="chart-percent" style="min-width: 200px; height: 200px; max-width: 600px; margin: 0 auto"></div>
+			                <!-- это график для давления -->
+                            <div id="chart-pressure" style="min-width: 310px; height: 400px; margin: 20px 0 0 auto"></div>
                         </div>
                         <div class="fotorama-text fotorama-text-3" style="display: none">
-                            <h1>Behavioural data</h1>
-                            <h2>Body type analysis</h2>
-                            <h2>Popular combinations</h2>
+								<h2>
+									Body analytics <br>
+									<small>Know you customer better by analysing collected body measurements at large</small>
+								</h2>
+								<ul>
+									<li>Customers body sizing summary</li>
+									<li>Segmented consumption</li>
+								</ul>	
+								<br>
+								<h2>
+									Behaviour analytics <br>
+									<small>Know what and how your customers like to wear</small>
+								</h2>
+								<ul>
+									<li>Popular look combinations</li>
+									<li>Preferable cut</li>
+									<li>Segmented consumption</li>
+								</ul>
+
                         </div>
                     </div>
 
@@ -247,12 +277,101 @@
             </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="presentation">
-            <h2>Test</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolore exercitationem illum, molestias
-                nobis officia porro quas ut veniam voluptates?</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam asperiores beatae delectus dicta
-                dolores et excepturi expedita facere illum nulla possimus quas, quidem, reiciendis tempore! Ad autem
-                iure unde?</p>
+			<h1>
+				Introducing ShareCloth' 3D retail
+			</h1>
+			<h2>
+				3Dretail is a back-end platform that enables third-party online retail to integrate precise virtual apparel 3D fitting experience into their website, mobile or VR app
+			</h2>
+			<div class="row" style="margin: 20px 0 20px 0;">
+				<h2>How does it work?</h2>
+				<div class="col-sm-4 col-sm-offset-1">
+					<img src="images/pattern.jpg" />
+				</div>
+				<div class="col-sm-3">
+					<img src="images/fabric.jpg" />
+				</div>
+				<div class="col-sm-3 col-sm-offset-1">
+					<img src="images/dress.jpg" style="max-height:343px" />
+				</div>
+			</div>
+				
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+					<h2 style="margin: 20px 0 20px 0;">Solutions</h2>
+					<table class="table table-striped table-hover;" style="font-size: 14px; font-style:normal !important;">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col"><h3 style="text-align:center;">Precise fitting</h3></th>
+								<th scope="col"><h3 style="text-align:center;">Interactive fitting</h3></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">About</th>
+								<th>Get complete on-the-fly fit analytics for every single customers visit similar to those available at the made-to-measure atelier </th>
+								<th>Enable your customers to use interactive 3D virtual fitting during online shopping session</th>								
+							</tr>
+							<tr>
+								<th scope="row">Options</th>
+								<th>
+									<ul style="list-style-type: circle; margin-left:20px">
+										<li>3D fitting experience for visitors + analytics</li>
+										<li>Blind fitting. Analytics only</li>
+									</ul>
+								</th>
+								<th>
+									<ul style="list-style-type: circle; margin-left:20px">
+										<li>3D fitting experience for visitors</li>
+									</ul>
+								</th>
+							</tr>
+							<tr>
+								<th scope="row">Requirements</th>
+								<th>
+									<ul style="list-style-type: circle; margin-left:20px">
+										<li>Digital garment patterns</li>
+										<li>Manual 3D samples creation</li>
+										<li>Prepared fabric & trim photos</li>
+									</ul>
+								</th>
+								<th>
+									<ul style="list-style-type: circle; margin-left:20px">
+										<li>Garment photos</li>
+										<li>Manual 3D samples creation</li>
+									</ul>
+								</th>							
+							</tr>
+							<tr>
+								<th scope="row">Time consumption</th>
+								<th>Slower, from 10 to 45 minutes per style</th>
+								<th>Faster, from 5 to 15 minutes per style</th>
+							</tr>
+							<tr>
+								<th scope="row">Content creation</th>
+								<th>
+									<ul style="list-style-type: circle; margin-left:20px">
+										<li>ShareCloth Editor</li>
+										<li>On-demand content services</li>
+									</ul>
+								</th>
+								<th>
+									<ul style="list-style-type: circle; margin-left:20px">
+										<li>Online garment samples database</li>
+										<li>On-demand content services</li>
+									</ul>
+								</th>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<h2>Cases</h2>
+			<ul style="text-align:center; list-style-type:circle;"> 
+				<li><h4><a href="https://marvelapp.com/3a8abfh">Blind fitting experience</a></h4></li>
+				<li><h4><a href="http://fitbuyshop.ru/application/lang/change-locale?lang=en_US">Real-time fitting</a></h4></li>
+			</ul>
         </div>
         <div role="tabpanel" class="tab-pane" id="sharing">
             <div class="row">
