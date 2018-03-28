@@ -687,26 +687,26 @@ function Plugin3d(container, options) {
     invisible.visible = false;
 
     function updateSkinBoundsAndCameraLimits() {
-        var boundingBox = new THREE.Box3 (), v1 = new THREE.Vector3 ();
-
-        for (var i = 0; i < avatarSkins.length; i++) {
-            avatarSkins[i].updateMatrixWorld (true);
-            if (i == 0) {
-                for (var j = 0, n = avatarSkins[0].geometry.attributes.position.array.length / 3; j < n; j++) {
-                    v1.copy (transformedSkinVertex (avatarSkins[0], j));
-                    v1.applyMatrix4 (avatarSkins[0].matrixWorld);
-                    boundingBox.expandByPoint (v1);
-                }
-
-                controls.minUpDown = defaultSceneOffset;
-                controls.maxUpDown = defaultSceneOffset + boundingBox.max.y - boundingBox.min.y;
-
-                correctSceneOffset = boundingBox.min.y;
-            }
-            avatarSkins[i].geometry.boundingSphere = new THREE.Sphere ();
-            avatarSkins[i].geometry.boundingSphere.setFromPoints ([boundingBox.min, boundingBox.max]);
-            avatarSkins[i].geometry.boundingBox = boundingBox.clone ();
-        }
+        // var boundingBox = new THREE.Box3 (), v1 = new THREE.Vector3 ();
+        //
+        // for (var i = 0; i < avatarSkins.length; i++) {
+        //     avatarSkins[i].updateMatrixWorld (true);
+        //     if (i == 0) {
+        //         for (var j = 0, n = avatarSkins[0].geometry.attributes.position.array.length / 3; j < n; j++) {
+        //             v1.copy (transformedSkinVertex (avatarSkins[0], j));
+        //             v1.applyMatrix4 (avatarSkins[0].matrixWorld);
+        //             boundingBox.expandByPoint (v1);
+        //         }
+        //
+        //         controls.minUpDown = defaultSceneOffset;
+        //         controls.maxUpDown = defaultSceneOffset + boundingBox.max.y - boundingBox.min.y;
+        //
+        //         correctSceneOffset = boundingBox.min.y;
+        //     }
+        //     avatarSkins[i].geometry.boundingSphere = new THREE.Sphere ();
+        //     avatarSkins[i].geometry.boundingSphere.setFromPoints ([boundingBox.min, boundingBox.max]);
+        //     avatarSkins[i].geometry.boundingBox = boundingBox.clone ();
+        // }
     }
 
     function render() {
@@ -716,12 +716,12 @@ function Plugin3d(container, options) {
 
         if (avatarPose && avatarSkins) {
 
-            for (var boneName in avatarPose) {
-                for (var i = 0; i < avatarSkins.length; i++) {
-                    var bone = avatarSkins[i].getObjectByName (boneName, true);
-                    avatarPose[boneName].decompose (bone.position, bone.quaternion, bone.scale);
-                }
-            }
+            // for (var boneName in avatarPose) {
+            //     for (var i = 0; i < avatarSkins.length; i++) {
+            //         var bone = avatarSkins[i].getObjectByName (boneName, true);
+            //         avatarPose[boneName].decompose (bone.position, bone.quaternion, bone.scale);
+            //     }
+            // }
 
             if (!vrButtonsGroup.positionIsSet) {
                 vrButtonsGroup.position.y = -correctSceneOffset;
