@@ -1,8 +1,6 @@
 function Plugin3d(container, options) {
     var settings = $.extend( {
-        // тип взаимодействия с воркером
-        'answer': 'rabbit_mq',
-        // callback для принятия сообщений со стороны воркера
+        //@deprecated callback для принятия сообщений со стороны воркера
         'onAnswerReceive': function (data) {
         },
         // единицы, в которых отображаются длины, и округление
@@ -48,7 +46,6 @@ function Plugin3d(container, options) {
         'controlsCenter' : new THREE.Vector3 (0, 0.2, 0),
         'cameraPosition': new THREE.Vector3(0, 1, 2.9),
         'minRenderbufferSizeForPostprocessing': 16384,
-        'showAddToHomeScreenBlock': false,
         'VRLoader': options.images + 'loading.png',
         'VRErrorClose': options.images + 'close-out-x-square.png',
         'showGallery': false,
@@ -60,7 +57,6 @@ function Plugin3d(container, options) {
     var debug = false;
 
     var subcontainer;
-    var curtainsCounter = 0;
     var scene;
     var light2, shadowLights = [];
     var camera, holder;
@@ -77,6 +73,12 @@ function Plugin3d(container, options) {
     var dummyContainer = new THREE.Object3D();
     var vrButtons, gallery;
 
+    var ERR_SCENE_LOAD = "ERR_SCENE_LOAD";
+    var ERR_AVATAR_LOAD = "ERR_AVATAR_LOAD";
+    var ERR_MESH_LOAD = "ERR_MESH_LOAD";
+    var ERR_NO_WORKERS = "ERR_NO_WORKERS";
+    var ERR_WORKER_TIMEOUT = "ERR_WORKER_TIMEOUT";
+
     self.hideStaticButtons = function () {
         vrButtonsStaticGroup.visible = false;
     };
@@ -86,6 +88,12 @@ function Plugin3d(container, options) {
         vrButtonsStaticGroup.children.forEach(function (btn) {
             btn.isActive = false;
         });
+    };
+
+    var isMobile = function () {
+        var check = false;
+        (function (a) { if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true; })(navigator.userAgent || navigator.vendor || window.opera);
+        return check;
     };
 
     function setInitialCameraPosition () {
@@ -145,20 +153,6 @@ function Plugin3d(container, options) {
     function init() {
 
         try {
-
-            if (settings.showAddToHomeScreenBlock && Util.isIOS() && !navigator.standalone) {
-                var addtohome = addToHomescreen({
-                    debug: true,
-                    autostart: false,
-                    maxDisplayCount: 0,
-                    skipFirstVisit: false,
-                    lifespan: 0,
-                    displayPace: 0,
-                    startDelay: .5,
-                    message: 'To view in fullscreen on iPhone add this web app to the home screen: tap %icon and then <strong>Add to Home Screen</strong>.'
-                });
-                addtohome.show(true);
-            }
 
             scene = new THREE.Scene();
 
@@ -302,12 +296,18 @@ function Plugin3d(container, options) {
             vrButtons.unlock();
         }
 
+        var polyfill = new WebVRPolyfill({
+            BUFFER_SCALE: 1
+        });
+
         initRenderer();
 
         navigator.getVRDisplays().then(function (displays) {
             if (displays.length > 0) {
                 vrDisplay = displays[0];
                 vrDisplay.requestAnimationFrame(render);
+            } else {
+                requestAnimationFrame(render);
             }
         });
       
@@ -371,10 +371,11 @@ function Plugin3d(container, options) {
         subcontainer.append(vrNotSupportPopup);
 
         self.exitVR = function () {
-            if (!vrDisplay.isPresenting) {
-                $('#rightMenu').show();
-            } else {
+
+            if (vrDisplay && vrDisplay.isPresenting) {
                 vrDisplay.exitPresent();
+            } else {
+                $('#rightMenu').show();
             }
 
             $("#rightMenu .vrExit").hide();
@@ -404,8 +405,8 @@ function Plugin3d(container, options) {
             }, 500);
             $("#rightMenu .vrExit").show();
             $("#rightMenu .vr").hide();
-            if (Util.isMobile())
-                $('#rightMenu').hide();
+            if (isMobile())
+              $('#rightMenu').hide();
 
             lockVRExit = true;
 
@@ -413,15 +414,20 @@ function Plugin3d(container, options) {
                 lockVRExit = false;
             }, 1000);
 
-            vrDisplay.requestPresent([{ source: renderer.domElement }]).catch(function (reason) {
+            if (vrDisplay) {
+                vrDisplay.requestPresent([{ source: renderer.domElement }]).catch(function (reason) {
+                    vrNotSupportPopup.show();
+                    self.exitVR();
+                });
+            } else {
                 vrNotSupportPopup.show();
-                self.exitVR();
-            });
+            }
 
             setInitialCameraPosition();
             vrButtonsGroup.visible = true;
             vrButtonsStaticGroup.visible = true;
             vrButtons.showHideCrosshair(true);
+            $('.viewer-hint').removeClass('active');
 
 
         };
@@ -485,7 +491,7 @@ function Plugin3d(container, options) {
 
 
         window.addEventListener('resize', function () {
-            if (vrDisplay.isPresenting) {
+            if (vrDisplay && vrDisplay.isPresenting) {
                 container.css({
                     "position":"fixed",
                     "top": "0px",
@@ -523,8 +529,7 @@ function Plugin3d(container, options) {
 
         subcontainer.append($(createSpinnerHtml (settings.images)));
 
-        subcontainer.append($('<div id="wait_message"><img src="' + settings.images + 'wait_message.png" style="display:none;" onload="this.style.display=\'\';" /></div>'));
-
+        subcontainer.append($('<div id="wait_message"></div>'));
 
         if (debug) {
             //showErrorMessage(33);
@@ -548,50 +553,87 @@ function Plugin3d(container, options) {
         ;
     }
 
-    function toggleCurtains (enabled, callback) {
-        //console.log('called from ' + (new Error()).stack)
-        if (enabled) {
-            curtainsCounter++;
-            if (curtainsCounter == 1) {
-                $('#curtain_left,#curtain_right').addClass('curtains_closed');
-                $.when($('#spinner,#wait_message').fadeIn(settings.curtainsDelay)).done(callback);
-            } else {
-                if (callback) setTimeout (callback, settings.curtainsDelay);
-            }
+    function updateWaitMessage(phase, progress) {
+        var fallbackTexts = {
+            "PHASE_LOADDATA": "Load data",
+            "PHASE_STITCHING": "Stitching",
+            "PHASE_RELAX": "Relaxing",
+            "PHASE_SAVEDATA": "Save data",
+            "PHASE_DONE": "Ready",
+        };
+        var texts;
+        if (typeof SHARECLOTH_PLUGIN_LANG !== 'undefined') {
+            texts = SHARECLOTH_PLUGIN_LANG;
         } else {
-            curtainsCounter--;
-            if (curtainsCounter <= 0) {
-                curtainsCounter = 0;
-            }
+            texts = fallbackTexts;
+        }
+        var langKey = "PHASE_" +  phase.toUpperCase()
 
-            if (curtainsCounter == 0) {
-                $('#curtain_left,#curtain_right').removeClass('curtains_closed');
-                $.when($('#spinner,#wait_message').fadeOut(settings.curtainsDelay)).done(callback);
-            } else {
-                if (callback) setTimeout(callback, settings.curtainsDelay);
-            }
+        var progressInt = parseInt(progress);
+        var message = "";
+        if (!isNaN(progressInt) && progress >=0 && progress <= 100) {
+            message = texts[langKey] + " <br />" + progress + '%';
+        } else {
+            message = texts[langKey];
+        }
+        $('#wait_message').html(message);
+    }
+
+
+    function toggleCurtains(enabled, callback) {
+        //todo вынести определение текстов в отдельный метод
+        var fallbackTexts = {
+            "LOADING": "Loading, <br/> please wait"
+        };
+        var texts;
+        if (typeof SHARECLOTH_PLUGIN_LANG !== 'undefined') {
+            texts = SHARECLOTH_PLUGIN_LANG;
+        } else {
+            texts = fallbackTexts;
+        }
+
+        if (enabled) {
+            $('#curtain_left,#curtain_right').addClass('curtains_closed');
+            $('#wait_message').html(texts.LOADING);
+            $.when($('#spinner,#wait_message').fadeIn(settings.curtainsDelay)).done(function() {
+                if (typeof (callback) === 'function') callback();
+            });
+        } else {
+            $('#curtain_left,#curtain_right').removeClass('curtains_closed');
+            $.when($('#spinner,#wait_message').fadeOut(settings.curtainsDelay)).done(function() {
+                if (typeof (callback) === 'function') callback();
+            });
         }
     }
 
     function showErrorMessage (code) {
-        // error popups are 414x167
-        var show = function (image) {
-            $('#error_popup').remove ();
+        //todo вынести определение текстов в отдельный метод
+        var fallbackTexts = {
+            "ERR_SCENE_LOAD": "Error while loading scene.",
+            "ERR_AVATAR_LOAD": "Error while loading avatar.",
+            "ERR_MESH_LOAD": "Error while loading product.",
+            "ERR_NO_WORKERS": "No resources available",
+            "ERR_WORKER_TIMEOUT": "Operation timeout"
+        };
 
-            image.id = 'error_popup';
-            subcontainer.append ($ (image).click (function () {
-                $('#error_popup').remove ();
+        var texts;
+        if (typeof SHARECLOTH_PLUGIN_LANG !== 'undefined') {
+            texts = SHARECLOTH_PLUGIN_LANG;
+        } else {
+            texts = fallbackTexts;
+        }
+
+        var text = texts[code] ? texts[code] : 'Error loading data';
+        // error popups are 414x167
+        var show = function (text) {
+            $('#plugin-error-popup').remove ();
+
+            var  html = '<div id="plugin-error-popup"><span></span><p>'+text+'</p></div>';
+            subcontainer.append ($ (html).click (function () {
+                $('#plugin-error-popup').remove ();
             }));
         }
-        var image = new Image()
-        image.onload = function() { show (image); }
-        image.onerror = function() {
-            // fall back to 20 (could not apply) or any other
-            image = new Image();
-            image.onload = function() { show (image); }
-            image.src = settings.images + '20.png';
-        }
-        image.src = settings.images + code + '.png';
+        show(text);
     }
 
     var glEnums = {};
@@ -663,8 +705,10 @@ function Plugin3d(container, options) {
 
     var avatarId = -1;
     var avatarParams = null;
-    var avatarPose = null;
+    var avatarPose = null; //todo this is old realisation.. leave this here.
     var avatarSkins = null;
+    var AVATAR_DEFAULT_POSE = 'VPose';
+    var avatarCurrentPose = AVATAR_DEFAULT_POSE;
 
     var defaultSceneOffset = -0.9; // 90 cm downwards
     var correctSceneOffset = defaultSceneOffset;
@@ -687,6 +731,7 @@ function Plugin3d(container, options) {
     invisible.visible = false;
 
     function updateSkinBoundsAndCameraLimits() {
+        // todo убрал обработку костей
         // var boundingBox = new THREE.Box3 (), v1 = new THREE.Vector3 ();
         //
         // for (var i = 0; i < avatarSkins.length; i++) {
@@ -715,7 +760,7 @@ function Plugin3d(container, options) {
             stats.update();
 
         if (avatarPose && avatarSkins) {
-
+            // todo убрал обработку костей
             // for (var boneName in avatarPose) {
             //     for (var i = 0; i < avatarSkins.length; i++) {
             //         var bone = avatarSkins[i].getObjectByName (boneName, true);
@@ -727,21 +772,26 @@ function Plugin3d(container, options) {
                 vrButtonsGroup.position.y = -correctSceneOffset;
                 vrButtonsGroup.positionIsSet = true;
                 if(gallery)
-                   gallery.setOffset(-correctSceneOffset + 0.3);
+                   gallery.setOffset(-correctSceneOffset - 0.7);
             }
 
             updateSkinBoundsAndCameraLimits();
             avatarPose = null;
         }
 
-        scene.traverse (function (child) {
+        scene.traverse(function (child) {
+
+            if (child.name === 'scene:btnCatalogue.robemesh:0') {
+                child.parent.position.y = 0;
+            }
+
             if (child.name.indexOf('scene') == 0 && !child.vrBtn && !child.isGalleryItem) {
-               child.position.y = correctSceneOffset;
+                child.position.y = correctSceneOffset;
             }
         });
 
         // SHOW VR ON DESKTOP
-        if (vrDisplay.isPresenting) {
+        if (vrDisplay && vrDisplay.isPresenting) {
             vrControls.update();
             vrButtons.update();
             // work around camera inside avatar thing
@@ -753,7 +803,11 @@ function Plugin3d(container, options) {
 
         renderSingleFrame();
 
-        vrDisplay.requestAnimationFrame(render);
+        if (vrDisplay) {
+            vrDisplay.requestAnimationFrame(render);
+        } else {
+            requestAnimationFrame(render);
+        }
     }
 
     function renderSingleFrame() {
@@ -914,7 +968,9 @@ light_mat - матрица источника освещения, имеющия
             JSZipUtils.getBinaryContent(url, function(err, data) {
                 document.removeEventListener ('keydown', abort, false);
                 if (err) {
-                    deferred.reject (err);
+                    //todo at this line may be some errors.. need mode debug and tests
+                    var jsonError = JSON.parse(String.fromCharCode.apply(null, new Uint8Array(xhr.response)));
+                    deferred.reject(jsonError);
                 } else {
                     console.log('Downloading ' + url + ' took ' + (Date.now() - t) + ' ms');
 
@@ -922,7 +978,6 @@ light_mat - матрица источника освещения, имеющия
                         showErrorMessage (data.byteLength);
                         deferred.reject (new Error ('Data too short: ' + data.byteLength + ' bytes, url was ' + url));
                     } else {
-
                         var result = null;
 
                         var zip = new JSZip(data);
@@ -965,11 +1020,9 @@ light_mat - матрица источника освещения, имеющия
 
     var hdrCubeRenderTarget;
 
-    this.loadScene = function (sceneId, callback, waitNextAction) {
-
-        toggleCurtains (true, function () {
+    this.loadScene = function (sceneId, callback) {
         $.when(
-            loadZip (settings.host + '/plugin/get-scene/' + sceneId + '?_=' + PathResolver.getUnixTimeStamp(), function (zip, fileName) {
+            loadZip (settings.host + '/plugin/get-scene/' + sceneId, function (zip, fileName) {
                 return processMeshFile (zip, fileName) || processHDRFile (zip, fileName) || processTextureFile (zip, fileName);
             })
         ).then(function (files) {
@@ -1082,20 +1135,11 @@ light_mat - матрица источника освещения, имеющия
                 }
             }
 
-        }).fail(function (err) {
-
-            if (err) console.error (err);
-
-        }).always(function () {
-
-            if (waitNextAction) {
-                callback();
-            } else {
-                toggleCurtains (false, callback);
-            }
-          
-        });
-
+            if (typeof callback === "function") callback(null, sceneId);
+        }, function(error) {
+            console.log('loadScene error - %j', error);
+            showErrorMessage(ERR_SCENE_LOAD);
+            if (typeof callback === "function")  callback(error, false);
         });
     };
 
@@ -1128,10 +1172,15 @@ light_mat - матрица источника освещения, имеющия
 
     }
 
-    this.loadDummy = function (dummyId, callback, hideCurtains) {
+    this.loadDummy = function (dummyId, pose, callback) {
+        $('#plugin-error-popup').remove ();
 
         vrButtonsGroup.positionIsSet = false;
         self.avatarId = dummyId;
+        if (!pose) {
+            pose = AVATAR_DEFAULT_POSE;
+        }
+        self.avatarCurrentPose = pose;
         avatarId = dummyId;
         avatarParams = null;
         avatarSkins = null;
@@ -1143,9 +1192,9 @@ light_mat - матрица источника освещения, имеющия
             removeMeshes('plane');
 
             $.when(
-                $.getJSON(settings.host + '/plugin/get-avatar-parameters/' + avatarId + '?_=' + PathResolver.getUnixTimeStamp()),
-                loadZip(settings.host + '/plugin/get-user-avatar/' + avatarId + '?_=' + PathResolver.getUnixTimeStamp(), processMeshFile),
-                loadZip(settings.host + '/plugin/avatar-texture/' + avatarId + '?_=' + PathResolver.getUnixTimeStamp(), processTextureFile)
+                $.getJSON(settings.host + '/plugin/avatar/parameters/' + avatarId + '?_=' + PathResolver.getUnixTimeStamp()),
+                loadZip(PathResolver.getAvatarUrl(avatarId, pose, settings), processMeshFile),
+                loadZip(settings.host + '/plugin/avatar/texture/' + avatarId, processTextureFile) //add cache to textures here.. see history for reset thsi behavior
             ).then(function (params, meshes, textures) {
                 avatarParams = params[0];
                 avatarSkins = [];
@@ -1207,6 +1256,7 @@ light_mat - матрица источника освещения, имеющия
                         var material = robemesh.materials[geometry.materialIndex];
 
                         var hasBones = (geometry.bones.length > 0);
+                        //todo Когда анимации работали на вебе, тут стояло SkinnedMesh - возможно это скажется на других частях работы плагина
                         var mesh = new THREE.SkinnedMesh(geometry,
                             createAvatarMaterial(material, textures, hasBones, hdrCubeRenderTarget ? hdrCubeRenderTarget.texture : undefined)
                         );
@@ -1236,25 +1286,14 @@ light_mat - матрица источника освещения, имеющия
 
                 updateSkinBoundsAndCameraLimits();
 
-            }).fail(function (err) {
-
-                if (err) console.error(err);
-
-            }).always(function () {
-                toggleCurtains(false, callback);
-
+                if (typeof (callback) === 'function') callback(null, avatarId);
+            }, function(err) {
+                showErrorMessage(ERR_AVATAR_LOAD);
+                if (typeof (callback) === 'function') callback(err, false);
             });
-
         };
 
-        if (hideCurtains) {
-            load();
-        } else {
-            toggleCurtains (true, function () {
-                load();
-            });
-        }
-
+        load();
     };
 
     var stretchModeEnabled = false;
@@ -1285,12 +1324,14 @@ light_mat - матрица источника освещения, имеющия
 
     var techPackMeasurements = null;
 
-    this.loadProducts = function (products, callback, clothTypeId, hideCurtains) {
+    this.loadProducts = function (products, pose, clothTypeId, callback) {
+        $('#plugin-error-popup').remove ();
 
         self.productIds = products;
 
         if (avatarId < 0) {
-            throw new Error ('Avatar ID was not set.');
+            if (typeof (callback) === 'function') callback(new Error ('Avatar ID was not set.'), false);
+            return;
         }
 
         var load = function () {
@@ -1300,9 +1341,7 @@ light_mat - матрица источника освещения, имеющия
 
             techPackMeasurements = null;
 
-            if (!products || (products == '')) {
-
-                toggleCurtains(false, callback);
+            if (!products || products === '') {
                 return;
             }
 
@@ -1310,62 +1349,39 @@ light_mat - матрица источника освещения, имеющия
 
             var args = [];
 
-            var combinationIdsUrl = PathResolver.getCombinationIds(products, avatarId, settings);
+            var requestId = PathResolver.getRequestId();
+            var combinationIdsUrl = PathResolver.getCombinationIds(products, avatarId, pose, settings, requestId);
             console.log('CombinationIdsUrl ids: ' + combinationIdsUrl);
 
-            //todo этот кусок кода еще до конца не доработан.. его бы влить в другую ветку.. или создать еще какую вариацию
-            if (settings.answer == 'rabbit_mq') {
-                console.log('user rabbit_mq answer');
-                args.push(
-                    loadZip(combinationIdsUrl, processMeshFile)
-                );
-            } else if (settings.answer == 'web_sockets') {
-                console.log('user web_sockets answer');
-                // code from this line on develop - WEB-2135
-                args.push(
-                    $.Deferred(function (deferred) {
-                        $.ajax({
-                            url: combinationIdsUrl,
-                            success: function (result) {
-                                console.log('Web sockets request result is: ');
-                                console.log(result.webSocketServer);
+            /// web sockets section
+            var webSockerClient = new WebSocket('ws://'+PathResolver.getLocation(settings.host).hostname+':8081?request_id=' + requestId);
 
-                                var client = new WebSocket(result.webSocketServer);
+            webSockerClient.onopen = function (evt) {
+                //console.log('Connected to web socket server');
+            };
 
-                                client.onopen = function (evt) {
-                                    console.log('Connected to web socket server')
-                                };
+            webSockerClient.onclose = function (evt) {
+                //console.log('Close connection')
+            };
 
-                                client.onclose = function (evt) {
-                                    console.log('Close connection')
-                                };
+            webSockerClient.onmessage = function (evt) {
+                //console.log('receiver messages from web socket server:');
 
-                                client.onmessage = function (evt) {
-                                    console.log('receiver messages from web socket server:');
+                var data = JSON.parse(evt.data);
+                //console.log('%j', data);
+                if (data.hasOwnProperty('phase') && data.hasOwnProperty('progress')) {
+                    updateWaitMessage(data.phase, data.progress);
+                }
+            };
 
-                                    var data = JSON.parse(evt.data);
-                                    settings.onAnswerReceive(JSON.parse(evt.data));
+            webSockerClient.onerror = function (evt) {
+                console.log(evt);
+            };
+            /// end
 
-                                    if (data.command == 'CalcClothesV2Command' && data.succeed == "true") {
-                                        client.close();
-                                        //load zip and other things
-                                        loadZip(settings.host + '/plugin/product-mesh/get-ident/' + data.ident, processMeshFile).then(
-                                            function (result) {
-                                                deferred.resolve(result);
-                                            }
-                                        )
-                                    }
-                                };
-
-                                client.onerror = function (evt) {
-                                    console.log('Can not connect to web socket server')
-                                    deferred.error();
-                                };
-                            }
-                        });
-                    }).promise()
-                );
-            }
+            args.push(
+                loadZip(combinationIdsUrl, processMeshFile)
+            );
 
             var textures = PathResolver.getProductTextures(products, settings);
 
@@ -1374,7 +1390,6 @@ light_mat - матрица источника освещения, имеющия
                     loadZip(t, processTextureFile)
                 );
             });
-
 
             $.when.apply(
                 $, args
@@ -1671,24 +1686,47 @@ light_mat - матрица источника освещения, имеющия
                 }
 
                 makeSausages();
+                //todo websocket connection not closed
+                webSockerClient.close();
+                if (typeof (callback) === 'function') callback(null, true);
+            }, function(err) {
+                var error = typeof err.message !== 'undefined' ? err.message : 'default';
+                debugger;
 
-            }).fail(function (err) {
+                switch (error) {
+                    case 'NO_WORKER_AVAILABLE':
+                        showErrorMessage(ERR_NO_WORKERS);
+                        break;
+                    case 'WORKER_TIMEOUT':
+                        showErrorMessage(ERR_WORKER_TIMEOUT);
+                        break;
+                    default:
+                        showErrorMessage(ERR_MESH_LOAD);
+                }
 
-                if (err) console.error(err);
+                //todo websocket connection not closed
+                webSockerClient.close();
 
-            }).always(function () {
-                toggleCurtains(false, callback);
+                if (typeof (callback) === 'function') callback(err, false);
             });
         };
 
-        if (hideCurtains) {
-            load();
-        } else {
-            toggleCurtains(true, function () {
-                load();
-            });
+        if (!pose) {
+            pose = AVATAR_DEFAULT_POSE;
         }
-
+        if (self.avatarCurrentPose !== pose) {
+            console.log('Current avatar pose != this pose ('+pose+')');
+            self.loadDummy(self.avatarId, pose, function(err, result) {
+                if (err) {
+                    showErrorMessage(ERR_AVATAR_LOAD);
+                    if (typeof (callback) === 'function') callback(err, false);
+                } else {
+                    load();
+                }
+            });
+        } else {
+            load();
+        }
     };
 
     var turnSpecialModesOff = function () {
@@ -2836,12 +2874,12 @@ light_mat - матрица источника освещения, имеющия
 
     };
 
-    this.showCurtains = function(){
-        toggleCurtains(true, function(){});
+    this.showCurtains = function(callback){
+        toggleCurtains(true, callback);
     };
 
-    this.hideCurtains = function(){
-        toggleCurtains(false, function(){});
+    this.hideCurtains = function(callback){
+        toggleCurtains(false, callback);
     };
 
     for (var prop in this) {

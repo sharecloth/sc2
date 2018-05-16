@@ -1,8 +1,8 @@
 var PathResolver = {
 
-    getCombinationIds: function (data, avatarId, settings) {
+    getCombinationIds: function (data, avatarId, pose, settings, requestId) {
         if (typeof data === 'string') {
-            return settings.host + '/plugin/get-animation/' + avatarId + '?combination_ids=' + data + '&animation_name=hands_down&version=3&answer=' + settings.answer + '&_=' + this.getUnixTimeStamp();
+            return settings.host + '/plugin/get-animation/' + avatarId + '?combination_ids=' + data + '&animation_name=' + pose + '&request_id=' + requestId;
         } else {
             var result = [];
 
@@ -10,7 +10,7 @@ var PathResolver = {
                 result.push(e.product) ;
             });
 
-            return settings.host + '/plugin/get-animation/' + avatarId + '?combination_ids=' + result.join('_') + '&animation_name=hands_down&version=3&answer=' + settings.answer + '&_=' + this.getUnixTimeStamp();
+            return settings.host + '/plugin/get-animation/' + avatarId + '?combination_ids=' + result.join('_') + '&animation_name=' + pose + '&request_id=' + requestId;
         }
     },
 
@@ -43,5 +43,24 @@ var PathResolver = {
 
     getUnixTimeStamp: function() {
         return new Date().getTime();
+    },
+
+    getRequestId: function () {
+        return Math.random().toString(36).substring(7) + '_' + Math.random().toString(36).substring(7);
+    },
+    
+    getAvatarUrl: function (avatarId, pose, settings) {
+        var self = this;
+        if (pose === 'v_pose') {
+            pose = '';
+        }
+
+        return settings.host + '/plugin/avatar/data/' + avatarId + '?pose='+ pose +'&_=' + self.getUnixTimeStamp();
+    },
+
+    getLocation: function(href) {
+        var l = document.createElement("a");
+        l.href = href;
+        return l;
     }
 };

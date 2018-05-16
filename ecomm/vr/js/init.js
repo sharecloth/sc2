@@ -7,7 +7,6 @@ $(document).ready(function () {
                 //'host': 'http://dev.plugin-web.globedrobe.com/api',
                 'host': 'http://plugin-web.globedrobe.com/api',
                 'clearColor': 0xffffff,
-                'showAddToHomeScreenBlock': true,
                 'VRLoader': 'images/loading.png',
                 'showGallery': false,
                 'VRRotationOptions': {
@@ -24,7 +23,7 @@ $(document).ready(function () {
                     rotationAcceleration: 0.0005 //ускорение  (radians)
                 },
             //'host': ''
-          //  'images': '/images/',
+            'images': 'images/',
             'setLightsUp'
     :
     function (scene) {
