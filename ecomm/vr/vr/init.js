@@ -63,17 +63,19 @@ $(document).ready(function () {
 
         if (e.detail.buttonName == 'galleryItem') {
 
-            var data = {
-                cloth_body_type: e.detail.currentClothBodyType,
-                ident: e.detail.currentProductId
-            };
-
-            console.log('Loading size: %j', data);
-
-            var products = ProductLoader.getProductsToLoad(data);
+            // var data = {
+            //     cloth_body_type: e.detail.currentClothBodyType,
+            //     ident: e.detail.currentProductId
+            // };
+            //
+            // console.log('Loading size: %j', data);
+            //
+            // var products = ProductLoader.getProductsToLoad(data);
 
             // use only one already loaded avatar
-            plugin.loadProducts(products, 'VPose', 1, function () {
+
+            // due to avatar error - we fit only one item
+            plugin.loadProducts('c-' + e.detail.currentProductId, 'VPose', 1, function () {
                 plugin.hideLoadingPlane();
                 plugin.showStaticButtons();
             }, 1, true);
