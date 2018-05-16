@@ -52,8 +52,9 @@ $(document).ready(function () {
 
     plugin.loadScene(15, function (e) {
 
-        plugin.loadDummy(GLOBAL_SETTINGS.avatarId, function () {
-            plugin.hideLoadingPlane(); 
+        plugin.loadDummy(GLOBAL_SETTINGS.avatarId, 'VPose', function () {
+            plugin.hideCurtains();
+            plugin.hideLoadingPlane();
         }, true);
 
     }, true);
@@ -72,7 +73,7 @@ $(document).ready(function () {
             var products = ProductLoader.getProductsToLoad(data);
 
             // use only one already loaded avatar
-            plugin.loadProducts(products, function () {
+            plugin.loadProducts(products, 'VPose', 1, function () {
                 plugin.hideLoadingPlane();
                 plugin.showStaticButtons();
             }, 1, true);
